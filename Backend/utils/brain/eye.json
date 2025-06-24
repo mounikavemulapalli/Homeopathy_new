@@ -1,0 +1,349 @@
+{
+  "EyeSigns": [
+    {
+      "rubric": "Eyes - Sunken",
+      "grading": {
+        "high": ["Phos", "China", "Carb-an"],
+        "medium": ["Nat-m", "Ars", "Kali-carb"],
+        "low": ["Sil", "Lyc"]
+      },
+      "modality": "From exhaustion, after diarrhea, hemorrhage, chronic disease",
+      "miasm": "Psora-Syphilis",
+      "notes": "Sunken eyes indicate dehydration, chronic loss of fluids, or wasting diseases. Useful in cases with collapsed appearance."
+    },
+    {
+      "rubric": "Eyes - Prominent / bulging (exophthalmos)",
+      "grading": {
+        "high": ["Lyc", "Spong", "Iod"],
+        "medium": ["Thyroidinum", "Calc", "Arg-n"],
+        "low": ["Bell", "Sulph"]
+      },
+      "modality": "Worse with excitement, thyroid dysfunction",
+      "miasm": "Sycosis",
+      "notes": "Seen in thyroid eye disease or sycotic overgrowths. Lyc has pressure behind eyes, Iod has emaciation with bulging."
+    },
+    {
+      "rubric": "Eyes - Drooping lids (ptosis)",
+      "grading": {
+        "high": ["Gels", "Caust"],
+        "medium": ["Plumb", "Sep", "Kali-phos"],
+        "low": ["Con", "Lyc"]
+      },
+      "modality": "Worse on fatigue, heat, motion",
+      "miasm": "Psora-Syphilis",
+      "notes": "Gelsemium ptosis from weakness; Causticum from paralysis. Common in neuro-muscular fatigue."
+    },
+    {
+      "rubric": "Eyes - Half-open during sleep",
+      "grading": {
+        "high": ["Sulph", "Phos", "Lach"],
+        "medium": ["Bell", "Ars", "Stram"],
+        "low": ["Zinc", "Ign"]
+      },
+      "modality": "During fevers, convulsions, chronic brain disease",
+      "miasm": "Psora",
+      "notes": "Seen in children and neuro cases; Sulphur, Phos in constitutional weakness. Lachesis in low vitality."
+    },
+    {
+      "rubric": "Eyes - Rolling upward",
+      "grading": {
+        "high": ["Cic", "Cupr", "Bell"],
+        "medium": ["Stram", "Hyos", "Helleb"],
+        "low": ["Opium", "Zinc"]
+      },
+      "modality": "During convulsions, fainting, fear",
+      "miasm": "Syphilis",
+      "notes": "Indicates neurological involvement, seizure states, or hysterical tendencies. Cicuta is classical."
+    },
+    {
+      "rubric": "Eyes - Wide open, staring",
+      "grading": {
+        "high": ["Stram", "Bell", "Hyos"],
+        "medium": ["Op", "Zinc", "Agar"],
+        "low": ["Phos", "Ign"]
+      },
+      "modality": "During fever, fear, mania",
+      "miasm": "Sycosis-Syphilis",
+      "notes": "Staring, open eyes in mania, delirium, fright. Stram especially in violent mania. Belladonna in acutes."
+    },
+    {
+      "rubric": "Eyes - Wandering movement (nystagmus)",
+      "grading": {
+        "high": ["Zinc", "Agar", "Cic"],
+        "medium": ["Hell", "Physos", "Gels"],
+        "low": ["Calc", "Nux-v"]
+      },
+      "modality": "Worse with nervous strain, ataxia, brain diseases",
+      "miasm": "Syphilis",
+      "notes": "Nystagmus is a sign of cerebellar dysfunction. Zincum in twitching, Agaricus in tremors and imbalance."
+    },
+    {
+      "rubric": "Eyes - Fixed, glassy look",
+      "grading": {
+        "high": ["Bell", "Op", "Helleb"],
+        "medium": ["Phos-ac", "Hyos", "Carb-v"],
+        "low": ["Gels", "Bapt"]
+      },
+      "modality": "During typhoid, coma, severe fevers",
+      "miasm": "Syphilis",
+      "notes": "Glassy eyes = severe systemic toxicity. Opium and Helleborus in coma; Bell in acute delirium."
+    },
+    {
+      "rubric": "Eyes - Lachrymation (tearing)",
+      "grading": {
+        "high": ["Euphr", "All-c", "Puls"],
+        "medium": ["Bell", "Sulph", "Ars"],
+        "low": ["Graph", "Phos"]
+      },
+      "modality": "Worse in wind, morning, open air; better in dark",
+      "miasm": "Psora",
+      "notes": "Euphrasia has profuse acrid tears; Pulsatilla thick bland discharge. Allium-c from coryza or eye strain."
+    },
+    {
+      "rubric": "Eyes - Eyelids swollen",
+      "grading": {
+        "high": ["Apis", "Puls", "Kali-carb"],
+        "medium": ["Graph", "Phos", "Bell"],
+        "low": ["Sulph", "Merc"]
+      },
+      "modality": "Worse with heat, touch, in morning",
+      "miasm": "Sycosis",
+      "notes": "Apis – baggy lids, stinging pain. Kali-c – lower lid puffiness. Puls – styes and chronic inflammation."
+    },
+    {
+      "rubric": "Eyes - Circles around eyes (dark, blue, black)",
+      "grading": {
+        "high": ["Phos", "China", "Sep"],
+        "medium": ["Nat-m", "Kali-carb", "Calc"],
+        "low": ["Sulph", "Lyc"]
+      },
+      "modality": "Worse from weakness, menses, grief",
+      "miasm": "Psora",
+      "notes": "Dark circles reflect anemia, grief, hormonal fatigue. Phos – delicate patients. Sep – hormonal disturbance."
+    },
+    {
+      "rubric": "Eyes - Strabismus (squinting)",
+      "grading": {
+        "high": ["Cic", "Gels", "Nux-v"],
+        "medium": ["Bell", "Zinc", "Aeth"],
+        "low": ["Caust", "Plumb"]
+      },
+      "modality": "During dentition, fevers, convulsions",
+      "miasm": "Syphilis",
+      "notes": "Squint due to nervous disorder or trauma. Cic – from convulsions. Gels – due to motor weakness."
+    },
+    {
+      "rubric": "Eyes - Pale conjunctiva",
+      "grading": {
+        "high": ["China", "Ferr", "Nat-m"],
+        "medium": ["Calc", "Sep", "Sil"],
+        "low": ["Phos", "Zinc"]
+      },
+      "modality": "Worse after blood loss, menses, diarrhea",
+      "miasm": "Psora",
+      "notes": "Pale eyes indicate anemia or exhaustion. Ferr & China are main anemic remedies. Nat-m with grief."
+    },
+    {
+      "rubric": "Eyes - Twitching of lids",
+      "grading": {
+        "high": ["Agar", "Zinc", "Ign"],
+        "medium": ["Gels", "Caust", "Cic"],
+        "low": ["Nux-v", "Bell"]
+      },
+      "modality": "Worse with stress, strain, fright",
+      "miasm": "Psora-Sycosis",
+      "notes": "Twitching from nervous exhaustion or fright. Agar in overactive nerves, Zinc in children with tics."
+    },
+    {
+      "rubric": "Eyes - Sensation of sand in eyes",
+      "grading": {
+        "high": ["Euphr", "Arg-n", "Sulph"],
+        "medium": ["Nat-m", "Alum", "Graph"],
+        "low": ["Ruta", "Bell"]
+      },
+      "modality": "Worse with dry weather, morning, reading",
+      "miasm": "Psora",
+      "notes": "Dry, gritty sensation. Euphrasia and Arg-n classic; Sulph with dryness and photophobia."
+    },
+    {
+      "rubric": "Eyes - Glassy, shiny appearance",
+      "grading": {
+        "high": ["Bell", "Stram", "Opium"],
+        "medium": ["Hyos", "Ars", "Helleb"],
+        "low": ["Phos", "Zinc"]
+      },
+      "modality": "During fever, delirium, sepsis, coma",
+      "miasm": "Syphilis",
+      "notes": "Indicates high-grade fever, delirium, collapse; commonly seen in Belladonna states."
+    },
+    {
+      "rubric": "Eyes - Dull, expressionless",
+      "grading": {
+        "high": ["Phos-ac", "Bapt", "Gels"],
+        "medium": ["Sil", "Sep", "Opium"],
+        "low": ["Calc", "Zinc"]
+      },
+      "modality": "After grief, typhoid, exhaustion",
+      "miasm": "Psora-Syphilis",
+      "notes": "Seen in apathetic, depressed, or collapsed states. Phos-ac in grief, Gels in prostration."
+    },
+    {
+      "rubric": "Eyes - Fixed gaze",
+      "grading": {
+        "high": ["Helleb", "Bell", "Opium"],
+        "medium": ["Hyos", "Stram", "Zinc"],
+        "low": ["Phos", "Gels"]
+      },
+      "modality": "During coma, shock, or meningitis",
+      "miasm": "Syphilis",
+      "notes": "Used in coma, shock, meningeal infection. Helleborus shows blank, unresponsive gaze."
+    },
+    {
+      "rubric": "Eyes - Closed tightly",
+      "grading": {
+        "high": ["Zinc", "Cham", "Ign"],
+        "medium": ["Cina", "Bell", "Cupr"],
+        "low": ["Merc", "Nux-v"]
+      },
+      "modality": "During colic, convulsion, strong pain",
+      "miasm": "Psora-Sycosis",
+      "notes": "Common in colic in children (Cham), or during fits (Zinc, Cuprum)."
+    },
+    {
+      "rubric": "Eyes - Constant movement / scanning",
+      "grading": {
+        "high": ["Stram", "Hyos", "Bell"],
+        "medium": ["Agar", "Zinc", "Cupr"],
+        "low": ["Opium", "Verat"]
+      },
+      "modality": "During mania, fear, delirium",
+      "miasm": "Sycosis-Syphilis",
+      "notes": "Manic, hyper-alert, fearful states. Stramonium frequently used."
+    },
+    {
+      "rubric": "Eyes - Moving side to side rapidly",
+      "grading": {
+        "high": ["Zinc", "Physostigma", "Cic"],
+        "medium": ["Agar", "Cupr", "Op"],
+        "low": ["Gels", "Nux-v"]
+      },
+      "modality": "During seizures, ataxia, neurological disorder",
+      "miasm": "Syphilis",
+      "notes": "Neurological twitching and nystagmus. Often used in cerebellar disease."
+    },
+    {
+      "rubric": "Eyes - One eye turned outward/inward (squint)",
+      "grading": {
+        "high": ["Cic", "Aethusa", "Stram"],
+        "medium": ["Bell", "Calc", "Zinc"],
+        "low": ["Caust", "Nux-v"]
+      },
+      "modality": "During dentition, fright, epilepsy",
+      "miasm": "Syphilis",
+      "notes": "Strabismus in neurological disease or epilepsy. Cicuta and Aethusa are key."
+    },
+    {
+      "rubric": "Eyes - Sudden blinking or spasms",
+      "grading": {
+        "high": ["Agar", "Zinc", "Ign"],
+        "medium": ["Gels", "Cupr", "Bell"],
+        "low": ["Caust", "Cham"]
+      },
+      "modality": "From nervous tension, fright, epilepsy",
+      "miasm": "Psora-Sycosis",
+      "notes": "Involuntary twitching and blinking of lids seen in tics or anxiety."
+    },
+    {
+      "rubric": "Eyes - Expression of fear",
+      "grading": {
+        "high": ["Stram", "Opium", "Bell"],
+        "medium": ["Hyos", "Phos", "Puls"],
+        "low": ["Acon", "Gels"]
+      },
+      "modality": "During acute fright, terror, mania",
+      "miasm": "Syphilis",
+      "notes": "Fearful, wide-eyed stare; classic rubric in mania or fright shock states."
+    },
+    {
+      "rubric": "Eyes - Sad, grief-stricken look",
+      "grading": {
+        "high": ["Nat-m", "Sep", "Ign"],
+        "medium": ["Phos-ac", "Calc", "Sil"],
+        "low": ["Puls", "Staph"]
+      },
+      "modality": "After long-term grief, disappointment",
+      "miasm": "Psora",
+      "notes": "Expression of silent grief and depression. Nat-m and Sepia are especially classic."
+    },
+    {
+      "rubric": "Eyes - Suspicious, darting look",
+      "grading": {
+        "high": ["Hyos", "Lach", "Stram"],
+        "medium": ["Bell", "Zinc", "Verat"],
+        "low": ["Anac", "Platina"]
+      },
+      "modality": "During psychosis, jealousy, persecution fears",
+      "miasm": "Sycosis",
+      "notes": "Seen in paranoid and delusional cases. Hyos, Lachesis very expressive through eyes."
+    },
+    {
+      "rubric": "Eyes - Pupils dilated",
+      "grading": {
+        "high": ["Bell", "Stram", "Gels"],
+        "medium": ["Hyos", "Opium", "Zinc"],
+        "low": ["Acon", "Phos"]
+      },
+      "modality": "During heat, fright, faintness",
+      "miasm": "Sycosis-Syphilis",
+      "notes": "Belladonna state; also in Gelsemium neurological dullness."
+    },
+    {
+      "rubric": "Eyes - Pupils contracted",
+      "grading": {
+        "high": ["Physostigma", "Merc", "Opium"],
+        "medium": ["Phos", "Bell", "Caust"],
+        "low": ["Helleb", "Ipec"]
+      },
+      "modality": "In brain injury, meningitis, poisoning",
+      "miasm": "Syphilis",
+      "notes": "Pinpoint pupils in opiate states, nerve collapse, or brain hemorrhage."
+    },
+    {
+      "rubric": "Eyes - Pupils unequal",
+      "grading": {
+        "high": ["Aur", "Bell", "Opium"],
+        "medium": ["Phos", "Nux-v", "Gels"],
+        "low": ["Calc", "Merc"]
+      },
+      "modality": "After injury, stroke, or neurological disease",
+      "miasm": "Syphilis",
+      "notes": "Brain or optic nerve damage. Aurum used in suicidal despair or brain softening."
+    }
+  ],
+  "EyeSignsSplit": {
+    "Physical": [
+      "Eyes - Sunken",
+      "Eyes - Prominent / bulging (exophthalmos)",
+      "Eyes - Drooping lids (ptosis)",
+      "Eyes - Half-open during sleep",
+      "Eyes - Lachrymation (tearing)",
+      "Eyes - Eyelids swollen",
+      "Eyes - Pale conjunctiva",
+      "Eyes - Circles around eyes (dark, blue, black)",
+      "Eyes - Sensation of sand in eyes"
+    ],
+    "Emotional": [
+      "Eyes - Wide open, staring",
+      "Eyes - Fixed, glassy look",
+      "Eyes - Circles around eyes (dark, blue, black)"
+    ],
+    "Neurologic": [
+      "Eyes - Rolling upward",
+      "Eyes - Wandering movement (nystagmus)",
+      "Eyes - Strabismus (squinting)",
+      "Eyes - Twitching of lids",
+      "Eyes - Drooping lids (ptosis)",
+      "Eyes - Half-open during sleep"
+    ]
+  }
+}

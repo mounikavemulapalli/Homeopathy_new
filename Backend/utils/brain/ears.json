@@ -1,0 +1,301 @@
+{
+  "EarSigns": [
+    {
+      "rubric": "Ear - Discharge offensive, pus-like",
+      "grading": {
+        "high": ["Merc", "Psor", "Sil"],
+        "medium": ["Hepar", "Graph", "Puls"],
+        "low": ["Calc-s", "Kali-s"]
+      },
+      "modality": "Worse at night, from warmth of bed",
+      "miasm": "Syphilis",
+      "notes": "Chronic otorrhoea with foul smell and thick discharge. Merc and Psorinum often used in long-standing cases."
+    },
+    {
+      "rubric": "Ear - Pain stitching, sharp",
+      "grading": {
+        "high": ["Hepar", "Cham", "Bell"],
+        "medium": ["Puls", "Merc", "Acon"],
+        "low": ["Sil", "Spig"]
+      },
+      "modality": "Worse from touch, cold air; better warmth",
+      "miasm": "Psora-Sycosis",
+      "notes": "Acute earaches in children. Hepar and Chamomilla especially when sensitive and irritable."
+    },
+    {
+      "rubric": "Ear - Noise, humming, buzzing, ringing (tinnitus)",
+      "grading": {
+        "high": ["Chin", "Salicylic-ac", "Kali-carb"],
+        "medium": ["China", "Sil", "Graph"],
+        "low": ["Phos", "Lyc", "Con"]
+      },
+      "modality": "Worse at night, after quinine, in elderly",
+      "miasm": "Syphilis",
+      "notes": "Buzzing and ringing sounds in ear. Salicylic acid and China key remedies for drug-induced or malaria-related tinnitus."
+    },
+    {
+      "rubric": "Ear - Hearing loss, deafness",
+      "grading": {
+        "high": ["Phos", "Sil", "Graph"],
+        "medium": ["Kali-carb", "Lyc", "China"],
+        "low": ["Con", "Baryta-c", "Merc"]
+      },
+      "modality": "Worse after cold, aging, wax accumulation",
+      "miasm": "Syphilis",
+      "notes": "Gradual hearing loss from middle ear issues or aging. Baryta-carb and Silicea used in old age-related hearing weakness."
+    },
+    {
+      "rubric": "Ear - Eczema around ears / behind ear",
+      "grading": {
+        "high": ["Graph", "Mez", "Petrol"],
+        "medium": ["Psor", "Sulph", "Calc"],
+        "low": ["Hepar", "Tellurium"]
+      },
+      "modality": "Worse in winter, with oozing and crusts",
+      "miasm": "Psora",
+      "notes": "Scaly or moist eruptions behind ears, often with itching and rawness. Graphites and Mezereum most indicated."
+    },
+    {
+      "rubric": "Ear - Boils / abscess inside ear",
+      "grading": {
+        "high": ["Hepar", "Sil", "Bell"],
+        "medium": ["Puls", "Merc", "Calc-s"],
+        "low": ["Psor", "Ars"]
+      },
+      "modality": "Worse from touch, better warm applications",
+      "miasm": "Psora-Sycosis",
+      "notes": "Recurrent boils or abscesses. Hepar and Silicea help drain and heal suppuration."
+    },
+    {
+      "rubric": "Ear - Cracking noise on swallowing / chewing",
+      "grading": {
+        "high": ["Kali-m", "Caust", "Sil"],
+        "medium": ["Phos", "Graph", "Puls"],
+        "low": ["Nat-m", "Thuja"]
+      },
+      "modality": "Worse during meals, after cold",
+      "miasm": "Sycosis",
+      "notes": "Eustachian tube blockage or catarrh. Kali mur and Causticum frequently indicated."
+    },
+    {
+      "rubric": "Ear - Pain during teething",
+      "grading": {
+        "high": ["Cham", "Calc-c", "Bell"],
+        "medium": ["Sil", "Puls", "Hepar"],
+        "low": ["Mag-p", "Cina"]
+      },
+      "modality": "Worse at night, from cold air",
+      "miasm": "Psora",
+      "notes": "Common in infants with teething irritability. Chamomilla is top remedy when extremely sensitive."
+    },
+    {
+      "rubric": "Ear - Sudden sharp pain with facial neuralgia",
+      "grading": {
+        "high": ["Spig", "Verbascum", "Mag-p"],
+        "medium": ["Phos", "Sil", "Bell"],
+        "low": ["Coloc", "Cham"]
+      },
+      "modality": "Worse from cold, chewing, wind",
+      "miasm": "Syphilis",
+      "notes": "Neuralgic pains shooting into ear and face. Spigelia and Verbascum highly effective in trigeminal-linked otalgia."
+    },
+    {
+      "rubric": "Ear - Discharge offensive, pus-like",
+      "grading": {
+        "high": ["Merc", "Psor", "Sil"],
+        "medium": ["Hepar", "Graph", "Puls"],
+        "low": ["Calc-s", "Kali-s"]
+      },
+      "modality": "Worse at night, from warmth of bed",
+      "miasm": "Syphilis",
+      "notes": "Chronic otorrhoea with foul smell and thick discharge. Merc and Psorinum often used in long-standing cases."
+    },
+    {
+      "rubric": "Ear - Discharge watery or thin",
+      "grading": {
+        "high": ["Sulph", "Psor", "Graph"],
+        "medium": ["Calc", "Petrol", "Mez"],
+        "low": ["Kali-s", "Puls"]
+      },
+      "modality": "Worse in cold air, dampness",
+      "miasm": "Psora",
+      "notes": "Thin clear or serous discharge often seen in mild infections or eczema-related ear issues."
+    },
+    {
+      "rubric": "Ear - Dryness, itching inside",
+      "grading": {
+        "high": ["Sulph", "Psor", "Tellurium"],
+        "medium": ["Petrol", "Graph", "Calc"],
+        "low": ["Hepar", "Sil"]
+      },
+      "modality": "Worse at night, in dry weather",
+      "miasm": "Psora",
+      "notes": "Itching and dryness may indicate eczema, psoriasis, or fungal issues in the canal."
+    },
+    {
+      "rubric": "Ear - Pain stitching, sharp",
+      "grading": {
+        "high": ["Hepar", "Cham", "Bell"],
+        "medium": ["Puls", "Merc", "Acon"],
+        "low": ["Sil", "Spig"]
+      },
+      "modality": "Worse from touch, cold air; better warmth",
+      "miasm": "Psora-Sycosis",
+      "notes": "Acute earaches in children. Hepar and Chamomilla especially when sensitive and irritable."
+    },
+    {
+      "rubric": "Ear - Pain dull, chronic",
+      "grading": {
+        "high": ["Graph", "Sil", "Kali-bi"],
+        "medium": ["Merc", "Kali-m", "Caust"],
+        "low": ["Phos", "Baryta-c"]
+      },
+      "modality": "Worse in cold weather, chronic catarrh",
+      "miasm": "Sycosis",
+      "notes": "Long-standing dull earache, often from Eustachian tube or chronic middle ear congestion."
+    },
+    {
+      "rubric": "Ear - Noise, humming, buzzing, ringing (tinnitus)",
+      "grading": {
+        "high": ["Chin", "Salicylic-ac", "Kali-carb"],
+        "medium": ["China", "Sil", "Graph"],
+        "low": ["Phos", "Lyc", "Con"]
+      },
+      "modality": "Worse at night, after quinine, in elderly",
+      "miasm": "Syphilis",
+      "notes": "Buzzing and ringing sounds in ear. Salicylic acid and China key remedies for drug-induced or malaria-related tinnitus."
+    },
+    {
+      "rubric": "Ear - Sensitive to noise (hyperacusis)",
+      "grading": {
+        "high": ["Nux-v", "Phos", "Therid"],
+        "medium": ["Bell", "Puls", "Sil"],
+        "low": ["Kali-c", "Nat-m"]
+      },
+      "modality": "Worse from sudden sounds, music, emotional states",
+      "miasm": "Psora",
+      "notes": "Irritation or oversensitivity to sounds; seen in nervous constitutions or migraine states."
+    },
+    {
+      "rubric": "Ear - Hearing loss, deafness",
+      "grading": {
+        "high": ["Phos", "Sil", "Graph"],
+        "medium": ["Kali-carb", "Lyc", "China"],
+        "low": ["Con", "Baryta-c", "Merc"]
+      },
+      "modality": "Worse after cold, aging, wax accumulation",
+      "miasm": "Syphilis",
+      "notes": "Gradual hearing loss from middle ear issues or aging. Baryta-carb and Silicea used in old age-related hearing weakness."
+    },
+    {
+      "rubric": "Ear - Eczema around ears / behind ear",
+      "grading": {
+        "high": ["Graph", "Mez", "Petrol"],
+        "medium": ["Psor", "Sulph", "Calc"],
+        "low": ["Hepar", "Tellurium"]
+      },
+      "modality": "Worse in winter, with oozing and crusts",
+      "miasm": "Psora",
+      "notes": "Scaly or moist eruptions behind ears, often with itching and rawness. Graphites and Mezereum most indicated."
+    },
+    {
+      "rubric": "Ear - Boils / abscess inside ear",
+      "grading": {
+        "high": ["Hepar", "Sil", "Bell"],
+        "medium": ["Puls", "Merc", "Calc-s"],
+        "low": ["Psor", "Ars"]
+      },
+      "modality": "Worse from touch, better warm applications",
+      "miasm": "Psora-Sycosis",
+      "notes": "Recurrent boils or abscesses. Hepar and Silicea help drain and heal suppuration."
+    },
+    {
+      "rubric": "Ear - Cracking noise on swallowing / chewing",
+      "grading": {
+        "high": ["Kali-m", "Caust", "Sil"],
+        "medium": ["Phos", "Graph", "Puls"],
+        "low": ["Nat-m", "Thuja"]
+      },
+      "modality": "Worse during meals, after cold",
+      "miasm": "Sycosis",
+      "notes": "Eustachian tube blockage or catarrh. Kali mur and Causticum frequently indicated."
+    },
+    {
+      "rubric": "Ear - Pain during teething",
+      "grading": {
+        "high": ["Cham", "Calc-c", "Bell"],
+        "medium": ["Sil", "Puls", "Hepar"],
+        "low": ["Mag-p", "Cina"]
+      },
+      "modality": "Worse at night, from cold air",
+      "miasm": "Psora",
+      "notes": "Common in infants with teething irritability. Chamomilla is top remedy when extremely sensitive."
+    },
+    {
+      "rubric": "Ear - Sudden sharp pain with facial neuralgia",
+      "grading": {
+        "high": ["Spig", "Verbascum", "Mag-p"],
+        "medium": ["Phos", "Sil", "Bell"],
+        "low": ["Coloc", "Cham"]
+      },
+      "modality": "Worse from cold, chewing, wind",
+      "miasm": "Syphilis",
+      "notes": "Neuralgic pains shooting into ear and face. Spigelia and Verbascum highly effective in trigeminal-linked otalgia."
+    },
+    {
+      "rubric": "Ear - Bleeding from ear",
+      "grading": {
+        "high": ["Ham", "Ars", "Ferr"],
+        "medium": ["Crot-h", "China", "Phos"],
+        "low": ["Bell", "Sulph"]
+      },
+      "modality": "Worse with trauma, infection",
+      "miasm": "Syphilis",
+      "notes": "Bleeding may occur from trauma, ruptured eardrum or malignancy. Hamamelis for passive bleeding."
+    },
+    {
+      "rubric": "Ear - Chronic Suppurative Otitis Media (CSOM)",
+      "grading": {
+        "high": ["Psor", "Merc", "Sil"],
+        "medium": ["Kali-s", "Graph", "Hepar"],
+        "low": ["Calc", "Sulph"]
+      },
+      "modality": "Worse in damp weather, after cold; chronic, with offensive discharge",
+      "miasm": "Syphilis",
+      "notes": "Long-standing ear discharge with hearing loss. Psorinum for offensive discharge, Silicea for delayed healing."
+    },
+    {
+      "rubric": "Ear - Acute Suppurative Otitis Media (ASOM)",
+      "grading": {
+        "high": ["Bell", "Cham", "Acon"],
+        "medium": ["Puls", "Merc", "Hepar"],
+        "low": ["Ferr-p", "Kali-m"]
+      },
+      "modality": "Sudden onset with fever, pain, crying in children",
+      "miasm": "Psora-Sycosis",
+      "notes": "Acute inflammation of middle ear with fever and pain. Belladonna and Chamomilla act well in early stages."
+    },
+    {
+      "rubric": "Ear - Vertigo from inner ear or labyrinth",
+      "grading": {
+        "high": ["Gels", "Chin", "Con"],
+        "medium": ["Bry", "Sil", "Phos"],
+        "low": ["Therid", "Cycl"]
+      },
+      "modality": "Worse with head motion, rising from bed",
+      "miasm": "Syphilis",
+      "notes": "Meniere’s disease or inner ear dysfunction. Gelsemium for dull, heavy vertigo; Conium for rotary vertigo."
+    },
+    {
+      "rubric": "Ear - Hears voices / auditory hallucinations",
+      "grading": {
+        "high": ["Anac", "Stram", "Bell"],
+        "medium": ["Hyos", "Phos", "Lach"],
+        "low": ["Sulph", "Verat"]
+      },
+      "modality": "In mental disorders, worse at night",
+      "miasm": "Syphilis",
+      "notes": "Hearing imaginary voices or sounds. Useful in schizophrenia, delirium, mania. Belladonna and Stramonium are commonly used."
+    }
+  ]
+}

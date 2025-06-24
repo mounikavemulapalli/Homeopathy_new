@@ -1,0 +1,339 @@
+{
+  "HeadPain": {
+    "Type": {
+      "Bursting pain": ["Belladonna", "Bryonia", "Nux vomica"],
+      "Throbbing pain": ["Belladonna", "Glonoinum", "Pulsatilla"],
+      "Pressing as from weight": ["Gelsemium", "Natrum mur", "Bryonia"],
+      "Stitching pain": ["Bryonia", "Spigelia", "Kali bichromicum"],
+      "Tearing pain": ["China", "Nux vomica", "Chamomilla"],
+      "Hammering pain": ["Glonoinum", "Belladonna", "Natrum mur"],
+      "Neuralgic shooting": ["Spigelia", "Mag phos", "Cimicifuga"],
+      "Burning pain": ["Sulphur", "Phosphorus", "Arsenicum album"],
+      "Boring pain": ["Colocynth", "Kali bichromicum", "Mercurius"],
+      "Jerking pain": ["Ignatia", "Zincum", "Nux vomica"],
+      "Drawing pain": ["Rhus tox", "Cimicifuga", "Pulsatilla"],
+      "Constricting or band-like pain": [
+        "Gelsemium",
+        "Carboneum sulph",
+        "Anacardium"
+      ]
+    },
+    "Location": {
+      "Forehead": ["Bryonia", "Natrum mur", "Gelsemium"],
+      "Temples": ["Belladonna", "Spigelia", "Sanguinaria"],
+      "Occiput": ["Gelsemium", "Cimicifuga", "Calcarea phosphorica"],
+      "Vertex": ["Sulphur", "Lachesis", "Natrum mur"],
+      "One-sided (right or left)": ["Sanguinaria", "Spigelia", "Lachesis"],
+      "Half-head (hemicrania)": [
+        "Iris versicolor",
+        "Lac defloratum",
+        "Lac caninum"
+      ],
+      "Eyes to occiput": ["Spigelia", "Gelsemium", "Belladonna"],
+      "Base of brain": ["Gelsemium", "Cimicifuga", "Belladonna"],
+      "Behind eyes": ["Paris quadrifolia", "Physostigma", "Spigelia"]
+    },
+    "TimeModalities": {
+      "Worse morning on waking": ["Nux vomica", "Gelsemium", "Lycopodium"],
+      "Worse at noon": ["Sanguinaria", "Lycopodium"],
+      "Worse in the evening": ["Pulsatilla", "Lachesis", "Silicea"],
+      "Worse at night": ["Mercurius", "Nux vomica", "Rhus tox"],
+      "Worse before menses": ["Lachesis", "Sepia", "Cyclamen"],
+      "Worse during menses": ["Belladonna", "Cimicifuga", "Cyclamen"],
+      "Worse after menses": ["Pulsatilla", "Sepia"],
+      "Worse every 7th day": ["Silicea", "Sulphur"],
+      "Worse weekly": ["Lac defloratum", "Iris versicolor"],
+      "Worse every change of weather": ["Rhus tox", "Dulcamara", "Phosphorus"],
+      "Periodical headache": ["Lac defloratum", "Silicea", "Natrum mur"]
+    },
+    "ModalitiesAggravation": {
+      "Worse from motion": ["Bryonia", "Belladonna", "Spigelia"],
+      "Worse from noise": ["Belladonna", "Nux vomica", "Coffea"],
+      "Worse from light": ["Belladonna", "Glonoinum", "Natrum carb"],
+      "Worse from strong smells": ["Phosphorus", "Pulsatilla", "Colocynth"],
+      "Worse from heat or sun": ["Glonoinum", "Natrum carb", "Belladonna"],
+      "Worse from cold wind": ["Silicea", "Dulcamara", "Hepar sulph"],
+      "Worse from mental exertion": [
+        "Nux vomica",
+        "Anacardium",
+        "Kali phosphoricum"
+      ],
+      "Worse from reading": ["Ruta", "Natrum mur", "Gelsemium"],
+      "Worse from stooping": ["Bryonia", "Belladonna", "Sinapis nigra"],
+      "Worse from coughing": ["Bryonia", "Phosphorus"],
+      "Worse from touch or pressure": ["Belladonna", "Hepar sulph", "Spigelia"],
+      "Worse from fasting": ["Lycopodium", "Ignatia", "Sepia"],
+      "Worse before stool or urination": ["Nux vomica", "Colocynth"]
+    },
+    "ModalitiesAmelioration": {
+      "Better from pressure": ["Belladonna", "Mag phos", "China"],
+      "Better from lying in dark": [
+        "Glonoinum",
+        "Belladonna",
+        "Iris versicolor"
+      ],
+      "Better from cold application": ["Belladonna", "Glonoinum", "Natrum mur"],
+      "Better from tight band around head": ["Gelsemium", "Argentum nitricum"],
+      "Better from sleep": ["Nux vomica", "Pulsatilla", "Iris versicolor"],
+      "Better from vomiting": [
+        "Iris versicolor",
+        "Sanguinaria",
+        "Kali bichromicum"
+      ],
+      "Better from urination": ["Gelsemium", "Lachesis"],
+      "Better from stool": ["Nux vomica", "Colocynth"],
+      "Better from walking in open air": ["Pulsatilla", "Sulphur", "Coffea"]
+    },
+    "RareRubrics": {
+      "Headache > tight band around head": ["Argentum nitricum", "Gelsemium"],
+      "Headache > after sexual excess": ["Kali bromatum", "Picric acid"],
+      "Headache with yawning and sleepiness": ["Nux moschata", "Cocculus"],
+      "Headache > eating": ["Anacardium"],
+      "Headache alternating with back pain": ["Cyclamen"],
+      "Headache with cold feet": ["Sepia", "Silicea"],
+      "Headache > pressure over vertex": ["Lachesis", "Sulphur"],
+      "Headache with sore hair roots": ["Fluoric acid"],
+      "Headache with nausea, better after vomiting": [
+        "Ipecacuanha",
+        "Iris versicolor"
+      ],
+      "Headache after anger": ["Chamomilla", "Staphysagria"],
+      "Headache with numbness of face or lips": ["Spigelia", "Belladonna"],
+      "Headache with zig-zag vision before attack": [
+        "Iris versicolor",
+        "Glonoinum"
+      ],
+      "Headache during coition": ["Nitric acid", "Sepia"],
+      "Headache after suppression of menses": ["Pulsatilla", "Lachesis"]
+    },
+    "AssociatedSymptoms": {
+      "Photophobia": ["Belladonna", "Natrum mur", "Iris versicolor"],
+      "Nausea and vomiting": ["Iris versicolor", "Sanguinaria", "Sepia"],
+      "Vertigo with headache": ["Gelsemium", "Bryonia", "Cocculus"],
+      "Scalp sensitive to touch": ["Belladonna", "Hepar sulph", "Merc sol"],
+      "Face red or pale with headache": [
+        "Belladonna",
+        "Sanguinaria",
+        "Pulsatilla"
+      ],
+      "Tension in neck or occiput": ["Cimicifuga", "Gelsemium", "Natrum mur"],
+      "Irritability or desire to be alone": ["Bryonia", "Ignatia", "Sepia"],
+      "Chilliness during headache": ["Silicea", "Calcarea carb"],
+      "Head feels too large": ["Argentum nitricum", "Glonoinum"],
+      "Visual aura before headache": [
+        "Iris versicolor",
+        "Gelsemium",
+        "Glonoinum"
+      ],
+      "Lacrimation or nasal discharge during headache": [
+        "Allium cepa",
+        "Sanguinaria",
+        "Pulsatilla"
+      ]
+    },
+    "Side": {
+      "Right-sided headache": ["Sanguinaria", "Lycopodium", "Belladonna"],
+      "Left-sided headache": ["Spigelia", "Lachesis", "Thuja"],
+      "Alternating sides": ["Lac caninum", "Lac defloratum"],
+      "Unilateral, shifting sides": ["Kali bichromicum", "Sepia"]
+    }
+  },
+  "HeadacheRemedyMiasms": {
+    "Belladonna": ["Psora", "Syphilis"],
+    "Bryonia": ["Psora"],
+    "Nux vomica": ["Psora", "Sycosis"],
+    "Pulsatilla": ["Psora", "Sycosis"],
+    "Glonoinum": ["Syphilis"],
+    "Gelsemium": ["Psora"],
+    "Spigelia": ["Syphilis"],
+    "Sanguinaria": ["Psora", "Syphilis"],
+    "Natrum muriaticum": ["Psora", "Sycosis"],
+    "Iris versicolor": ["Sycosis", "Syphilis"],
+    "Silicea": ["Psora", "Syphilis"],
+    "Sulphur": ["Psora"],
+    "Lachesis": ["Syphilis", "Sycosis"],
+    "Sepia": ["Psora", "Sycosis"],
+    "Cimicifuga": ["Sycosis", "Syphilis"],
+    "Kali bichromicum": ["Syphilis"],
+    "Argentum nitricum": ["Sycosis"],
+    "Anacardium": ["Sycosis", "Psora"],
+    "Ignatia": ["Psora"],
+    "China": ["Psora"],
+    "Chamomilla": ["Psora", "Sycosis"],
+    "Cocculus": ["Psora", "Sycosis"],
+    "Colocynth": ["Psora"],
+    "Ruta": ["Psora", "Syphilis"],
+    "Hepar sulphuris": ["Sycosis", "Syphilis"],
+    "Mercurius": ["Syphilis"],
+    "Picric acid": ["Syphilis"],
+    "Fluoric acid": ["Syphilis"],
+    "Staphysagria": ["Sycosis"],
+    "Lac caninum": ["Sycosis", "Psora"],
+    "Lac defloratum": ["Psora", "Sycosis"],
+    "Kali bromatum": ["Syphilis"],
+    "Phosphorus": ["Psora", "Sycosis"],
+    "Calcarea phosphorica": ["Psora"],
+    "Natrum carbonicum": ["Psora"],
+    "Magnesium phosphoricum": ["Psora"],
+    "Dulcamara": ["Sycosis"],
+    "Allium cepa": ["Psora"],
+    "Thuja": ["Sycosis"],
+    "Nitric acid": ["Syphilis"]
+  },
+  "PsoricHeadaches": {
+    "Throbbing pain": ["Belladonna", "Bryonia", "Gelsemium"],
+    "Pressing pain as from weight": ["Gelsemium", "Natrum muriaticum"],
+    "Headache from mental exertion": ["Nux vomica", "Anacardium"],
+    "Morning headache": ["Nux vomica", "Gelsemium"],
+    "Headache better from pressure": ["Magnesium phosphoricum", "China"],
+    "Headache with photophobia": ["Belladonna", "Iris versicolor"],
+    "Headache from hunger or fasting": ["Lycopodium", "Sepia"],
+    "Headache with irritability": ["Bryonia", "Ignatia"],
+    "Headache relieved by open air": ["Pulsatilla", "Sulphur"],
+    "Headache with nausea and vomiting": ["Iris versicolor", "Sepia"]
+  },
+  "SycoticHeadaches": {
+    "Headache worse before menses": ["Lachesis", "Sepia", "Cyclamen"],
+    "Left-sided headache": ["Lachesis", "Thuja"],
+    "Pain like a band around head": ["Argentum nitricum", "Gelsemium"],
+    "Periodic headaches": ["Lac defloratum", "Pulsatilla"],
+    "Headache after suppression of discharges": ["Pulsatilla", "Staphysagria"],
+    "Headache with sore hair roots": ["Fluoric acid"],
+    "Headache alternating sides": ["Lac caninum", "Thuja"],
+    "Headache worse from cold wind": ["Dulcamara", "Hepar sulph"],
+    "Headache with weeping or emotional instability": [
+      "Pulsatilla",
+      "Ignatia",
+      "Sepia"
+    ],
+    "Headache during coition": ["Sepia", "Nitric acid"]
+  },
+  "SyphiliticHeadaches": {
+    "Violent congestive headaches": ["Glonoinum", "Belladonna"],
+    "Headache worse from sun or heat": ["Glonoinum", "Natrum carbonicum"],
+    "Boring or stitching pain": ["Kali bichromicum", "Spigelia"],
+    "Headache with visual aura or zig-zag vision": [
+      "Iris versicolor",
+      "Glonoinum"
+    ],
+    "Headache with numbness": ["Spigelia", "Belladonna"],
+    "Headache with sore scalp": ["Mercurius", "Fluoric acid"],
+    "Occipital pain extending to neck": ["Cimicifuga", "Silicea"],
+    "Headache with destruction tendencies (late stage)": [
+      "Syphilinum",
+      "Mercurius"
+    ],
+    "Headache worse at night": ["Mercurius", "Hepar sulph"],
+    "Left-sided destructive pain": ["Spigelia", "Lachesis"]
+  },
+  "HeadacheRubricRankings": {
+    "Throbbing pain": {
+      "high": ["Belladonna", "Glonoinum", "Sanguinaria"],
+      "medium": ["Pulsatilla", "Natrum mur", "Iris versicolor"],
+      "low": ["Nux vomica", "Sulphur", "Sepia"]
+    },
+    "Bursting pain": {
+      "high": ["Belladonna", "Bryonia"],
+      "medium": ["Natrum mur", "Sulphur"],
+      "low": ["Iris versicolor", "Colocynth"]
+    },
+    "Pressing as from weight": {
+      "high": ["Gelsemium", "Natrum mur"],
+      "medium": ["Bryonia", "Sepia"],
+      "low": ["Silicea", "Phosphorus"]
+    },
+    "Headache from motion (agg)": {
+      "high": ["Bryonia", "Belladonna"],
+      "medium": ["Spigelia", "Sanguinaria"],
+      "low": ["Colocynth", "Sepia"]
+    },
+    "Better from pressure": {
+      "high": ["Magnesium phosphoricum", "China"],
+      "medium": ["Belladonna", "Iris versicolor"],
+      "low": ["Gelsemium", "Sepia"]
+    },
+    "Better from vomiting": {
+      "high": ["Iris versicolor", "Sanguinaria"],
+      "medium": ["Kali bichromicum", "Natrum mur"],
+      "low": ["Nux vomica", "Sepia"]
+    },
+    "Worse from light": {
+      "high": ["Belladonna", "Glonoinum"],
+      "medium": ["Natrum carb", "Spigelia"],
+      "low": ["Pulsatilla", "Sepia"]
+    },
+    "Forehead headache": {
+      "high": ["Bryonia", "Gelsemium"],
+      "medium": ["Natrum mur", "Belladonna"],
+      "low": ["Silicea", "Sepia"]
+    },
+    "Right-sided headache": {
+      "high": ["Sanguinaria", "Belladonna"],
+      "medium": ["Lycopodium", "Iris versicolor"],
+      "low": ["Phosphorus", "Silicea"]
+    },
+    "Left-sided headache": {
+      "high": ["Spigelia", "Lachesis"],
+      "medium": ["Thuja", "Sepia"],
+      "low": ["Sulphur", "Silicea"]
+    },
+    "Periodic headaches": {
+      "high": ["Lac defloratum", "Natrum mur"],
+      "medium": ["Iris versicolor", "Pulsatilla"],
+      "low": ["Silicea", "Sepia"]
+    },
+    "Visual aura before headache": {
+      "high": ["Iris versicolor", "Glonoinum"],
+      "medium": ["Gelsemium", "Spigelia"],
+      "low": ["Natrum mur", "Phosphorus"]
+    },
+    "Headache with photophobia": {
+      "high": ["Belladonna", "Iris versicolor"],
+      "medium": ["Natrum mur", "Spigelia"],
+      "low": ["Gelsemium", "Phosphorus"]
+    },
+    "Headache during menses": {
+      "high": ["Cyclamen", "Sepia", "Cimicifuga"],
+      "medium": ["Belladonna", "Lachesis"],
+      "low": ["Pulsatilla", "Natrum mur"]
+    },
+    "Better from tight band": {
+      "high": ["Gelsemium", "Argentum nitricum"],
+      "medium": ["Iris versicolor", "Belladonna"],
+      "low": ["Sepia", "Anacardium"]
+    },
+    "Alternating sides": {
+      "high": ["Lac caninum", "Lac defloratum"],
+      "medium": ["Kali bichromicum", "Sepia"],
+      "low": ["Ignatia", "Pulsatilla"]
+    }
+  },
+  "HeadacheKeynotes": {
+    "Belladonna": "Sudden, violent, throbbing headaches with red face, dilated pupils, and intolerance to light, noise, and motion. Worse from jarring, light, sun. Better by pressure and lying in dark room.",
+    "Bryonia": "Headache worse from slightest motion, better from firm pressure and rest. Bursting sensation as if brain would come out. Often begins in forehead and extends to occiput. Associated with dryness of mouth and lips.",
+    "Nux vomica": "Headache in irritable, oversensitive individuals. Worse in morning, after mental exertion, loss of sleep, stimulants. Often located at occiput or above eyebrows. Better after short nap or warmth.",
+    "Pulsatilla": "Wandering, shifting headaches, worse in warm room, better in open air and cold applications. Often associated with menstrual irregularities or indigestion. Weepy and emotionally sensitive.",
+    "Glonoinum": "Violent, bursting, congestive headaches with throbbing in temples. Worse from sun exposure, heat, motion, and stooping. Face flushed. Head feels full or as if it would explode.",
+    "Gelsemium": "Dull, heavy occipital headache with drooping eyelids, trembling, and weakness. Worse from heat and mental exertion. Better after urination. Suited to timid, exhausted individuals.",
+    "Spigelia": "Left-sided neuralgic headaches with sharp, shooting pains extending to eyes. Worse from motion, touch, stooping. Better lying with head high. Often used for headaches around or behind left eye.",
+    "Sanguinaria": "Right-sided headaches starting in occiput and settling over right eye. Periodic, often weekly. Better from vomiting or sleep. Associated with hot flushes, nausea, and dryness.",
+    "Natrum muriaticum": "Headache like thousands of little hammers, especially during or after grief. Worse from sun, reading, or fasting. Better with cold applications. Often has visual aura.",
+    "Iris versicolor": "Periodic migraine with blurred vision or zig-zag aura followed by intense frontal or right-sided pain and vomiting of sour, bitter matter. Better after vomiting. Often triggered by gastric issues.",
+    "Sepia": "Left-sided headaches, worse before/during menses, better after. Associated with hormonal imbalances, pelvic congestion. Indifferent or irritable mental state. Worse from smell, better vigorous movement.",
+    "Lachesis": "Congestive, left-sided headaches, worse from sun, heat, and suppression of discharges. Pain may extend from vertex to temples or eyes. Can’t bear tight collars. Better after menses begins.",
+    "Silicea": "Chronic, deep-seated headaches, often from mental exertion. Worse in morning or from cold. Better by wrapping head warmly. Sensitive to draft. Often associated with cold hands and feet.",
+    "Kali bichromicum": "Headache with a definite spot, usually frontal or at root of nose. Pain comes and goes suddenly. Often with sinus or gastric symptoms. Better by pressure, worse from beer.",
+    "Ipecacuanha": "Frontal headache with constant nausea and clean tongue. No relief from vomiting. Worse from motion or warmth. Suited to headaches with continuous nausea.",
+    "Cimicifuga": "Occipital or vertex headache with neck stiffness and tension, extending over eyes. Worse during menses or emotional excitement. Suited to sensitive, nervous women.",
+    "Cyclamen": "Headache with visual disturbances (dim vision, flickering), worse before menses. Wandering, confused feelings. Better in open air.",
+    "Anacardium": "Headache from mental exertion, better after eating. Feels as if a band or plug is pressing in head. Suited to indecisive, anxious personalities.",
+    "Lac caninum": "Headache alternates sides. Worse from cold air and noise. Often linked with hormonal imbalance or sore throat alternation. Nervous, unstable states.",
+    "Lac defloratum": "Periodic migraine with nausea and constipation. Pain from occiput to eyes, worse morning. Very chilly, exhausted patients. Used in menstrual and gastric headaches.",
+    "Mercurius": "Throbbing or tearing headache, worse at night, with scalp tenderness and salivation. May have sinus, dental, or glandular link.",
+    "Hepar sulphuris": "Headache with oversensitivity and irritability. Scalp sore to touch. Worse from slightest draft. Often seen in sinus cases.",
+    "Argentum nitricum": "Explosive headaches with dizziness, worse from heat, crowd, or mental strain. Often with anticipatory anxiety or gastric disturbances.",
+    "Ignatia": "Headache from suppressed emotions or grief. Pain feels like a nail driven in. Worse from smell or noise. Better with change of position or by lying on painful side.",
+    "Phosphorus": "Headaches with burning sensation and visual aura. Worse from noise, talking, or strong smells. Better in dark, lying down. Often tall, sensitive patients.",
+    "Cocculus": "Headache from loss of sleep, travel, nursing, or exhaustion. Vertigo, nausea, and sensitivity to motion. Worse from motion or talking."
+  }
+}
