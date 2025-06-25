@@ -63,6 +63,7 @@ const CaseSchema = new mongoose.Schema({
   phone: String,
   age: Number,
   gender: String,
+  maritalStatus: String,
   symptoms: String,
   remedyGiven: {
     type: String,

@@ -1,33 +1,24 @@
+/** @format */
+
+// utils/loadBrainFile.js
+
 const fs = require("fs");
 const path = require("path");
 
-function loadBrainFile(fileName) {
-  try {
-    const filePath = path.join(__dirname, "brain", fileName); // loads from utils/brain/
-    const data = fs.readFileSync(filePath, "utf-8");
+function loadAllRubrics() {
+  const folder = path.join(__dirname, "brain"); // folder: Backend/utils/brain
+  const files = fs.readdirSync(folder);
+  const allRubrics = {};
 
-    try {
-      const parsedData = JSON.parse(data);
-      return parsedData;
-    } catch (parseErr) {
-      console.error(`❌ JSON parsing error in file: ${fileName}`);
-      console.error(parseErr.message);
-
-      const lines = data.split("\n");
-      lines.forEach((line, index) => {
-        try {
-          JSON.parse(line);
-        } catch (err) {
-          console.log(`--> Possible error at line ${index + 1}: ${line}`);
-        }
-      });
-
-      throw new Error(`Invalid JSON in ${fileName}`);
+  files.forEach((file) => {
+    if (file.endsWith(".json")) {
+      const filePath = path.join(folder, file);
+      const data = JSON.parse(fs.readFileSync(filePath));
+      Object.assign(allRubrics, data); // merge each file into one big rubric object
     }
-  } catch (err) {
-    console.error(`❌ Error loading file ${fileName}:`, err.message);
-    return null;
-  }
+  });
+
+  return allRubrics;
 }
 
-module.exports = { loadBrainFile };
+module.exports = loadAllRubrics;

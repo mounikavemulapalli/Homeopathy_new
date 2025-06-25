@@ -267,6 +267,9 @@ const ViewCases = () => {
               <strong>Gender:</strong> {caseItem.gender}
             </p>
             <p>
+              <strong>Marital Status:</strong> {caseItem.maritalStatus}
+            </p>
+            <p>
               <strong>Phone:</strong> {caseItem.phone}
             </p>
             <p>

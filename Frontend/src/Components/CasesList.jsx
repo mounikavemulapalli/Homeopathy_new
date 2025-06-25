@@ -286,7 +286,9 @@ const CasesList = () => {
           <p>
             <strong>Gender:</strong> {viewCase.gender}
           </p>
-
+          <p>
+            <strong>Marital Status:</strong> {viewCase.maritalStatus}
+          </p>
           {/* Symptoms section */}
           {viewCase.symptoms ? (
             <p>
