@@ -132,7 +132,7 @@ function analyzeCase(caseInput = {}, toggles = {}) {
   console.log("🧠 All symptoms:", allSymptoms);
 
   const result = {
-    main_remedy: "Unknown",
+    main_remedy: undefined, // <-- Changed from "Unknown" to undefined
     top_matches: [],
     dosage: "1M once daily",
     analysis: "No matching rubric found.",
@@ -156,7 +156,7 @@ function analyzeCase(caseInput = {}, toggles = {}) {
         result.analysis = `Matched rubric from ${group.label}: ${rubrics.join(", ")}`;
         result.pioneer_explanation = `Remedy suggested from ${group.label} based on: ${entry.symptom || "matched text"}`;
         result.top_matches.push({ group: group.label, rubric: rubrics, remedy });
-        return result; // If you only want the first match, keep this return.
+        return result; // Only first match returned
       }
     }
   }

@@ -1,0 +1,78 @@
+{
+  "Hemoglobin": [
+    {
+      "min": 0,
+      "max": 11.5,
+      "diagnosis": "anemia",
+      "remedies": ["Ferrum Phos", "Calcarea Phos", "China", "Natrum Mur"]
+    }
+  ],
+  "WBC": [
+    {
+      "min": 11000,
+      "max": 999999,
+      "diagnosis": "infection or inflammation",
+      "remedies": ["Belladonna", "Echinacea", "Hepar Sulph", "Pyrogenium"]
+    },
+    {
+      "min": 0,
+      "max": 3000,
+      "diagnosis": "low immunity / viral suppression",
+      "remedies": ["Arsenicum Alb", "Tuberculinum", "Psorinum"]
+    }
+  ],
+  "FBS": [
+    {
+      "min": 126,
+      "max": 999,
+      "diagnosis": "diabetes mellitus",
+      "remedies": ["Syzygium Jambolanum", "Phosphoric Acid", "Uranium Nitricum"]
+    }
+  ],
+  "TSH": [
+    {
+      "min": 5.0,
+      "max": 30.0,
+      "diagnosis": "hypothyroidism",
+      "remedies": ["Calcarea Carb", "Thyroidinum", "Sepia", "Lycopodium"]
+    },
+    {
+      "min": 0,
+      "max": 0.3,
+      "diagnosis": "hyperthyroidism",
+      "remedies": ["Iodum", "Natrum Mur", "Lachesis"]
+    }
+  ],
+  "ESR": [
+    {
+      "min": 21,
+      "max": 999,
+      "diagnosis": "chronic inflammation / auto-immune",
+      "remedies": ["Rhus Tox", "Bryonia", "Tuberculinum", "Merc Sol"]
+    }
+  ],
+  "CRP": [
+    {
+      "min": 10,
+      "max": 999,
+      "diagnosis": "acute inflammation",
+      "remedies": ["Belladonna", "Apis", "Eupatorium Perf"]
+    }
+  ],
+  "Vitamin D": [
+    {
+      "min": 0,
+      "max": 20,
+      "diagnosis": "vitamin D deficiency",
+      "remedies": ["Calcarea Carb", "Calcarea Phos", "Silicea"]
+    }
+  ],
+  "Vitamin B12": [
+    {
+      "min": 0,
+      "max": 200,
+      "diagnosis": "B12 deficiency",
+      "remedies": ["China", "Ferrum Met", "Natrum Mur", "Nux Vomica"]
+    }
+  ]
+}

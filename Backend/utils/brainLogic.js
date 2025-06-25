@@ -1,133 +1,114 @@
 /** @format */
 
-// function analyzeCase(caseInput, toggles) {
-//     const symptoms = caseInput.symptoms?.toLowerCase() || "";
-//     const thermal = caseInput.thermal?.toLowerCase() || "";
-//     const cravings = caseInput.cravings?.toLowerCase() || "";
-//     const mentals = caseInput.mentals?.toLowerCase() || "";
+// const { brainData } = require("./brainLogic"); // brainData already export chestunnaru
 
-//     let result = {
-//       main_remedy: "Unknown",
-//       analysis: "Insufficient data to determine remedy.",
-//     };
+// function analyzeCase(caseInput) {
+//   const symptoms = caseInput.symptoms?.toLowerCase() || "";
+//   const cravings = caseInput.cravings?.toLowerCase() || "";
+//   const thermal = caseInput.thermal?.toLowerCase() || "";
+//   const mentals = caseInput.mentals?.toLowerCase() || "";
 
-//     if (
-//       symptoms.includes("itch") &&
-//       symptoms.includes("scaly") &&
-//       symptoms.includes("winter") &&
-//       thermal.includes("hot")
-//     ) {
-//       result = {
-//         main_remedy: "Sulphur",
-//         analysis: "Strong psoric miasm with skin affinity, worse by warmth and bathing.",
-//       };
-//     } else if (
-//       symptoms.includes("migraine") &&
-//       symptoms.includes("constipation") &&
-//       symptoms.includes("sun exposure") &&
-//       cravings.includes("salt")
-//     ) {
-//       result = {
-//         main_remedy: "Natrum Muriaticum",
-//         analysis:
-//           "Migraine with photophobia, aggravated by sun, suppressed grief, and salt craving. Psoro-sycotic.",
-//       };
+//   // All user input values combine cheyyadam (for matching)
+//   const userInput = [symptoms, cravings, thermal, mentals].join(" ");
+
+//   // Remedies match logic
+//   let matchedRemedies = [];
+
+//   for (const rubric of brainData) {
+//     // Rubric structure: { name: "...", remedies: ["..."] }
+//     if (!rubric || !rubric.name || !rubric.remedies) continue;
+//     // Rubric name lo user input word unda check cheyyadam
+//     if (userInput.includes(rubric.name.toLowerCase())) {
+//       matchedRemedies.push(...rubric.remedies);
 //     }
-
-//     if (toggles?.showExplanation) {
-//       if (result.main_remedy === "Sulphur") {
-//         result.pioneer_explanation =
-//           "Sulphur is suited for chronic skin conditions with itching and burning, worse by warmth.";
-//       } else if (result.main_remedy === "Natrum Muriaticum") {
-//         result.pioneer_explanation =
-//           "Natrum Mur is suited for migraines from grief, worse by sun, with craving for salt.";
-//       } else {
-//         result.pioneer_explanation = "No remedy-specific explanation available.";
-//       }
-//     }
-
-//     return result;
 //   }
 
-//   module.exports = analyzeCase;
-// const fs = require("fs");
-// const path = require("path");
+//   // Remedies unique cheyyadam
+//   matchedRemedies = [...new Set(matchedRemedies)];
 
-// function loadBrainFile(fileName) {
-//   try {
-//     const filePath = path.join(__dirname, "brain", fileName); // fixed path
-//     const data = fs.readFileSync(filePath, "utf-8");
-
-//     try {
-//       const parsedData = JSON.parse(data);
-//       return parsedData;
-//     } catch (parseErr) {
-//       console.error(`❌ JSON parsing error in file: ${fileName}`);
-//       console.error(parseErr.message);
-
-//       const lines = data.split("\n");
-//       lines.forEach((line, index) => {
-//         try {
-//           JSON.parse(line);
-//         } catch (err) {
-//           console.log(`--> Possible error at line ${index + 1}: ${line}`);
-//         }
-//       });
-
-//       throw new Error(`Invalid JSON in ${fileName}`);
-//     }
-//   } catch (err) {
-//     console.error(`Error loading file ${fileName}:`, err.message);
-//     return null;
+//   if (matchedRemedies.length === 0) {
+//     return {
+//       main_remedy: undefined,
+//       analysis: "No matching rubrics found in brainData.",
+//     };
+//   } else {
+//     return {
+//       main_remedy: matchedRemedies.join(", "),
+//       analysis: "Matching remedies found based on user input.",
+//     };
 //   }
 // }
 
-// module.exports = { loadBrainFile };
-const { loadBrainFile } = require("./loadBrainFile");
+// module.exports = { analyzeCase };
+// utils/brainLogic.js
 
-const mindData = loadBrainFile("mind_symptoms.json");
-const skinData = loadBrainFile("skin_symptoms.json");
-const complaints = loadBrainFile("chief_complaints.json");
-const physicalGeneral = loadBrainFile("physical_general.json"); // <-- add this line
+// utils/finalBrain.js
 
-// Add all additional files (use exact names as in your screenshot)
-const intercurrentRemedys = loadBrainFile("intercurrent remedys.json");
-const eye = loadBrainFile("eye.json");
-const hair = loadBrainFile("hair.json");
-const ears = loadBrainFile("ears.json");
-const pregnancyRelated = loadBrainFile("pregnancy related.json");
-const childhoodBehavioral = loadBrainFile("Childhood Behavioral Rubrics.json");
-const headPain = loadBrainFile("head pain modalitis and pecularitis.json");
-const dreams = loadBrainFile("dreams.json");
-const maleReproductive = loadBrainFile("male reproductive system.json");
-const obesity = loadBrainFile("obesity.json");
-const nose = loadBrainFile("nose.json");
-const mouth = loadBrainFile("mouth.json");
-const menstruation = loadBrainFile(
-  "MENSTRUATION – MODALITIES & PECULIARITIES.json"
-);
+const { mapSymptomsToRubrics } = require("./rubricMapper");
+const { analyzeRubrics } = require("./remedySelector");
+const { analyzeFacialFeatures } = require("./facialAnalyzer");
+const { analyzeSkinCondition } = require("./skinImageAnalyzer");
+const { interpretLabData } = require("./labAnalyzer");
+const remedyExplanations = require("./brain/remedyExplanation.json");
 
-// Fallback-safe and clean
-const brainData = [
-  ...(mindData?.rubrics || []),
-  ...(skinData?.rubrics || []),
-  ...(Array.isArray(complaints) ? complaints : []),
-  ...(physicalGeneral?.rubrics || []), // <-- add this line
-  ...(intercurrentRemedys?.rubrics || []),
-  ...(eye?.rubrics || []),
-  ...(hair?.rubrics || []),
-  ...(ears?.rubrics || []),
-  ...(pregnancyRelated?.rubrics || []),
-  ...(childhoodBehavioral?.rubrics || []),
-  ...(headPain?.rubrics || []),
-  ...(dreams?.rubrics || []),
-  ...(maleReproductive?.rubrics || []),
-  ...(obesity?.rubrics || []),
-  ...(nose?.rubrics || []),
-  ...(mouth?.rubrics || []),
-  ...(menstruation?.rubrics || []),
-];
+function fullCaseAnalysis({
+  symptoms,
+  facialFeatures,
+  skinDisease,
+  labValues,
+}) {
+  let combinedScore = {};
 
-console.log("✅ brainData loaded:", brainData.length, "rubrics");
+  // Symptom → Rubric → Remedy
+  const rubrics = mapSymptomsToRubrics(symptoms);
+  const symptomRemedies = analyzeRubrics(rubrics);
+  symptomRemedies.forEach(({ remedy, score }) => {
+    if (!combinedScore[remedy]) combinedScore[remedy] = 0;
+    combinedScore[remedy] += score * 2; // High weight for subjective symptoms
+  });
 
-module.exports = { brainData };
+  // Facial
+  const facialRemedies = analyzeFacialFeatures(facialFeatures);
+  for (const [remedy, score] of Object.entries(facialRemedies)) {
+    if (!combinedScore[remedy]) combinedScore[remedy] = 0;
+    combinedScore[remedy] += score;
+  }
+
+  // Skin Image
+  const skinRemedies = analyzeSkinCondition(skinDisease);
+  skinRemedies.forEach((rem) => {
+    if (!combinedScore[rem]) combinedScore[rem] = 0;
+    combinedScore[rem] += 2;
+  });
+
+  // Lab Values
+  const labFindings = interpretLabData(labValues);
+  labFindings.forEach((f) => {
+    f.remedies.forEach((rem) => {
+      if (!combinedScore[rem]) combinedScore[rem] = 0;
+      combinedScore[rem] += 1;
+    });
+  });
+
+  // Final ranking
+  const sortedRemedies = Object.entries(combinedScore)
+    .sort((a, b) => b[1] - a[1])
+    .map(([remedy, score]) => ({ remedy, score }));
+
+  const topRemedies = sortedRemedies.slice(0, 4);
+
+  return {
+    bestRemedy: topRemedies[0].remedy,
+    allTopRemedies: topRemedies.map((r) => ({
+      remedy: r.remedy,
+      score: r.score,
+      explanation: remedyExplanations[r.remedy] || "No explanation available",
+    })),
+    rubricsMatched: rubrics.map((r) => r.rubric),
+    facialMatched: Object.keys(facialRemedies),
+    skinDiseaseMatched: skinDisease,
+    labFindings,
+  };
+}
+
+module.exports = { fullCaseAnalysis };
