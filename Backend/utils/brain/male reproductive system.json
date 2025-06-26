@@ -132,28 +132,6 @@
     "notes": "Often linked with hormonal or emotional disturbances"
   },
   {
-    "rubric": "Sexual desire with excessive masturbation",
-    "grading": {
-      "High": ["Staph", "Ph-ac", "Agn"],
-      "Medium": ["Selen", "Con", "Calc"],
-      "Low": ["Lyc", "Sulph"]
-    },
-    "modality": "Compulsive behavior, often with guilt",
-    "miasm": ["Psora"],
-    "notes": "Psychogenic; leads to sexual debility and exhaustion"
-  },
-  {
-    "rubric": "Sexual desire with excessive sexual fantasies",
-    "grading": {
-      "High": ["Canth", "Med", "Ph-ac"],
-      "Medium": ["Selen", "Lyc", "Agn"],
-      "Low": ["Sulph", "Calc"]
-    },
-    "modality": "Worse at night, during idleness",
-    "miasm": ["Sycosis"],
-    "notes": "Hypersexuality; often leads to mental fatigue"
-  },
-  {
     "rubric": "Premature ejaculation",
     "grading": {
       "High": ["Selen", "Staph", "Calc"],

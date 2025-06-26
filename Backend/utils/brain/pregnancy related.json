@@ -40,76 +40,6 @@
     "notes": "Seen in recurrent miscarriage or IVF patients"
   },
   {
-    "rubric": "Breast tenderness and swelling during pregnancy",
-    "grading": {
-      "High": ["Puls", "Sep", "Calc"],
-      "Medium": ["Bell", "Lach"],
-      "Low": ["Nat-m", "Sil"]
-    },
-    "miasm": ["Psora"],
-    "notes": "Sensitive breasts, worse from touch; Pulsatilla for emotional component"
-  },
-  {
-    "rubric": "Varicose veins in pregnancy",
-    "grading": {
-      "High": ["Hamam", "Aesculus", "Rhus-t"],
-      "Medium": ["Calc", "Kali-c"],
-      "Low": ["Bell", "Nux-v"]
-    },
-    "miasm": ["Sycosis"],
-    "notes": "Painful, swollen veins, worse standing; Aesculus for heaviness"
-  },
-  {
-    "rubric": "Hemorrhoids during pregnancy",
-    "grading": {
-      "High": ["Aesculus", "Hamam", "Ratan"],
-      "Medium": ["Nux-v", "Bell"],
-      "Low": ["Sulph", "Calc"]
-    },
-    "miasm": ["Sycosis"],
-    "notes": "Bleeding, itching, pain; Aesculus for backache with hemorrhoids"
-  },
-  {
-    "rubric": "Swelling of feet and ankles in pregnancy",
-    "grading": {
-      "High": ["Calc", "Sep", "Nat-m"],
-      "Medium": ["Kali-c", "Rhus-t"],
-      "Low": ["Bell", "Nux-v"]
-    },
-    "miasm": ["Psora"],
-    "notes": "Edema worse in evening, better with elevation"
-  },
-  {
-    "rubric": "Heartburn and acid reflux in pregnancy",
-    "grading": {
-      "High": ["Nux-v", "Sep", "Puls"],
-      "Medium": ["Ars", "Kreos"],
-      "Low": ["Phos", "Lyc"]
-    },
-    "miasm": ["Psora"],
-    "notes": "Burning sensation, worse after eating; Nux vomica for irritability"
-  },
-  {
-    "rubric": "Constipation during pregnancy",
-    "grading": {
-      "High": ["Nux-v", "Lyc", "Sep"],
-      "Medium": ["Calc", "Sulph"],
-      "Low": ["Bell", "Graph"]
-    },
-    "miasm": ["Psora"],
-    "notes": "Hard, dry stools; Nux vomica for irritability and straining"
-  },
-  {
-    "rubric": "Anxiety and restlessness during pregnancy",
-    "grading": {
-      "High": ["Acon", "Gels", "Nux-v"],
-      "Medium": ["Ign", "Cimic"],
-      "Low": ["Phos", "Sep"]
-    },
-    "miasm": ["Psora"],
-    "notes": "Nervousness, fear of childbirth; Aconite for sudden panic"
-  },
-  {
     "rubric": "Backache in pregnancy",
     "grading": {
       "High": ["Kali-c", "Sep", "Aesculus"],
@@ -178,36 +108,6 @@
     },
     "miasm": ["Syphilis"],
     "notes": "Hemorrhage, faintness, poor uterine tone"
-  },
-  {
-    "rubric": "Postpartum hemorrhage",
-    "grading": {
-      "High": ["Sec", "Sabin", "Caul"],
-      "Medium": ["Bell", "Ars"],
-      "Low": ["China", "Ipec"]
-    },
-    "miasm": ["Syphilis"],
-    "notes": "Excessive bleeding after childbirth; Secale for uterine atony"
-  },
-  {
-    "rubric": "Milk suppression or insufficient lactation",
-    "grading": {
-      "High": ["Urtica-ur", "Lac-can", "Calc"],
-      "Medium": ["Puls", "Phos-ac"],
-      "Low": ["Ign", "Bell"]
-    },
-    "miasm": ["Psora"],
-    "notes": "Poor milk supply, can be emotional or physical cause"
-  },
-  {
-    "rubric": "Breast engorgement or mastitis",
-    "grading": {
-      "High": ["Bell", "Puls", "Lac-can"],
-      "Medium": ["Sep", "Kreos"],
-      "Low": ["Phos", "Sil"]
-    },
-    "miasm": ["Psora"],
-    "notes": "Swollen, painful breasts; Pulsatilla for emotional component"
   },
   {
     "rubric": "Depression after childbirth",

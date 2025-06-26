@@ -1,4 +1,4 @@
-{
+[{
   "EarSigns": [
     {
       "rubric": "Ear - Discharge offensive, pus-like",
@@ -98,7 +98,11 @@
       "modality": "Worse from cold, chewing, wind",
       "miasm": "Syphilis",
       "notes": "Neuralgic pains shooting into ear and face. Spigelia and Verbascum highly effective in trigeminal-linked otalgia."
-    },
+    }
+  ]
+},
+{
+  "EarSigns": [
     {
       "rubric": "Ear - Discharge offensive, pus-like",
       "grading": {
@@ -252,7 +256,11 @@
       "modality": "Worse with trauma, infection",
       "miasm": "Syphilis",
       "notes": "Bleeding may occur from trauma, ruptured eardrum or malignancy. Hamamelis for passive bleeding."
-    },
+    }
+  ]
+},
+{
+  "EarSigns": [
     {
       "rubric": "Ear - Chronic Suppurative Otitis Media (CSOM)",
       "grading": {
@@ -299,3 +307,4 @@
     }
   ]
 }
+]
