@@ -256,7 +256,7 @@ const CaseSheetForm = () => {
 
     try {
       // Step 1: Get summary from Gemini AI
-      const response = await fetch(`${API_URL}/api/generate-summary`, {
+      const response = await fetch(`${API_URL}/api/generatesummary`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...caseData, imageBase64 }),
@@ -316,15 +316,24 @@ const CaseSheetForm = () => {
       setBrainResult(brainData);
 
       // Combine summary and AI remedy suggestion
+      const main = brainData.main_remedy || {};
+
       const finalSummary = `
 📝 AI Generated Summary
 ${summaryText}
 
 🧠 AI Suggested Remedy
-Remedy: ${brainData.main_remedy || "N/A"}
-Miasm: ${brainData.analysis || "N/A"}
+Remedy: ${main.name || "N/A"}
+Miasm: ${main.miasm || "N/A"}
 Dosage: ${brainData.dosage || "N/A"}
-Explanation: ${brainData.pioneer_explanation || "No explanation provided"}
+Explanation: ${main.reason || "No explanation provided"}
+
+Key Symptoms:
+${
+  main.key_symptoms && main.key_symptoms.length > 0
+    ? main.key_symptoms.map((s, i) => `${i + 1}. ${s}`).join("\n")
+    : "No key symptoms provided"
+}
 `;
 
       setAiSummary(finalSummary);
@@ -854,16 +863,48 @@ Explanation: ${brainData.pioneer_explanation || "No explanation provided"}
             {brainResult && (
               <div className='brain'>
                 <h3>AI Remedy Suggestion</h3>
-                <p>
-                  <strong>AI Remedy:</strong> {brainResult.main_remedy || "N/A"}
-                  <br />
-                  <strong>Dosage:</strong> {brainResult.dosage || "N/A"}
-                  <br />
-                  <strong>Miasm:</strong> {brainResult.analysis || "N/A"}
-                  <br />
-                  <strong>Explanation:</strong>{" "}
-                  {brainResult.pioneer_explanation || "No explanation provided"}
-                </p>
+                <div>
+                  <p>
+                    <strong>Remedy:</strong>{" "}
+                    {brainResult.main_remedy?.name || "N/A"}
+                  </p>
+
+                  <p>
+                    <strong>Miasm:</strong>{" "}
+                    {brainResult.main_remedy?.miasm || "N/A"}
+                  </p>
+                  <p>
+                    <strong>Reason:</strong>{" "}
+                    {brainResult.main_remedy?.reason || "N/A"}
+                  </p>
+
+                  {brainResult.main_remedy?.key_symptoms?.length > 0 && (
+                    <>
+                      <p>
+                        <strong>Key Symptoms:</strong>
+                      </p>
+                      <ul>
+                        {brainResult.main_remedy.key_symptoms.map((s, i) => (
+                          <li key={i}>{s}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+
+                  {brainResult.next_best_remedies?.length > 0 && (
+                    <>
+                      <h4>Next Best Remedies</h4>
+                      <ul>
+                        {brainResult.next_best_remedies.map((r, i) => (
+                          <li key={i}>
+                            <strong>{r.name}</strong>: {r.reason}
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </div>
+
                 <h3>Remedy Prescribed</h3>
                 <p>
                   <strong>Remedy Given:</strong>{" "}

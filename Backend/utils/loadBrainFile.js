@@ -1,11 +1,10 @@
 /** @format */
 
-// utils/loadBrainFile.js
-
 const fs = require("fs");
 const path = require("path");
 
 function normalize(text) {
+  if (typeof text !== "string") return "";
   return text.trim().toLowerCase();
 }
 
@@ -19,30 +18,56 @@ function loadAllRubrics() {
       const filePath = path.join(folder, file);
       const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
-      Object.entries(data).forEach(([rubricKey, rubricVal]) => {
-        const normalizedRubric = normalize(rubricKey);
+      if (Array.isArray(data)) {
+        data.forEach((item) => {
+          if (item.rubric && item.grading) {
+            const normalizedRubric = normalize(item.rubric);
+            const grading = item.grading;
+            const remedyMap = {};
 
-        // Case 1: Already in { remedy: score } format
-        if (typeof rubricVal === "object" && !rubricVal.grading) {
-          allRubrics[normalizedRubric] = rubricVal;
-        }
+            (grading.high || []).forEach((r) => (remedyMap[r] = 3));
+            (grading.medium || []).forEach((r) => (remedyMap[r] = 2));
+            (grading.low || []).forEach((r) => (remedyMap[r] = 1));
 
-        // Case 2: Has grading.high/medium/low
-        else if (rubricVal.grading) {
-          const grading = rubricVal.grading;
-          const remedyMap = {};
+            allRubrics[normalizedRubric] = {
+              grading: remedyMap,
+              modality: item.modality || "",
+              miasm: item.miasm || "",
+              notes: item.notes || "",
+            };
 
-          (grading.high || []).forEach((r) => (remedyMap[r] = 3));
-          (grading.medium || []).forEach((r) => (remedyMap[r] = 2));
-          (grading.low || []).forEach((r) => (remedyMap[r] = 1));
+            console.log("✅ Loaded rubric:", item.rubric);
+          }
+        });
+      } else if (typeof data === "object") {
+        Object.entries(data).forEach(([rubricKey, rubricVal]) => {
+          if (rubricVal.grading) {
+            const normalizedRubric = normalize(rubricKey);
+            const grading = rubricVal.grading;
+            const remedyMap = {};
 
-          allRubrics[normalizedRubric] = remedyMap;
-        }
-      });
+            (grading.high || []).forEach((r) => (remedyMap[r] = 3));
+            (grading.medium || []).forEach((r) => (remedyMap[r] = 2));
+            (grading.low || []).forEach((r) => (remedyMap[r] = 1));
+
+            allRubrics[normalizedRubric] = {
+              grading: remedyMap,
+              modality: rubricVal.modality || "",
+              miasm: rubricVal.miasm || "",
+              notes: rubricVal.notes || "",
+            };
+
+            console.log("✅ Loaded object rubric:", rubricKey);
+          }
+        });
+      }
     }
   });
 
   return allRubrics;
 }
 
-module.exports = loadAllRubrics;
+module.exports = {
+  loadAllRubrics,
+  normalize,
+};

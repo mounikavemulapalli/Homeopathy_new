@@ -17,7 +17,7 @@
 // module.exports = router;
 const express = require("express");
 const router = express.Router();
-const { analyzeCase,searchRubrics  } = require("../controllers/brainController");
+const { analyzeCase, searchRubrics } = require("../controllers/analyzeCase");
 
 router.post("/analyze", analyzeCase);
 router.get("/search", searchRubrics);

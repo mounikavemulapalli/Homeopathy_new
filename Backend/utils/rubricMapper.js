@@ -1,12 +1,6 @@
-/** @format */
-
-// utils/rubricMapper.js
-
-const rubricDB = require("./brain/dreams.json"); // contains rubric keywords and remedies
-
+const rubricDB = require("./loadBrainFile"); 
 function mapSymptomsToRubrics(symptoms) {
   const matchedRubrics = [];
-
   symptoms.forEach((symptom) => {
     for (const rubric of rubricDB) {
       if (symptom.toLowerCase().includes(rubric.keyword.toLowerCase())) {
@@ -18,8 +12,6 @@ function mapSymptomsToRubrics(symptoms) {
       }
     }
   });
-
   return matchedRubrics;
 }
-
 module.exports = { mapSymptomsToRubrics };
