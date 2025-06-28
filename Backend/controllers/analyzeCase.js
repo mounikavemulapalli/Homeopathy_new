@@ -369,35 +369,71 @@ exports.analyzeCase = (req, res) => {
         .json({ error: "No rubrics or valid caseInput found." });
     }
 
-    console.log("Extracted rubrics:", finalRubrics);
-
     const selectedRubrics = getRemediesFromRubrics(finalRubrics);
     const sorted = fullCaseAnalysis({ selectedRubrics });
-
     const top3 = sorted.slice(0, 3);
 
-    const getInfo = (remedyName) => {
-      return (
-        remedyExplanation.find(
-          (entry) => entry.remedy.toLowerCase() === remedyName.toLowerCase()
-        ) || null
+    //     const getInfo = (remedyName) => {
+    //       return (
+    //         remedyExplanation.find(
+    //           (entry) => entry.remedy.toLowerCase() === remedyName?.toLowerCase()
+    //         ) || {}
+    //       );
+    //     };
+
+    //     const info0 = getInfo(top3[0]?.name);
+
+    //     res.json({
+    //       main_remedy: {
+    //         name: top3[0]?.name || "N/A",
+    //         miasm: info0?.miasm || "N/A",
+    //         reason: info0?.pioneerRemarks?.[0] || "No reason found.",
+    //         key_symptoms: info0?.keynotes || [],
+    //         dosage: "1M once daily",
+    //       },
+    //       next_best_remedies: top3.slice(1).map((r) => {
+    //         const info = getInfo(r.name);
+    //         return {
+    //           name: r.name,
+    //           reason: info?.pioneerRemarks?.[0] || "No reason found.",
+    //         };
+    //       }),
+    //     });
+    //   } catch (error) {
+    //     console.error("analyzeCase error:", error);
+    //     res.status(500).json({ error: "Internal server error" });
+    //   }
+    // };
+
+    const getInfo = (remedyName, isMain = false) => {
+      const match = remedyExplanation.find(
+        (entry) => entry.remedy.toLowerCase() === remedyName?.toLowerCase()
       );
+      if (!match) return null;
+
+      return {
+        name: remedyName,
+        miasm: match.miasm || "N/A",
+        reason: match.pioneerRemarks?.[0] || "No reason found.",
+        key_symptoms: match.keynotes || [],
+        confirmatory_rubrics: match.confirmatoryRubrics || [],
+        modalities: match.modalities || {},
+        mental_symptoms: match.mentalSymptoms || [],
+        physical_generals: match.physicalGenerals || [],
+        dosage: isMain ? "1M once daily for 3 days" : "200C once at night",
+      };
     };
-const info0 = getInfo(top3[0]?.name);
+
+    const mainInfo = getInfo(top3[0]?.name, true);
+    const nextInfos = top3.slice(1).map((r) => getInfo(r.name));
+
     res.json({
-      main_remedy: {
-        name: top3[0]?.name || "N/A",
-        miasm: getInfo(top3[0]?.name)?.miasm || "N/A",
-        reason: getInfo(top3[0]?.name)?.reason || "No reason found.",
-        key_symptoms: getInfo(top3[0]?.name)?.symptoms || [],
-      },
-      next_best_remedies: top3.slice(1).map((r) => ({
-        name: r.name,
-        reason: getInfo(r.name)?.reason || "No reason found.",
-      })),
+      inputRubrics: finalRubrics,
+      main_remedy: mainInfo || { name: "N/A" },
+      next_best_remedies: nextInfos.filter(Boolean),
     });
   } catch (error) {
-    console.error("analyzeCase error:", error);
+    console.error("❌ analyzeCase error:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
@@ -410,23 +446,8 @@ exports.searchRubrics = (req, res) => {
     .filter((rubric) => rubric.toLowerCase().includes(query))
     .map((rubric) => ({
       target: rubric,
-      rating: 1, // dummy static rating
+      rating: 1,
     }));
 
-  res.json({
-    main_remedy: {
-      name: top3[0]?.name || "N/A",
-      miasm: info0?.miasm || "N/A",
-      reason: info0?.pioneerRemarks?.[0] || "No reason found.",
-      key_symptoms: info0?.keynotes || [],
-      dosage: "1M once daily", // or customize per remedy
-    },
-    next_best_remedies: top3.slice(1).map((r) => {
-      const info = getInfo(r.name);
-      return {
-        name: r.name,
-        reason: info?.pioneerRemarks?.[0] || "No reason found.",
-      };
-    }),
-  });
+  res.json({ results });
 };
