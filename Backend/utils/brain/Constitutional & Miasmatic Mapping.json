@@ -1,99 +1,5 @@
 [
   {
-    "remedy": "Sulphur",
-    "constitution": [
-      "Warm-blooded",
-      "Lazy",
-      "Philosophical",
-      "Theorist",
-      "Untidy"
-    ],
-    "miasms": ["Psora", "Latent Sycosis"]
-  },
-  {
-    "remedy": "Calcarea carbonica",
-    "constitution": [
-      "Chilly",
-      "Sluggish",
-      "Fearful",
-      "Responsible",
-      "Craves eggs"
-    ],
-    "miasms": ["Psora", "Sycosis"]
-  },
-  {
-    "remedy": "Lycopodium",
-    "constitution": [
-      "Intellectual",
-      "Haughty",
-      "Anticipatory anxiety",
-      "Digestive issues"
-    ],
-    "miasms": ["Sycotic", "Psoric"]
-  },
-  {
-    "remedy": "Natrum muriaticum",
-    "constitution": [
-      "Reserved",
-      "Emotionally hurt",
-      "Sensitive to grief",
-      "Prefers solitude"
-    ],
-    "miasms": ["Sycotic", "Psoric"]
-  },
-  {
-    "remedy": "Sepia",
-    "constitution": [
-      "Indifferent",
-      "Irritable",
-      "Worn-out mothers",
-      "Worse from consolation"
-    ],
-    "miasms": ["Syco-syphilitic", "Latent Psora"]
-  },
-  {
-    "remedy": "Phosphorus",
-    "constitution": [
-      "Affectionate",
-      "Imaginative",
-      "Fearful of being alone",
-      "Thirst for cold drinks"
-    ],
-    "miasms": ["Tubercular", "Psora"]
-  },
-  {
-    "remedy": "Nux vomica",
-    "constitution": [
-      "Irritable",
-      "Ambitious",
-      "Workaholic",
-      "Oversensitive to stimuli"
-    ],
-    "miasms": ["Psoric", "Sycotic"]
-  },
-  {
-    "remedy": "Arsenicum album",
-    "constitution": [
-      "Restless",
-      "Anxious about health",
-      "Fastidious",
-      "Chilly",
-      "Despair of recovery"
-    ],
-    "miasms": ["Syphilitic", "Psora"]
-  },
-  {
-    "remedy": "Silicea",
-    "constitution": [
-      "Timid",
-      "Obstinate",
-      "Chilly",
-      "Lack of stamina",
-      "Fear of failure"
-    ],
-    "miasms": ["Psora", "Syphilitic"]
-  },
-  {
     "remedy": "Medorrhinum",
     "constitution": [
       "Extremes",
@@ -114,95 +20,923 @@
     "miasms": ["Tubercular"]
   },
   {
-    "remedy": "Mercurius",
-    "constitution": [
-      "Destructive",
-      "Suspicious",
-      "Tremors",
-      "Offensive discharges"
-    ],
-    "miasms": ["Syphilitic"]
-  },
-  {
-    "remedy": "Thuja",
-    "constitution": [
-      "Secretive",
-      "Fixed ideas",
-      "Feels fragile or split",
-      "Ailments after vaccination"
-    ],
-    "miasms": ["Sycotic"]
-  },
-  {
     "remedy": "Psorinum",
     "constitution": [
-      "Dirty",
+      "Despair",
       "Chilly",
-      "Hopeless",
-      "Feels doomed",
-      "Wants to lie down"
+      "Offensive discharges",
+      "Hopelessness"
     ],
     "miasms": ["Psoric"]
   },
   {
     "remedy": "Syphilinum",
     "constitution": [
-      "Compulsive",
-      "Fear of contamination",
-      "Despair of recovery",
-      "Destructive"
+      "Night pains",
+      "Destructive tendencies",
+      "Obsessive cleaning",
+      "Fear of infection"
     ],
     "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Sulphur",
+    "constitution": [
+      "Intellectual",
+      "Messy",
+      "Philosophical",
+      "Neglects hygiene"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Calcarea carbonica",
+    "constitution": ["Sluggish", "Responsible", "Fearful", "Chilly", "Obese"],
+    "miasms": ["Psoric", "Sycotic"]
+  },
+  {
+    "remedy": "Lycopodium",
+    "constitution": [
+      "Bossy",
+      "Low self-confidence",
+      "Digestive issues",
+      "Worse 4-8 PM"
+    ],
+    "miasms": ["Psoric", "Sycotic"]
+  },
+  {
+    "remedy": "Natrum muriaticum",
+    "constitution": [
+      "Introverted",
+      "Emotionally closed",
+      "Grief",
+      "Salt craving"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Nux vomica",
+    "constitution": [
+      "Irritable",
+      "Workaholic",
+      "Oversensitive",
+      "Abuses stimulants"
+    ],
+    "miasms": ["Psoric", "Sycotic"]
+  },
+  {
+    "remedy": "Pulsatilla",
+    "constitution": [
+      "Mild",
+      "Yielding",
+      "Craves attention",
+      "Changeable symptoms"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Silicea",
+    "constitution": [
+      "Timid",
+      "Perfectionist",
+      "Cold",
+      "Weak resistance to infections"
+    ],
+    "miasms": ["Psoric", "Tubercular"]
+  },
+  {
+    "remedy": "Phosphorus",
+    "constitution": [
+      "Sympathetic",
+      "Open",
+      "Fearful",
+      "Sensitive to noise and light"
+    ],
+    "miasms": ["Tubercular"]
+  },
+  {
+    "remedy": "Arsenicum album",
+    "constitution": ["Anxious", "Obsessive", "Fastidious", "Wants control"],
+    "miasms": ["Psoric", "Syphilitic"]
   },
   {
     "remedy": "Carcinosin",
     "constitution": [
       "Perfectionist",
       "Suppressed emotions",
-      "History of grief and cancer"
+      "Dance/music lover",
+      "Craves chocolate"
     ],
-    "miasms": ["Cancer miasm (mixed)"]
+    "miasms": ["Cancerinic"]
   },
   {
-    "remedy": "Baryta carbonica",
+    "remedy": "Thuja",
     "constitution": [
-      "Immature",
-      "Shy",
-      "Mentally underdeveloped",
-      "Dependent on others"
+      "Fixed ideas",
+      "Feels ugly",
+      "Low self-worth",
+      "Feels something inside is alive"
     ],
-    "miasms": ["Psoric", "Syphilitic"]
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Sepia",
+    "constitution": [
+      "Indifferent",
+      "Irritable",
+      "Better with vigorous exercise",
+      "Hates sympathy"
+    ],
+    "miasms": ["Sycotic", "Syphilitic"]
   },
   {
     "remedy": "Ignatia",
     "constitution": [
-      "Contradictory",
-      "Romantic",
-      "Easily hurt",
-      "Sighing",
-      "Ailments from grief"
+      "Idealistic",
+      "Hysterical grief",
+      "Contradictory symptoms",
+      "Sensitive"
     ],
-    "miasms": ["Psora", "Sycotic"]
-  },
-  {
-    "remedy": "Pulsatilla",
-    "constitution": [
-      "Mild",
-      "Weepy",
-      "Seeks sympathy",
-      "Changeable symptoms",
-      "Dislikes fatty food"
-    ],
-    "miasms": ["Psora", "Mild Sycotic"]
+    "miasms": ["Psoric"]
   },
   {
     "remedy": "Staphysagria",
     "constitution": [
       "Suppressed anger",
-      "Sensitive to insult",
-      "Ailments after humiliation"
+      "Mild outside, burns inside",
+      "Sexual suppression"
     ],
-    "miasms": ["Sycotic", "Psora"]
+    "miasms": ["Sycotic", "Cancerinic"]
+  },
+  {
+    "remedy": "China officinalis",
+    "constitution": [
+      "Sensitive",
+      "Weak from loss of fluids",
+      "Irritable",
+      "Talkative"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Hepar sulphuris",
+    "constitution": [
+      "Irritable",
+      "Oversensitive",
+      "Offended easily",
+      "Abscess tendency"
+    ],
+    "miasms": ["Psoric", "Syphilitic"]
+  },
+  {
+    "remedy": "Aurum metallicum",
+    "constitution": [
+      "Serious",
+      "Responsible",
+      "Suicidal when failed",
+      "Sensitive to contradiction"
+    ],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Baryta carbonica",
+    "constitution": ["Immature", "Shy", "Dependent", "Fear of responsibility"],
+    "miasms": ["Psoric", "Sycotic"]
+  },
+  {
+    "remedy": "Belladonna",
+    "constitution": [
+      "Sudden onset",
+      "Violent",
+      "Sensitive to light and noise",
+      "Dry heat"
+    ],
+    "miasms": ["Acute"]
+  },
+  {
+    "remedy": "Bryonia alba",
+    "constitution": [
+      "Irritable",
+      "Wants to be alone",
+      "Dryness",
+      "Worse slightest motion"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Camphora",
+    "constitution": [
+      "Collapse state",
+      "Icy cold body",
+      "Sudden anxiety",
+      "Fear of touch"
+    ],
+    "miasms": ["Acute", "Syphilitic"]
+  },
+  {
+    "remedy": "Cantharis",
+    "constitution": [
+      "Burning pains",
+      "Violent sexual desire",
+      "Anger",
+      "Irritable"
+    ],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Coffea cruda",
+    "constitution": [
+      "Excitable",
+      "Insomnia from joy or pain",
+      "Sensitive to noise"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Crocus sativus",
+    "constitution": [
+      "Alternating moods",
+      "Impulsive",
+      "Hysterical",
+      "Feels body parts are double"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Digitalis purpurea",
+    "constitution": [
+      "Fear of heart disease",
+      "Slow pulse",
+      "Anxious",
+      "Fainting"
+    ],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Dulcamara",
+    "constitution": [
+      "Chilly damp aggravates",
+      "Irritable",
+      "Suppressed eruptions"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Euphrasia",
+    "constitution": [
+      "Irritable",
+      "Burning lachrymation",
+      "Cold aggravates",
+      "Photophobia"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Ferrum metallicum",
+    "constitution": [
+      "Pale but flushes easily",
+      "Alternating strength and weakness",
+      "Anemia"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Gelsemium",
+    "constitution": [
+      "Dullness",
+      "Lack of coordination",
+      "Fear of appearing in public",
+      "Stage fright"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Glonoinum",
+    "constitution": [
+      "Congestive headaches",
+      "Pulsations",
+      "Worse from sun",
+      "Sudden blood rush"
+    ],
+    "miasms": ["Acute", "Sycotic"]
+  },
+  {
+    "remedy": "Hamamelis",
+    "constitution": [
+      "Venous congestion",
+      "Passive bleeding",
+      "Bruised feeling",
+      "Mild"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Ipecacuanha",
+    "constitution": [
+      "Nausea not relieved by vomiting",
+      "Irritable",
+      "Persistent complaints"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Kali bichromicum",
+    "constitution": [
+      "Stringy discharges",
+      "Perfectionist",
+      "Migratory pains",
+      "Ulcers"
+    ],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Kali carbonicum",
+    "constitution": [
+      "Rigid morals",
+      "Anxiety at 3 AM",
+      "Conservative",
+      "Sensitive to drafts"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Lachesis",
+    "constitution": [
+      "Talkative",
+      "Jealous",
+      "Suspicious",
+      "Worse after sleep",
+      "Better discharges"
+    ],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Mercurius solubilis",
+    "constitution": [
+      "Anxious",
+      "Trembling",
+      "Offensive discharges",
+      "Slow healing ulcers"
+    ],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Muriatic acid",
+    "constitution": [
+      "Exhausted",
+      "Apathetic",
+      "Serious weakness",
+      "Worse while resting"
+    ],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Nitric acid",
+    "constitution": [
+      "Irritable",
+      "Pains like splinters",
+      "Obstinate",
+      "Discharges offensive"
+    ],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Opium",
+    "constitution": [
+      "Lack of reaction",
+      "Comatose",
+      "Overconfidence",
+      "Fear from fright"
+    ],
+    "miasms": ["Psoric", "Syphilitic"]
+  },
+  {
+    "remedy": "Petroleum",
+    "constitution": [
+      "Irritable",
+      "Skin cracks",
+      "Cold aggravates",
+      "Poor memory"
+    ],
+    "miasms": ["Psoric", "Syphilitic"]
+  },
+  {
+    "remedy": "Platina",
+    "constitution": ["Pride", "Contemptuous", "Haughty", "Sexual excitement"],
+    "miasms": ["Sycotic", "Syphilitic"]
+  },
+  {
+    "remedy": "Podophyllum",
+    "constitution": [
+      "Profuse diarrhea",
+      "Exhausted",
+      "Loud flatus",
+      "Hot face"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Rhus toxicodendron",
+    "constitution": [
+      "Restless",
+      "Stiffness",
+      "Better with motion",
+      "Worse at rest"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Ruta graveolens",
+    "constitution": [
+      "Bruised feeling",
+      "Eye strain",
+      "Tendon pain",
+      "Restless"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Sabadilla",
+    "constitution": ["Delusions", "Chilly", "Sneezing", "Fear of worms"],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Sanguinaria",
+    "constitution": [
+      "Right-sided complaints",
+      "Flushed face",
+      "Burning",
+      "Hot hands/feet"
+    ],
+    "miasms": ["Tubercular"]
+  },
+  {
+    "remedy": "Spongia tosta",
+    "constitution": [
+      "Dry cough",
+      "Worse midnight",
+      "Anxiety of heart",
+      "Heat and dryness"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Stramonium",
+    "constitution": ["Terror", "Violent mania", "Fear of dark", "Loquacious"],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Veratrum album",
+    "constitution": ["Collapse", "Cold sweat", "Religious mania", "Greed"],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Zincum metallicum",
+    "constitution": [
+      "Restless feet",
+      "Mental exhaustion",
+      "Suppressed eruptions",
+      "Nervousness"
+    ],
+    "miasms": ["Psoric", "Syphilitic"]
+  },
+  {
+    "remedy": "Tarentula hispanica",
+    "constitution": [
+      "Hysterical",
+      "Fast movements",
+      "Manipulative",
+      "Love for music and dance"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Bovista",
+    "constitution": [
+      "Clumsy",
+      "Feels body is too large",
+      "Skin eruptions",
+      "Sensitive"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Cimicifuga",
+    "constitution": [
+      "Hysterical",
+      "Fear of insanity",
+      "Muscular pain",
+      "Talkative"
+    ],
+    "miasms": ["Psoric", "Sycotic"]
+  },
+  {
+    "remedy": "Cyclamen",
+    "constitution": ["Guilt", "Changeable mood", "Faintness", "Worse open air"],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Graphites",
+    "constitution": [
+      "Obesity",
+      "Skin cracks",
+      "Sadness",
+      "Delayed mental development"
+    ],
+    "miasms": ["Psoric", "Sycotic"]
+  },
+  {
+    "remedy": "Helonias",
+    "constitution": [
+      "Irritable",
+      "Uterine prolapse",
+      "Better when busy",
+      "Back pain"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Kali phosphoricum",
+    "constitution": [
+      "Mental fatigue",
+      "Nervous exhaustion",
+      "Depression",
+      "Irritability"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Manganum",
+    "constitution": ["Better lying on affected side", "Bone pain", "Restless"],
+    "miasms": ["Psoric", "Syphilitic"]
+  },
+  {
+    "remedy": "Millefolium",
+    "constitution": [
+      "Hemorrhagic tendency",
+      "Passive bleeding",
+      "Venous congestion"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Moschus",
+    "constitution": ["Fainting", "Hysterical", "Gas retention", "Sensitivity"],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Antimonium tartaricum",
+    "constitution": [
+      "Drowsy",
+      "Lethargic",
+      "Wet rattling cough",
+      "Desires to be left alone"
+    ],
+    "miasms": ["Psoric", "Sycotic"]
+  },
+  {
+    "remedy": "Ammonium carbonicum",
+    "constitution": [
+      "Lassitude",
+      "Fear of suffocation",
+      "Chilly",
+      "Weak heart"
+    ],
+    "miasms": ["Psoric", "Sycotic"]
+  },
+  {
+    "remedy": "Anacardium orientale",
+    "constitution": ["Wicked thoughts", "Irresolute", "Two wills", "Cruel"],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Agaricus muscarius",
+    "constitution": [
+      "Clownish",
+      "Uncontrollable laughter",
+      "Cold aggravates",
+      "Chorea"
+    ],
+    "miasms": ["Psoric", "Sycotic"]
+  },
+  {
+    "remedy": "Aethusa cynapium",
+    "constitution": [
+      "Inability to digest milk",
+      "Irritability",
+      "Weakness",
+      "Sudden collapse"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Alumina",
+    "constitution": [
+      "Slowness",
+      "Dryness",
+      "Constipation with no urge",
+      "Confused identity"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Ammonium muriaticum",
+    "constitution": [
+      "Irritable",
+      "Sad",
+      "Back pain with sciatica",
+      "Craving pickles"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Antimonium crudum",
+    "constitution": [
+      "Irritable children",
+      "Thick white-coated tongue",
+      "Craves sour",
+      "Obesity"
+    ],
+    "miasms": ["Psoric", "Sycotic"]
+  },
+  {
+    "remedy": "Apis mellifica",
+    "constitution": [
+      "Jealous",
+      "Edematous swellings",
+      "Worse heat",
+      "Stinging pains"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Argentum nitricum",
+    "constitution": [
+      "Impulsive",
+      "Stage fright",
+      "Diarrhea from anxiety",
+      "Desire for sweets"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Asafoetida",
+    "constitution": [
+      "Hysterical",
+      "Gastrointestinal complaints",
+      "Oppression",
+      "Flatulence"
+    ],
+    "miasms": ["Sycotic", "Hysteric"]
+  },
+  {
+    "remedy": "Asterias rubens",
+    "constitution": [
+      "Breast affections",
+      "Irritability",
+      "Redness",
+      "Feeling of heat"
+    ],
+    "miasms": ["Cancerinic"]
+  },
+  {
+    "remedy": "Aurum muriaticum natronatum",
+    "constitution": ["Uterine tumors", "Grief", "Despair", "Suicidal thoughts"],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Berberis vulgaris",
+    "constitution": ["Radiating pain", "Renal colic", "Tired", "Thirstless"],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Boerhaavia diffusa",
+    "constitution": ["Edema", "Nephritis", "Puffy face", "Urinary retention"],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Borax",
+    "constitution": [
+      "Anxious",
+      "Startles easily",
+      "Aphthae in mouth",
+      "Fear of downward motion"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Bothrops lanceolatus",
+    "constitution": [
+      "Hemorrhagic tendency",
+      "Sluggish",
+      "Paralysis",
+      "Cerebral stroke"
+    ],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Bromium",
+    "constitution": [
+      "Scrofulous children",
+      "Goitre",
+      "Agg. dust",
+      "Left-sided"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Cadmium sulphuratum",
+    "constitution": [
+      "Extreme prostration",
+      "Cancer cachexia",
+      "Thirsty",
+      "Nausea"
+    ],
+    "miasms": ["Cancerinic", "Syphilitic"]
+  },
+  {
+    "remedy": "Cactus grandiflorus",
+    "constitution": [
+      "Constriction",
+      "Heart affections",
+      "Worse at night",
+      "Fear of death"
+    ],
+    "miasms": ["Sycotic", "Syphilitic"]
+  },
+  {
+    "remedy": "Calendula officinalis",
+    "constitution": [
+      "Wound healing",
+      "Lacerated injuries",
+      "Fear of touch",
+      "Suppuration"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Calcarea fluorica",
+    "constitution": ["Varicose veins", "Cracks", "Hard nodules", "Obstinate"],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Capsicum annuum",
+    "constitution": ["Homesick", "Red cheeks", "Burning pains", "Overweight"],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Chelidonium majus",
+    "constitution": [
+      "Right-sided liver affections",
+      "Yellow coating",
+      "Lethargic"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Cimex lectularius",
+    "constitution": [
+      "Rheumatic",
+      "Restless sleep",
+      "Periodic chills",
+      "Shrinking pains"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Cistus canadensis",
+    "constitution": [
+      "Extreme sensitivity to cold air",
+      "Nasal ulcers",
+      "Chronic infections"
+    ],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Cocculus indicus",
+    "constitution": [
+      "Weakness from loss of sleep",
+      "Vertigo",
+      "Slow comprehension"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Colchicum autumnale",
+    "constitution": ["Gouty", "Sensitive to smell", "Nausea", "Swollen joints"],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Collinsonia canadensis",
+    "constitution": [
+      "Hemorrhoids",
+      "Pelvic congestion",
+      "Irritable",
+      "Backache"
+    ],
+    "miasms": ["Psoric"]
+  },
+  {
+    "remedy": "Conium maculatum",
+    "constitution": [
+      "Indurated glands",
+      "Vertigo on turning head",
+      "Suppression",
+      "Sexual weakness"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Crotalus horridus",
+    "constitution": ["Hemorrhagic", "Jaundice", "Delirium", "Fear of death"],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Croton tiglium",
+    "constitution": [
+      "Violent diarrhea",
+      "Skin eruptions",
+      "Burning",
+      "Sensitive"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Cuprum metallicum",
+    "constitution": ["Convulsions", "Spasms", "Collapse", "Chilly"],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Cundurango",
+    "constitution": [
+      "Cracks in corners of mouth",
+      "Cancerous diathesis",
+      "Tightness in esophagus"
+    ],
+    "miasms": ["Cancerinic"]
+  },
+  {
+    "remedy": "Dioscorea villosa",
+    "constitution": [
+      "Biliary colic",
+      "Wandering abdominal pain",
+      "Better stretching"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Drosera rotundifolia",
+    "constitution": [
+      "Violent cough",
+      "Tubercular diathesis",
+      "Fear of suffocation"
+    ],
+    "miasms": ["Tubercular"]
+  },
+  {
+    "remedy": "Echinacea",
+    "constitution": [
+      "Septic conditions",
+      "Lack of reaction",
+      "Blood poisoning",
+      "Fatigue"
+    ],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Elaps corallinus",
+    "constitution": [
+      "Black discharges",
+      "Fears rain",
+      "Right-sided",
+      "Bleeding tendency"
+    ],
+    "miasms": ["Syphilitic"]
+  },
+  {
+    "remedy": "Erigeron",
+    "constitution": [
+      "Bright red bleeding",
+      "Menorrhagia",
+      "Hematuria",
+      "Excitability"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Eugenia jambos",
+    "constitution": [
+      "Acne",
+      "Facial eruptions",
+      "Youthful aggravations",
+      "Oversensitive"
+    ],
+    "miasms": ["Sycotic"]
+  },
+  {
+    "remedy": "Eupatorium perfoliatum",
+    "constitution": ["Bone pains", "Chilly", "Thirsty", "Malarial fevers"],
+    "miasms": ["Psoric"]
   },
   {
     "miasm": "Psora",
