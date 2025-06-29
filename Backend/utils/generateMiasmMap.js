@@ -57,12 +57,14 @@
 //   } remedies in utils/brain/`
 // );
 /** @format */
-
 const fs = require("fs");
 const path = require("path");
 
 const rubricFolder = path.join(__dirname, "brain");
 const remedySet = new Set();
+
+// Helper to normalize remedy names
+const normalize = (name) => name.trim().toLowerCase();
 
 // Step 1: Collect all remedies from rubric files
 const rubricFiles = fs
@@ -80,7 +82,7 @@ rubricFiles.forEach((file) => {
   });
 });
 
-// Step 2: Expanded defaultMap with AI-suggested miasms
+// Step 2: Expanded defaultMap with miasm classifications
 const defaultMap = {
   "Natrum Muriaticum": "Sycotic",
   Sepia: "Sycotic",
@@ -111,7 +113,7 @@ const defaultMap = {
   "Aurum Metallicum": "Syphilitic",
 };
 
-// Step 3: Generate miasm map and split by type
+// Step 3: Generate miasmMap and group by miasm
 const miasmMap = {};
 const grouped = {
   Psoric: {},
@@ -122,21 +124,37 @@ const grouped = {
   Unknown: {},
 };
 
+const unknownRemedies = [];
+
 [...remedySet].sort().forEach((remedy) => {
-  const miasm = defaultMap[remedy] || "Unknown";
+  const normalized = normalize(remedy);
+  let miasm = defaultMap[remedy];
+
+  if (!miasm) {
+    const matchedKey = Object.keys(defaultMap).find(
+      (key) => normalize(key) === normalized
+    );
+    if (matchedKey) {
+      miasm = defaultMap[matchedKey];
+    } else {
+      miasm = "Unknown";
+      unknownRemedies.push(remedy);
+    }
+  }
+
   miasmMap[remedy] = miasm;
   if (!grouped[miasm]) grouped[miasm] = {};
   grouped[miasm][remedy] = miasm;
 });
 
-// Step 4: Write main map
+// Step 4: Write miasmMap.json
 fs.writeFileSync(
   path.join(rubricFolder, "miasmMap.json"),
   JSON.stringify(miasmMap, null, 2),
   "utf-8"
 );
 
-// Step 5: Write split files
+// Step 5: Write individual miasm category files
 Object.entries(grouped).forEach(([miasm, remedies]) => {
   const filename = `${miasm.toLowerCase()}.json`;
   fs.writeFileSync(
@@ -146,7 +164,15 @@ Object.entries(grouped).forEach(([miasm, remedies]) => {
   );
 });
 
+// ✅ Step 6: Write unknown remedies for review
+fs.writeFileSync(
+  path.join(rubricFolder, "unknownRemedies.json"),
+  JSON.stringify(unknownRemedies, null, 2),
+  "utf-8"
+);
+
+// ✅ Logs
 console.log(`✅ Total Remedies: ${Object.keys(miasmMap).length}`);
 console.log(
-  `📁 Files generated in utils/brain/: miasmMap.json + psoric.json + sycotic.json + ...`
+  `📁 Files generated in brain/: miasmMap.json + individual miasm files`
 );

@@ -35,8 +35,6 @@ const upload = multer({
   },
 });
 
-// @route   POST /api/cases
-// @desc    Submit new case with image and chief complaint images
 router.post("/", upload.any(), async (req, res) => {
   try {
     // if (!req.body.data) {
@@ -59,15 +57,22 @@ router.post("/", upload.any(), async (req, res) => {
       if (file.fieldname === "image") {
         data.imageUrl = `/uploads/${file.filename}`;
       } else {
-        const match = file.fieldname.match(/chiefComplaints\[(\d+)\]\[skinImage\]/);
+        const match = file.fieldname.match(
+          /chiefComplaints\[(\d+)\]\[skinImage\]/
+        );
         if (match) {
           const index = parseInt(match[1], 10);
           if (data.chiefComplaints[index]) {
-            data.chiefComplaints[index].skinImageUrl = `/uploads/${file.filename}`;
+            data.chiefComplaints[
+              index
+            ].skinImageUrl = `/uploads/${file.filename}`;
           }
         }
       }
     });
+    if (typeof data.aiRemedyGiven === "object" && data.aiRemedyGiven?.name) {
+      data.aiRemedyGiven = data.aiRemedyGiven.name;
+    }
 
     const newCase = new Case(data);
     await newCase.save();
@@ -106,7 +111,7 @@ router.get("/:id", async (req, res) => {
 
 // @route   PUT /api/cases/:id
 // PUT /api/cases/:id
-router.put('/:id', async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const updatedData = {
       name: req.body.name,
@@ -130,18 +135,15 @@ router.put('/:id', async (req, res) => {
     );
 
     if (!updatedCase) {
-      return res.status(404).json({ message: 'Case not found' });
+      return res.status(404).json({ message: "Case not found" });
     }
 
     res.json(updatedCase);
   } catch (error) {
-    console.error('Update Error:', error);
-    res.status(500).json({ message: 'Server error while updating case' });
+    console.error("Update Error:", error);
+    res.status(500).json({ message: "Server error while updating case" });
   }
 });
-
-
-
 
 // @route   DELETE /api/cases/:id
 router.delete("/:id", async (req, res) => {
