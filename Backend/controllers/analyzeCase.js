@@ -47,12 +47,14 @@ exports.analyzeCase = (req, res) => {
 
     let finalRubrics = rubrics || [];
 
+    // Try to extract from free text if rubrics are empty
     if ((!finalRubrics || !finalRubrics.length) && caseInput) {
       finalRubrics = extractRubricsFromCase(caseInput);
     }
 
-    // ✅ Fallback to Gemini output if no rubrics matched
-    if (!finalRubrics.length) {
+    console.log("🔍 Final rubrics:", finalRubrics);
+
+    if (!finalRubrics || !finalRubrics.length) {
       return res.json({
         inputRubrics: [],
         main_remedy: {
@@ -66,9 +68,12 @@ exports.analyzeCase = (req, res) => {
       });
     }
 
-    // ✅ Full rubric-based remedy analysis
-    const selectedRubrics = getRemediesFromRubrics(finalRubrics);
-    const sorted = fullCaseAnalysis({ selectedRubrics });
+    // Correct: This returns an array of { name, grade }
+    const remedyGrades = getRemediesFromRubrics(finalRubrics);
+
+    // Run rubric-based analysis
+    const sorted = fullCaseAnalysis({ remedyGrades });
+
     const top3 = sorted.slice(0, 3);
 
     const getInfo = (remedyName, isMain = false) => {

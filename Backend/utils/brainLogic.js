@@ -85,6 +85,7 @@
 
 const { loadAllRubrics } = require("./loadBrainFile");
 const remedyExplanation = require("./brain/remedyExplanation.json"); // singular, matching usage
+const stringSimilarity = require("string-similarity");
 
 // Load rubric data once
 const { rubricData, remedyFrequency } = loadAllRubrics();
@@ -120,15 +121,30 @@ function fullCaseAnalysis({ remedyGrades, remedyFrequency }) {
  */
 function getRemediesFromRubrics(rubricTexts = []) {
   const result = [];
-
+  const knownRubrics = Object.keys(rubricData || {}); 
   rubricTexts.forEach((rubric) => {
     const normalized = rubric.trim().toLowerCase();
-    const grading = rubricData[normalized];
+    let grading = rubricData[normalized];
 
-    if (!grading) {
-      console.warn("❌ Rubric not found:", rubric);
-      return;
+    // If rubric not found, try fuzzy match
+    if (!grading || !grading.grading) {
+      // const knownRubrics = Object.keys(rubricData || {});
+      const match = stringSimilarity.findBestMatch(normalized, knownRubrics);
+      const bestMatch = match.bestMatch;
+
+      if (bestMatch.rating > 0.6 && rubricData[bestMatch.target]?.grading) {
+        console.warn(`🔍 Substituted "${rubric}" with "${bestMatch.target}"`);
+        grading = rubricData[bestMatch.target];
+      } else {
+        console.warn(`❌ Rubric not found and no good match: "${rubric}"`);
+        return; // skip this rubric
+      }
     }
+
+    // if (!grading?.grading) {
+    //   console.warn(`⚠️ grading object invalid for rubric "${rubric}"`);
+    //   return;
+    // }
 
     Object.entries(grading.grading).forEach(([remedy, grade]) => {
       result.push({ name: remedy, grade });
