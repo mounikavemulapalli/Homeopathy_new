@@ -12,17 +12,23 @@ const rubricData = loadAllRubrics();
  */
 function fullCaseAnalysis({ selectedRubrics }) {
   const combinedScore = {};
-
+  const remedyRubricCount = {};
   selectedRubrics.forEach(({ name, grade }) => {
     if (!combinedScore[name]) combinedScore[name] = 0;
-    combinedScore[name] += grade;
+    combinedScore[name] += grade >= 3 ? grade * 2 : grade;
+    if (!remedyRubricCount[name]) remedyRubricCount[name] = 0;
+    remedyRubricCount[name]++;
   });
 
   return Object.entries(combinedScore)
-    .sort((a, b) => b[1] - a[1])
-    .map(([name, score]) => ({ name, score }));
-}
+    .map(([name, score]) => {
+      const rubricCount = remedyRubricCount[name];
+      const penalty = score < 6 && rubricCount > 3 ? 2 : 0; // If low total score + too many weak rubrics → penalize
 
+      return { name, score: score - penalty };
+    })
+    .sort((a, b) => b.score - a.score);
+}
 /**
  * Helper: convert rubric strings to remedies with grading
  */
