@@ -356,7 +356,16 @@ function extractRubricsFromCase(caseInput) {
 
 exports.analyzeCase = (req, res) => {
   try {
-    const { rubrics, caseInput } = req.body;
+    const {
+      rubrics,
+      caseInput,
+      geminiRemedy,
+      geminiMiasm,
+      geminiReason,
+      geminiDosage,
+      geminiKeySymptoms,
+    } = req.body;
+
     let finalRubrics = rubrics || [];
 
     if ((!finalRubrics || !finalRubrics.length) && caseInput) {
@@ -364,9 +373,17 @@ exports.analyzeCase = (req, res) => {
     }
 
     if (!finalRubrics.length) {
-      return res
-        .status(400)
-        .json({ error: "No rubrics or valid caseInput found." });
+      return res.json({
+        inputRubrics: [],
+        main_remedy: {
+          name: geminiRemedy || "No remedy selected",
+          miasm: geminiMiasm || "N/A",
+          reason: geminiReason || "No explanation provided",
+          dosage: geminiDosage || "N/A",
+          key_symptoms: geminiKeySymptoms || [],
+        },
+        next_best_remedies: [],
+      });
     }
 
     const selectedRubrics = getRemediesFromRubrics(finalRubrics);

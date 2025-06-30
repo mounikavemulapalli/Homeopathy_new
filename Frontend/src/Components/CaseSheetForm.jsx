@@ -64,6 +64,7 @@ const CaseSheetForm = () => {
   const [remedy, setRemedy] = useState("");
   const [miasm, setMiasm] = useState("");
   const [dosage, setDosage] = useState("");
+  const [geminiReason, setGeminiReason] = useState("");
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setCaseData({ ...caseData, [name]: value });
@@ -281,18 +282,28 @@ const CaseSheetForm = () => {
       //   cravings: caseData.personalHistory?.cravingsAversions || "",
       //   mentals: caseData.mentalSymptoms || "",
       // };
-      const geminiMiasm = summaryData.miasm || null;
-      const geminiRemedy = summaryData.geminiRemedy || null;
-      const geminiDosage = summaryData.dosage || null;
+      const geminiRemedy =
+        summaryData.geminiRemedy || summaryData.remedy || null;
+      const geminiMiasm = summaryData.miasm || "N/A";
+      const geminiReason = summaryData.summary || "No explanation provided";
+      const geminiDosage = summaryData.dosage || "N/A";
+      const geminiKeySymptoms = summaryData.key_symptoms || [];
+
       const caseInput = {
         symptoms: getAllSymptomsString(),
-		thermal: caseData.personalHistory?.thermal || "Not specified",
-  cravings: caseData.personalHistory?.cravingsAversions || "Not specified",
-  mentals: caseData.mentalSymptoms || "Not specified",
+        thermal: caseData.personalHistory?.thermal || "Not specified",
+        cravings:
+          caseData.personalHistory?.cravingsAversions || "Not specified",
+        mentals: caseData.mentalSymptoms || "Not specified",
       };
       const requestBody = {
         rubrics: selectedRubrics || [],
         caseInput,
+        geminiRemedy,
+        geminiMiasm,
+        geminiReason,
+        geminiDosage,
+        geminiKeySymptoms,
       };
 
       const brainResponse = await fetch(`${API_URL}/api/brain/analyze`, {
@@ -309,7 +320,7 @@ const CaseSheetForm = () => {
         brainData.main_remedy = {
           name: geminiRemedy,
           miasm: geminiMiasm,
-          reason: "Based on Gemini AI suggestion.",
+          reason: geminiReason,
           dosage: "30C (tentative)",
           key_symptoms: [],
         };
@@ -328,8 +339,14 @@ ${summaryText}
 🧠 AI Suggested Remedy
 Remedy: ${geminiRemedy || "N/A"}
 Miasm: ${geminiMiasm || "N/A"}
-Dosage: ${brainData.dosage || "N/A"}
-Explanation: ${main.reason || "No explanation provided"}
+Dosage: ${geminiDosage || "N/A"}
+Explanation: ${main?.reason || geminiReason || "No explanation provided"}
+Key Symptoms: ${
+        main?.key_symptoms?.join(", ") ||
+        geminiKeySymptoms?.join(", ") ||
+        "No key symptoms provided"
+      }
+
 
 Key Symptoms:
 ${

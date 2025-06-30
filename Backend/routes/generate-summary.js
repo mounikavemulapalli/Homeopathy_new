@@ -112,10 +112,11 @@ Please analyze this patient case and return:
 
 ⚠️ Respond strictly in the following JSON format:
 {
-  "summary": "Summary of findings, miasmatic diagnosis, and remedy explanation with dosage",
+  "summary": "Explanation with remedy logic",
   "miasm": "Miasmatic diagnosis",
-  "remedy": "Best homeopathic remedy name",
-  "dosage": "Suggested dosage with frequency and potency"
+  "remedy": "Remedy name",
+  "dosage": "Potency + frequency",
+  "key_symptoms": ["symptom1", "symptom2"]
 }
 
 Patient Details:
