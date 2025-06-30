@@ -130,8 +130,6 @@ const CaseSheetForm = () => {
 
     const formData = new FormData();
     formData.append("image", caseData.image);
-
-    // Append chief complaints data, including skin images
     const chiefComplaintsWithImages = caseData.chiefComplaints.map(
       (complaint, index) => {
         if (complaint.skinImage) {
@@ -139,7 +137,6 @@ const CaseSheetForm = () => {
             `chiefComplaints[${index}][skinImage]`,
             complaint.skinImage
           );
-          // Return complaint without the File object for JSON stringify
           const { skinImage, ...rest } = complaint;
           return rest;
         }
@@ -200,12 +197,6 @@ const CaseSheetForm = () => {
         },
         body: JSON.stringify({
           caseInput: {
-            // symptoms: caseData.chiefComplaints
-            //   .map((c) => c.description)
-            //   .join(", "),
-            // thermal: caseData.personalHistory.thermal,
-            // cravings: caseData.personalHistory.cravingsAversions,
-            // mentals: caseData.mentalSymptoms,
             symptoms: getAllSymptomsString(),
           },
           toggles: { showExplanation: true },
@@ -220,7 +211,6 @@ const CaseSheetForm = () => {
   };
 
   const generateSummary = async () => {
-    // Prevent empty rubric/caseInput submission
     if (
       (!selectedRubrics || selectedRubrics.length === 0) &&
       (!caseData.chiefComplaints ||
@@ -241,7 +231,7 @@ const CaseSheetForm = () => {
     }
 
     try {
-      // Step 1: Get summary from Gemini AI
+      // 🔹 1. Get Gemini Summary
       const response = await fetch(`${API_URL}/api/generatesummary`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -251,43 +241,13 @@ const CaseSheetForm = () => {
       const summaryData = await response.json();
       const summaryText = summaryData.summary || "No summary generated.";
 
-      // Step 2: Get remedy + dosage from internal brain logic
-      // Corrected AI Brain Logic Call
-      // const aiResponse = await fetch(
-      //   "http://localhost:5000/api/brain/analyze",
-      //   {
-      //     method: "POST",
-      //     headers: { "Content-Type": "application/json" },
-      //     body: JSON.stringify(
-      //       selectedRubrics.length > 0
-      //         ? { rubrics: selectedRubrics } // Use rubric override if selected
-      //         : {
-      //             caseInput: {
-      //               symptoms:
-      //                 caseData.chiefComplaints
-      //                   ?.map((c) => c.description)
-      //                   .join(", ") || "",
-      //               thermal: caseData.personalHistory?.thermal || "",
-      //               cravings: caseData.personalHistory?.cravingsAversions || "",
-      //               mentals: caseData.mentalSymptoms || "",
-      //             },
-      //           }
-      //     ),
-      //   }
-      // );
-      // const caseInput = {
-      //   symptoms:
-      //     caseData.chiefComplaints?.map((c) => c.description).join(", ") || "",
-      //   thermal: caseData.personalHistory?.thermal || "",
-      //   cravings: caseData.personalHistory?.cravingsAversions || "",
-      //   mentals: caseData.mentalSymptoms || "",
-      // };
       const geminiRemedy =
         summaryData.geminiRemedy || summaryData.remedy || null;
       const geminiMiasm = summaryData.miasm || "N/A";
       const geminiReason = summaryData.summary || "No explanation provided";
       const geminiDosage = summaryData.dosage || "N/A";
       const geminiKeySymptoms = summaryData.key_symptoms || [];
+      const geminiNextBestRemedies = summaryData.next_best_remedies || [];
 
       const caseInput = {
         symptoms: getAllSymptomsString(),
@@ -296,6 +256,7 @@ const CaseSheetForm = () => {
           caseData.personalHistory?.cravingsAversions || "Not specified",
         mentals: caseData.mentalSymptoms || "Not specified",
       };
+
       const requestBody = {
         rubrics: selectedRubrics || [],
         caseInput,
@@ -304,8 +265,10 @@ const CaseSheetForm = () => {
         geminiReason,
         geminiDosage,
         geminiKeySymptoms,
+        geminiNextBestRemedies,
       };
 
+      // 🔹 3. Get analysis from internal brain
       const brainResponse = await fetch(`${API_URL}/api/brain/analyze`, {
         method: "POST",
         headers: {
@@ -316,30 +279,33 @@ const CaseSheetForm = () => {
 
       const brainData = await brainResponse.json();
 
+      // 🔹 4. Fallback if only Gemini response is available
       if (geminiRemedy && !brainData?.main_remedy?.name) {
         brainData.main_remedy = {
           name: geminiRemedy,
           miasm: geminiMiasm,
           reason: geminiReason,
-          dosage: "30C (tentative)",
-          key_symptoms: [],
+          dosage: geminiDosage || "30C (tentative)",
+          key_symptoms: geminiKeySymptoms || [],
         };
+
+        // ✅ Add fallback next best remedies from Gemini
+        brainData.next_best_remedies = geminiNextBestRemedies || [];
       }
 
       setBrainResult(brainData);
 
-      // Combine summary and AI remedy suggestion
+      // 🔹 5. Format output
       const main = brainData.main_remedy || {};
 
       const finalSummary = `
 📝 AI Generated Summary
 ${summaryText}
 
-
 🧠 AI Suggested Remedy
-Remedy: ${geminiRemedy || "N/A"}
-Miasm: ${geminiMiasm || "N/A"}
-Dosage: ${geminiDosage || "N/A"}
+Remedy: ${main?.name || geminiRemedy || "N/A"}
+Miasm: ${main?.miasm || geminiMiasm || "N/A"}
+Dosage: ${main?.dosage || geminiDosage || "N/A"}
 Explanation: ${main?.reason || geminiReason || "No explanation provided"}
 Key Symptoms: ${
         main?.key_symptoms?.join(", ") ||
@@ -347,29 +313,29 @@ Key Symptoms: ${
         "No key symptoms provided"
       }
 
-
-Key Symptoms:
 ${
-  main.key_symptoms && main.key_symptoms.length > 0
-    ? main.key_symptoms.map((s, i) => `${i + 1}. ${s}`).join("\n")
-    : "No key symptoms provided"
+  brainData.next_best_remedies?.length > 0
+    ? `🧠 Next Best Remedies:\n${brainData.next_best_remedies
+        .map((r, i) => `${i + 1}. ${r.name} – ${r.reason || "No reason"}`)
+        .join("\n")}`
+    : ""
 }
 `;
+
       setAiSummary(finalSummary);
-      setRemedy(geminiRemedy);
-      setMiasm(geminiMiasm);
-      setDosage(brainData.dosage);
+      setRemedy(main?.name || geminiRemedy);
+      setMiasm(main?.miasm || geminiMiasm);
+      setDosage(main?.dosage || geminiDosage);
       console.log("AI Summary:", finalSummary);
-      console.log("remedy:", geminiRemedy);
-      console.log("miasm:", geminiMiasm);
-      console.log("dosage:", brainData.dosage);
       console.log("Brain Result:", brainData);
     } catch (error) {
       alert("Error generating summary.");
+      console.error("❌ generateSummary error:", error);
     } finally {
       setLoadingSummary(false);
     }
   };
+
   useEffect(() => {
     const fetchSuggestions = async () => {
       if (rubricInput.length < 3) return;
@@ -418,6 +384,20 @@ ${
     ]
       .filter(Boolean)
       .join(" ");
+  {
+    brainResult?.next_best_remedies?.length > 0 && (
+      <>
+        <h4>Next Best Remedies</h4>
+        <ul>
+          {brainResult?.next_best_remedies.map((r, i) => (
+            <li key={i}>
+              <strong>{r.name}</strong>: {r.reason}
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  }
 
   return (
     <form className='case-container' onSubmit={handleSubmit}>
@@ -862,62 +842,43 @@ ${
           >
             <h3>AI Generated Summary</h3>
             <p>{aiSummary}</p>
-            {brainResult && (
-              <div className='brain'>
-                <h3>AI Remedy Suggestion</h3>
-                <div>
+            {brainResult?.main_remedy?.key_symptoms?.length > 0 &&
+              !aiSummary.includes("Key Symptoms:") && (
+                <>
                   <p>
-                    <strong>Remedy:</strong>{" "}
-                    {/* {brainResult?.main_remedy?.name || "N/A"} */}
-                    {remedy || "N/A"}
+                    <strong>Key Symptoms:</strong>
                   </p>
+                  <ul>
+                    {brainResult.main_remedy.key_symptoms.map((s, i) => (
+                      <li key={i}>{s}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
 
-                  <p>
-                    <strong>Miasm:</strong>{" "}
-                    {brainResult?.main_remedy?.miasm || "N/A"}
-                  </p>
-                  <p>
-                    <strong>Reason:</strong>{" "}
-                    {brainResult.main_remedy?.reason || "N/A"}
-                  </p>
+            {/* Optional re-show Next Remedies only if NOT in aiSummary */}
+            {brainResult?.next_best_remedies?.length > 0 &&
+              !aiSummary.includes("Next Best Remedies") && (
+                <>
+                  <h4>Next Best Remedies</h4>
+                  <ul>
+                    {brainResult.next_best_remedies.map((r, i) => (
+                      <li key={i}>
+                        <strong>{r.name}</strong>: {r.reason}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
 
-                  {brainResult?.main_remedy?.key_symptoms?.length > 0 && (
-                    <>
-                      <p>
-                        <strong>Key Symptoms:</strong>
-                      </p>
-                      <ul>
-                        {brainResult?.main_remedy.key_symptoms.map((s, i) => (
-                          <li key={i}>{s}</li>
-                        ))}
-                      </ul>
-                    </>
-                  )}
-
-                  {brainResult.next_best_remedies?.length > 0 && (
-                    <>
-                      <h4>Next Best Remedies</h4>
-                      <ul>
-                        {brainResult?.next_best_remedies.map((r, i) => (
-                          <li key={i}>
-                            <strong>{r.name}</strong>: {r.reason}
-                          </li>
-                        ))}
-                      </ul>
-                    </>
-                  )}
-                </div>
-
-                <h3>Remedy Prescribed</h3>
-                <p>
-                  <strong>Remedy Given:</strong>{" "}
-                  {caseData.prescription && caseData.prescription.length > 0
-                    ? caseData.prescription[caseData.prescription.length - 1]
-                        .remedyName || "N/A"
-                    : "N/A"}
-                </p>
-              </div>
-            )}
+            <h3>Remedy Prescribed</h3>
+            <p>
+              <strong>Remedy Given:</strong>{" "}
+              {caseData.prescription && caseData.prescription.length > 0
+                ? caseData.prescription[caseData.prescription.length - 1]
+                    .remedyName || "N/A"
+                : "N/A"}
+            </p>
           </div>
         )}
 
@@ -1022,16 +983,6 @@ ${
       <button type='submit' className='case-button'>
         Submit Case
       </button>
-
-      {/* Submitted Data Preview */}
-      {/* {submittedData && (
-        <div className='case-submitted-data-container'>
-          <h4>Submitted Data Preview:</h4>
-          <pre style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>
-            {JSON.stringify(submittedData, null, 2)}
-          </pre>
-        </div>
-      )} */}
     </form>
   );
 };

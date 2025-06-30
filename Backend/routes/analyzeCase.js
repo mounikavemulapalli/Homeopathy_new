@@ -17,6 +17,6 @@ function analyzeRubric(rubricInput) {
   };
 }
 
-// Example usage
-const result = analyzeRubric("Mouth - Ulcers inside cheek or lips");
-console.log(JSON.stringify(result, null, 2));
+// // Example usage
+// const result = analyzeRubric("Mouth - Ulcers inside cheek or lips");
+// console.log(JSON.stringify(result, null, 2));

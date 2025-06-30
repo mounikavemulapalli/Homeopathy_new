@@ -109,14 +109,18 @@ Please analyze this patient case and return:
 1. Key summary of findings
 2. Miasmatic diagnosis
 3. Best homeopathic remedy (with explanation and dosage)
-
+4. 2 alternative remedies (with brief reasons)
 ⚠️ Respond strictly in the following JSON format:
 {
-  "summary": "Explanation with remedy logic",
+  "summary": "Summary of findings, miasmatic diagnosis, and remedy explanation with dosage",
   "miasm": "Miasmatic diagnosis",
-  "remedy": "Remedy name",
-  "dosage": "Potency + frequency",
-  "key_symptoms": ["symptom1", "symptom2"]
+  "remedy": "Best homeopathic remedy name",
+  "dosage": "Suggested dosage with frequency and potency",
+  "key_symptoms": ["symptom1", "symptom2"],
+  "next_best_remedies": [
+    { "name": "RemedyName1", "reason": "Why this was suggested" },
+    { "name": "RemedyName2", "reason": "Why this was suggested" }
+  ]
 }
 
 Patient Details:
@@ -191,6 +195,8 @@ router.post("/", async (req, res) => {
       geminiRemedy: parsed.remedy,
       miasm: parsed.miasm,
       dosage: parsed.dosage,
+      key_symptoms: parsed.key_symptoms || [],
+      next_best_remedies: parsed.next_best_remedies || [],
     });
     console.log(
       `Remedy: ${parsed.remedy}, Miasm: ${parsed.miasm}, Dosage: ${parsed.dosage}, Summary: ${parsed.summary}`
