@@ -113,7 +113,9 @@ Please analyze this patient case and return:
 ⚠️ Respond strictly in the following JSON format:
 {
   "summary": "Summary of findings, miasmatic diagnosis, and remedy explanation with dosage",
-  "remedy": "Name of remedy",
+  "miasm": "Miasmatic diagnosis",
+  "remedy": "Best homeopathic remedy name",
+  "dosage": "Suggested dosage with frequency and potency"
 }
 
 Patient Details:
@@ -172,20 +174,26 @@ router.post("/", async (req, res) => {
 
     let parsed;
     try {
-      const jsonStart = text.indexOf('{');
-      const jsonEnd = text.lastIndexOf('}') + 1;
+      const jsonStart = text.indexOf("{");
+      const jsonEnd = text.lastIndexOf("}") + 1;
       const jsonString = text.slice(jsonStart, jsonEnd);
       parsed = JSON.parse(jsonString);
     } catch (err) {
       console.warn("Failed to parse JSON. Raw text:", text);
-      return res.status(500).json({ error: "Invalid structured response from Gemini" });
+      return res
+        .status(500)
+        .json({ error: "Invalid structured response from Gemini" });
     }
 
     res.json({
       summary: parsed.summary,
       geminiRemedy: parsed.remedy,
+      miasm: parsed.miasm,
+      dosage: parsed.dosage,
     });
-    console.log(`Remedy: ${parsed.remedy}, Summary: ${parsed.summary}`);
+    console.log(
+      `Remedy: ${parsed.remedy}, Miasm: ${parsed.miasm}, Dosage: ${parsed.dosage}, Summary: ${parsed.summary}`
+    );
   } catch (error) {
     console.error("Gemini API error:", error);
     res
