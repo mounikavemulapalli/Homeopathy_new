@@ -30,19 +30,7 @@ const initialCaseData = {
     majorIllnesses: "",
   },
   familyHistory: "",
-  personalHistory: {
-    appetite: "",
-    cravingsAversions: "",
-    thirst: "",
-    bowel: "",
-    urine: "",
-    sleep: "",
-    dreams: "",
-    sweat: "",
-    thermal: "",
-    habits: "",
-    menstrual: "",
-  },
+  personalHistory: "",
   generalRemarks: "",
   observationsByDoctor: "",
   prescription: [
@@ -296,7 +284,15 @@ const CaseSheetForm = () => {
       setBrainResult(brainData);
 
       // 🔹 5. Format output
-      const main = brainData.main_remedy || {};
+      const main = brainData?.main_remedy?.name
+        ? brainData.main_remedy
+        : {
+            name: geminiRemedy,
+            miasm: geminiMiasm,
+            reason: geminiReason,
+            dosage: geminiDosage,
+            key_symptoms: geminiKeySymptoms,
+          };
 
       const finalSummary = `
 📝 AI Generated Summary

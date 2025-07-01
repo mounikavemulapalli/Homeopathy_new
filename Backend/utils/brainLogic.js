@@ -97,10 +97,10 @@ function fullCaseAnalysis({ remedyGrades, remedyFrequency }) {
   const combinedScore = {};
   const remedyRubricCount = {};
 
-  remedyGrades.forEach(({ name, grade }) => {
+  remedyGrades.forEach(({ name, grade,type }) => {
     const rarityBoost = remedyFrequency?.[name] ? 1 / remedyFrequency[name] : 1;
 
-    const weighted = (grade >= 3 ? grade * 2 : grade) * rarityBoost;
+    const weighted = (grade >= 3 ? grade * 2 : grade) * rarityBoost * typeWeight;
 
     combinedScore[name] = (combinedScore[name] || 0) + weighted;
     remedyRubricCount[name] = (remedyRubricCount[name] || 0) + 1;
@@ -109,6 +109,9 @@ function fullCaseAnalysis({ remedyGrades, remedyFrequency }) {
   return Object.entries(combinedScore)
     .map(([name, score]) => {
       const rubricCount = remedyRubricCount[name];
+      if (remedyFrequency[name] > 40 && score < 9) {
+        score *= 0.6;
+      }
       const penalty = score < 6 && rubricCount > 3 ? 2 : 0;
 
       return { name, score: score - penalty };
@@ -132,7 +135,7 @@ function getRemediesFromRubrics(rubricTexts = []) {
       const match = stringSimilarity.findBestMatch(normalized, knownRubrics);
       const bestMatch = match.bestMatch;
 
-      if (bestMatch.rating > 0.6 && rubricData[bestMatch.target]?.grading) {
+      if (bestMatch.rating > 0.85 && rubricData[bestMatch.target]?.grading) {
         console.warn(`🔍 Substituted "${rubric}" with "${bestMatch.target}"`);
         grading = rubricData[bestMatch.target];
       } else {
@@ -140,7 +143,7 @@ function getRemediesFromRubrics(rubricTexts = []) {
         return; // skip this rubric
       }
     }
-
+    const rubricType = grading.type || "general";
     // if (!grading?.grading) {
     //   console.warn(`⚠️ grading object invalid for rubric "${rubric}"`);
     //   return;
@@ -183,7 +186,10 @@ function getExplanation(topRemedy, matchedRubrics) {
  */
 function fullCaseAnalysisWrapper(selectedRubricTexts) {
   const remedyGrades = getRemediesFromRubrics(selectedRubricTexts);
-  return fullCaseAnalysis({ remedyGrades, remedyFrequency });
+  const result = fullCaseAnalysis({ remedyGrades, remedyFrequency });
+  console.log("🔝 Top 5 Remedies:");
+  console.table(result.slice(0, 5));
+  return result;
 }
 
 module.exports = {
