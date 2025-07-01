@@ -230,7 +230,7 @@ const CaseSheetForm = () => {
       const summaryText = summaryData.summary || "No summary generated.";
 
       const geminiRemedy =
-        summaryData.geminiRemedy || summaryData.remedy || null;
+      summaryData.geminiRemedy || summaryData.remedy || null;
       const geminiMiasm = summaryData.miasm || "N/A";
       const geminiReason = summaryData.summary || "No explanation provided";
       const geminiDosage = summaryData.dosage || "N/A";
