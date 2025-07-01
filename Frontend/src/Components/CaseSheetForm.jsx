@@ -59,7 +59,7 @@ const CaseSheetForm = () => {
   };
 
   const handleChiefComplaintChange = (index, e) => {
-    const { name, value, files } = e.target; // Destructure files for file input
+    const { name, value, files } = e.target; 
     const updatedComplaints = [...caseData.chiefComplaints];
 
     if (name === "skinImage" && files && files[0]) {
@@ -97,7 +97,7 @@ const CaseSheetForm = () => {
     setCaseData({
       ...caseData,
       prescription: [
-        ...caseData.prescription, // <-- singular
+        ...caseData.prescription, 
         {
           date: "",
           remedyName: "",
