@@ -298,30 +298,38 @@ const CaseSheetForm = () => {
 📝 AI Generated Summary
 ${summaryText}
 
+--- Gemini AI Suggestion ---
+Remedy: ${geminiRemedy || "N/A"}
+Miasm: ${geminiMiasm || "N/A"}
+Dosage: ${geminiDosage || "N/A"}
+Explanation: ${geminiReason || "No explanation provided"}
+Key Symptoms: ${geminiKeySymptoms?.join(", ") || "No key symptoms provided"}
+
+--- Internal Brain AI Suggestion ---
+Remedy: ${brainData?.main_remedy?.name || "N/A"}
+Miasm: ${brainData?.main_remedy?.miasm || "N/A"}
+Dosage: ${brainData?.main_remedy?.dosage || "N/A"}
+Explanation: ${brainData?.main_remedy?.reason || "No explanation provided"}
+Key Symptoms: ${brainData?.main_remedy?.key_symptoms?.join(", ") || "No key symptoms provided"}
+
 🧠 AI Suggested Remedy
-Remedy: ${main?.name || geminiRemedy || "N/A"}
-Miasm: ${main?.miasm || geminiMiasm || "N/A"}
-Dosage: ${main?.dosage || geminiDosage || "N/A"}
-Explanation: ${main?.reason || geminiReason || "No explanation provided"}
-Key Symptoms: ${
-        main?.key_symptoms?.join(", ") ||
-        geminiKeySymptoms?.join(", ") ||
-        "No key symptoms provided"
-      }
+Best Homeopathic Remedy and Dosage: ${geminiRemedy || (brainData?.main_remedy?.name || "N/A")} ${geminiDosage ? `(${geminiDosage})` : (brainData?.main_remedy?.dosage ? `(${brainData.main_remedy.dosage})` : "")}
 
 ${
   brainData.next_best_remedies?.length > 0
-    ? `🧠 Next Best Remedies:\n${brainData.next_best_remedies
+    ? `🧠 Next Best Remedies:
+${brainData.next_best_remedies
         .map((r, i) => `${i + 1}. ${r.name} – ${r.reason || "No reason"}`)
         .join("\n")}`
     : ""
 }
 `;
-
       setAiSummary(finalSummary);
       setRemedy(main?.name || geminiRemedy);
       setMiasm(main?.miasm || geminiMiasm);
       setDosage(main?.dosage || geminiDosage);
+      console.log("Gemini remedy:", geminiRemedy);
+      console.log("Brain remedy:", brainData.main_remedy?.name);
       console.log("AI Summary:", finalSummary);
       console.log("Brain Result:", brainData);
     } catch (error) {
@@ -331,7 +339,6 @@ ${
       setLoadingSummary(false);
     }
   };
-
   useEffect(() => {
     const fetchSuggestions = async () => {
       if (rubricInput.length < 3) return;
