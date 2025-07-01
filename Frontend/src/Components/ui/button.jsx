@@ -1,9 +1,13 @@
-const Button = ({ type = "button", className, children, onClick }) => (
-  <button
-    type={type}
-    className={`bg-blue-500 text-white py-2 px-4 rounded-md ${className}`}
-    onClick={onClick}
-  >
-    {children}
-  </button>
-);
+// src/components/ui/button.jsx
+import React from "react";
+
+export const Button = ({ children, className = "", ...props }) => {
+  return (
+    <button
+      className={`bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
