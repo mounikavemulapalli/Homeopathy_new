@@ -77,6 +77,11 @@ const CaseSchema = new mongoose.Schema({
     type: [prescriptionSchema],
     default: [],
   },
+  labInvestigation: {
+    type: mongoose.Schema.Types.Mixed, // or Object / String depending on structure
+    default: {},
+  },
+  
   pastHistory: pastHistorySchema,
   personalHistory: personalHistorySchema,
   createdAt: {
@@ -84,5 +89,6 @@ const CaseSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
+
 
 module.exports = mongoose.model("Case", CaseSchema);

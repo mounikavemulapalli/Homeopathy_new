@@ -29,8 +29,21 @@ const initialCaseData = {
     surgeriesInjuries: "",
     majorIllnesses: "",
   },
+  labInvestigation:"",
   familyHistory: "",
-  personalHistory: "",
+  personalHistory: {
+    appetite: "",
+    cravingsAversions: "",
+    thirst: "",
+    bowel: "",
+    urine: "",
+    sleep: "",
+    dreams: "",
+    sweat: "",
+    thermal: "",
+    habits: "",
+    menstrual: "",
+  },
   generalRemarks: "",
   observationsByDoctor: "",
   prescription: [
@@ -779,7 +792,33 @@ ${brainData.next_best_remedies
           placeholder="Doctor's observations"
         />
       </section>
-      <div className='case-form-group'>
+      <section className='case-section'>
+  <h3 className='case-section-title'>10. Lab Investigation</h3>
+
+  {["Hemoglobin", "WBC", "Platelet Count"].map((testName) => (
+    <div className='case-form-group' key={testName}>
+      <label className='case-label'>{testName}</label>
+      <input
+        className='case-input'
+        type='number'
+        name={`labInvestigation.${testName}`}
+        value={caseData.labInvestigation?.[testName] || ""}
+        onChange={(e) =>
+          setCaseData({
+            ...caseData,
+            labInvestigation: {
+              ...caseData.labInvestigation,
+              [testName]: parseFloat(e.target.value) || "",
+            },
+          })
+        }
+        placeholder={`Enter ${testName} value`}
+      />
+    </div>
+  ))}
+</section>
+
+      {/* <div className='case-form-group'>
         <label className='case-label'>Rubric Suggestion (type to search)</label>
         <input
           className='case-input'
@@ -814,7 +853,7 @@ ${brainData.next_best_remedies
             ))}
           </div>
         )}
-      </div>
+      </div> */}
 
       {/* Prescription */}
       <section className='case-section'>
@@ -916,7 +955,10 @@ ${brainData.next_best_remedies
             </table>
           </section>
         )}
-        <h3 className='case-section-title'>10. Prescription</h3>
+      
+
+
+        <h3 className='case-section-title'>11. Prescription</h3>
         {caseData.prescription.map((prescription, index) => (
           <div key={index} className='case-prescription-block'>
             <div className='case-form-column'>

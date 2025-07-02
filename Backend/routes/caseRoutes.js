@@ -6,7 +6,7 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const Case = require("../models/Case");
-
+const { interpretLabData } = require("../utils/labAnalyzer");
 // Ensure upload directory exists
 const uploadDir = "uploads";
 if (!fs.existsSync(uploadDir)) {
@@ -41,6 +41,7 @@ router.post("/", upload.any(), async (req, res) => {
     //   return res.status(400).json({ message: "Missing data field" });
     // }
     // const data = JSON.parse(req.body.data);
+    
     const data = req.body;
 
     if (!Array.isArray(data.chiefComplaints)) {
@@ -73,6 +74,23 @@ router.post("/", upload.any(), async (req, res) => {
     if (typeof data.aiRemedyGiven === "object" && data.aiRemedyGiven?.name) {
       data.aiRemedyGiven = data.aiRemedyGiven.name;
     }
+    // 🔍 If labInvestigation is provided as a valid object, analyze it
+if (
+  data.labInvestigation &&
+  typeof data.labInvestigation === "string"
+) {
+  try {
+    const parsedLab = JSON.parse(data.labInvestigation);
+    if (typeof parsedLab === "object") {
+      data.labInvestigation = parsedLab;
+      data.labAnalysisResult = interpretLabData(parsedLab);
+    }
+  } catch (e) {
+    console.warn("Invalid labInvestigation JSON:", e.message);
+    data.labInvestigation = {};
+    data.labAnalysisResult = [];
+  }
+}
 
     const newCase = new Case(data);
     await newCase.save();
