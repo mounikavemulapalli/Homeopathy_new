@@ -1,0 +1,134 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+}
+.logo-img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-logo .dot {
+  width: 12px;
+  height: 12px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+}
+
+.navbar-logo h1 {
+  font-size: 20px;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+/* Nav Links */
+.navbar-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #1d4ed8;
+}
+
+/* Sign Up Button */
+.signup-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #1e40af;
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.bar {
+  width: 24px;
+  height: 2px;
+  background-color: #374151;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    position: absolute;
+    top: 72px;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .navbar-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Prevent content from hiding under navbar */
+body {
+  padding-top: 80px;
+}

@@ -84,10 +84,55 @@ const Home = () => {
         <p style={styles.sectionText}>📧 bhanuhomeohospital@gmail.com</p>
       </section>
 
+{/* Testimonials Marquee Section */}
+<section style={styles.section}>
+  <h2 style={styles.sectionTitle}>What Our Patients Say</h2>
+  <div style={styles.marqueeContainer}>
+    <div style={styles.marqueeContent}>
+      {[1, 2, 3, 4].map((_, index) => (
+        <div key={index} style={styles.testimonialBox}>
+          <p style={styles.testimonialText}>
+            “{[
+              "Dr. Somasekhar’s treatment changed my life.",
+              "Effective remedies. Results within weeks.",
+              "Excellent diagnosis and care.",
+              "The best clinic for chronic conditions.",
+            ][index % 4]}”
+          </p>
+          <div style={styles.testimonialAuthor}>
+            — {["Sravani", "Ramesh", "Lakshmi", "Venkat"][index % 4]}
+          </div>
+          <div style={styles.testimonialStars}>⭐⭐⭐⭐⭐</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+
+{/* Map Section */}
+<section style={{ ...styles.section, paddingTop: 0 }}>
+  <h2 style={styles.sectionTitle}>Find Us on Google Maps</h2>
+  <div style={styles.mapContainer}>
+    <iframe
+      title="Bhanu Homeo Clinic Location"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3878.7384504433393!2d78.50766697503696!3d13.558046202203175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb2b4d99b5c7b05%3A0x3f8a2cb54be57ff6!2sPrimo%20Smart%20Salon!5e0!3m2!1sen!2sin!4v1720198472937!5m2!1sen!2sin"
+      width="100%"
+      height="400"
+      style={{ border: 0, borderRadius: "12px" }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</section>
+
       {/* Footer */}
-      <footer style={styles.footer}>
+      {/* <footer style={styles.footer}>
         © {new Date().getFullYear()} Bhanu Homeo Clinic. All rights reserved.
-      </footer>
+      </footer> */}
     </div>
   );
 };
@@ -213,6 +258,66 @@ const styles = {
     fontSize: "0.95rem",
     marginTop: "40px",
   },
-};
+  testimonialScrollWrapper: {
+    overflowX: "auto",
+    paddingBottom: "10px",
+    scrollbarWidth: "thin",
+  },
+  
+  testimonialScrollInner: {
+    display: "flex",
+    gap: "20px",
+    minWidth: "600px",
+    padding: "10px 0",
+  },
+  
+  testimonialContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: "30px",
+    marginTop: "30px",
+  },
+  testimonialBox: {
+    background: "#e0f2fe",
+    borderRadius: "12px",
+    padding: "20px",
+    maxWidth: "300px",
+    boxShadow: "0 5px 15px rgba(0,0,0,0.05)",
+    textAlign: "left",
+  },
+  testimonialText: {
+    fontStyle: "italic",
+    color: "#334155",
+    marginBottom: "10px",
+  },
+  testimonialAuthor: {
+    fontWeight: "600",
+    color: "#1e3a8a",
+  },
+  testimonialStars: {
+    color: "#f59e0b",
+    marginTop: "5px",
+  },
+  mapContainer: {
+    maxWidth: "900px",
+    margin: "0 auto",
+    marginTop: "20px",
+    borderRadius: "12px",
+    overflow: "hidden",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+  },
+  marqueeContainer: {
+    overflow: "hidden",
+    width: "100%",
+    marginTop: "30px",
+  },
+  
+  marqueeContent: {
+    display: "flex",
+    gap: "30px",
+    animation: "scrollLeft 20s linear infinite",
+  },
+}
 
 export default Home;

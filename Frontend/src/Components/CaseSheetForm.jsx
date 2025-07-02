@@ -33,7 +33,8 @@ const initialCaseData = {
   familyHistory: "",
   personalHistory: {
     appetite: "",
-    cravingsAversions: "",
+    cravings: "",
+    Aversions: "",
     thirst: "",
     bowel: "",
     urine: "",
@@ -213,6 +214,25 @@ const CaseSheetForm = () => {
   };
 
   const generateSummary = async () => {
+    const skinImageBase64s = [];
+
+for (const complaint of caseData.chiefComplaints) {
+
+if (complaint.skinImage) {
+
+const base64 = await getBase64(complaint.skinImage);
+
+skinImageBase64s.push({
+
+label: complaint.complaint || "Skin Image",
+
+imageBase64: base64,
+
+});
+
+}
+
+}
     if (
       (!selectedRubrics || selectedRubrics.length === 0) &&
       (!caseData.chiefComplaints ||
@@ -237,7 +257,7 @@ const CaseSheetForm = () => {
       const response = await fetch(`${API_URL}/api/generatesummary`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...caseData, imageBase64 }),
+        body: JSON.stringify({ ...caseData, imageBase64,skinImages:skinImageBase64s, }),
       });
 
       const summaryData = await response.json();
@@ -698,9 +718,10 @@ ${brainData.next_best_remedies
           {[
             { label: "Appetite", name: "appetite" },
             {
-              label: "Cravings / Aversions",
-              name: "cravingsAversions",
+              label: "Cravings",
+              name: "cravings",
             },
+            { label: "Aversions", name: "Aversions" },
             { label: "Thirst", name: "thirst" },
             { label: "Bowel", name: "bowel" },
             { label: "Urine", name: "urine" },

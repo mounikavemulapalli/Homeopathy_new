@@ -1,8 +1,18 @@
 import React from "react";
 
+const styles = {
+  footer: {
+    padding: "20px",
+    textAlign: "center",
+    backgroundColor: "#e0f2fe",
+    fontSize: "0.95rem",
+    marginTop: "40px",
+  },
+};
+
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white text-center py-4 mt-10">
+    <footer style={styles.footer}>
       © {new Date().getFullYear()} Bhanu Homeo Clinic. All rights reserved.
     </footer>
   );
