@@ -33,7 +33,7 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.json());
+app.use(express.json({ limit: '100mb' }));
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 app.get("/", (req, res) => {
@@ -49,7 +49,7 @@ app.use("/api/followups", followupRoutes);
 app.use("/api/brain", brainRoutes);
 app.use("/api", analyzeRoutes);
 app.use("/api/generatesummary",generateSummaryRoute); 
-
+app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

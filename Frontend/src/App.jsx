@@ -10,16 +10,11 @@ import Navbar from "./pages/Navbar";
 import Footer from "./pages/Footer";
 function App() {
   return (
-    <Router>
-     {/* <Navbar /> */}
-{/* 
-      <Footer /> */}
-      
+    <Router>      
       <Routes>
         <Route path='/' element={<Hero />} />
         <Route path='/addcase' element={<CaseSheetForm />} />
         <Route path='/cases' element={<CasesList />} />
-    
         {/* other routes */}
       </Routes>
       <Footer />

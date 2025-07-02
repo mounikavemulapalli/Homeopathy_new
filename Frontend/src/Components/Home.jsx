@@ -210,11 +210,6 @@ const Home = () => {
   </div>
 </section>
 
-
-      {/* Footer */}
-      <footer className="bg-blue-100 text-center py-6 text-sm text-gray-600">
-        © {new Date().getFullYear()} Bhanu Homeo Clinic. All rights reserved.
-      </footer>
     </div>
   );
 };
