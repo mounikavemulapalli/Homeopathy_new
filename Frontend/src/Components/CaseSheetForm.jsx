@@ -29,7 +29,7 @@ const initialCaseData = {
     surgeriesInjuries: "",
     majorIllnesses: "",
   },
-  labInvestigation:"",
+  labInvestigation:{},
   familyHistory: "",
   personalHistory: {
     appetite: "",
@@ -65,6 +65,7 @@ const CaseSheetForm = () => {
   const [remedy, setRemedy] = useState("");
   const [miasm, setMiasm] = useState("");
   const [dosage, setDosage] = useState("");
+  const [labInput, setLabInput] = useState("");
   const [geminiReason, setGeminiReason] = useState("");
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -792,31 +793,37 @@ ${brainData.next_best_remedies
           placeholder="Doctor's observations"
         />
       </section>
-      <section className='case-section'>
-  <h3 className='case-section-title'>10. Lab Investigation</h3>
+      <section className="case-section">
+  <h3 className="case-section-title">10. Lab Investigation</h3>
 
-  {["Hemoglobin", "WBC", "Platelet Count"].map((testName) => (
-    <div className='case-form-group' key={testName}>
-      <label className='case-label'>{testName}</label>
-      <input
-        className='case-input'
-        type='number'
-        name={`labInvestigation.${testName}`}
-        value={caseData.labInvestigation?.[testName] || ""}
-        onChange={(e) =>
-          setCaseData({
-            ...caseData,
-            labInvestigation: {
-              ...caseData.labInvestigation,
-              [testName]: parseFloat(e.target.value) || "",
-            },
-          })
+  <textarea
+    className="case-textarea"
+    placeholder="Enter values like: Hb: 9.5, WBC: 12000, Thyroid: 2.1"
+    value={labInput}
+    onChange={(e) => {
+      const input = e.target.value;
+      setLabInput(input);
+
+      // Convert to object
+      const entries = input.split(",").map((pair) => pair.trim());
+      const labObj = {};
+
+      entries.forEach((entry) => {
+        const [key, value] = entry.split(":").map((item) => item.trim());
+        if (key && !isNaN(parseFloat(value))) {
+          labObj[key] = parseFloat(value);
         }
-        placeholder={`Enter ${testName} value`}
-      />
-    </div>
-  ))}
+      });
+
+      setCaseData({
+        ...caseData,
+        labInvestigation: labObj,
+      });
+    }}
+    rows={5}
+  />
 </section>
+
 
       {/* <div className='case-form-group'>
         <label className='case-label'>Rubric Suggestion (type to search)</label>
