@@ -11,62 +11,74 @@ const AboutUs = () => {
         <h2 className='about-heading'>About Bhanu Homeopathy</h2>
 
         <p className='about-description'>
-          At <strong>Bhanu Homeopathy</strong>, we are committed to providing
-          natural, gentle, and effective healing through the timeless science of
-          homeopathy. With years of experience and a compassionate approach, we
-          treat not just the disease, but the person as a whole.
+          At <strong>Bhanu Homeopathy</strong>, we provide natural, gentle, and
+          effective healing through the science of homeopathy. Our mission is to
+          offer holistic wellness by treating not just the symptoms, but the
+          root cause of disease.
         </p>
 
         <div className='about-content'>
           <div className='about-text'>
             <h3>Our Philosophy</h3>
             <p>
-              We believe in the body's natural ability to heal itself. Our
-              holistic treatments are personalized for every individual,
-              ensuring long-term wellness and harmony of mind, body, and spirit.
+              We believe in the body's natural healing ability. Our treatments
+              focus on enhancing that ability while understanding your physical,
+              emotional, and psychological needs.
             </p>
 
             <h3>Why Choose Us?</h3>
             <ul>
-              <li>Experienced and Certified Homeopathic Practitioners</li>
-              <li>Customized Treatment Plans</li>
-              <li>Safe for all ages – infants to elderly</li>
-              <li>Chronic and Acute Disease Management</li>
-              <li>Supportive and Confidential Environment</li>
-              <li>Affordable and Transparent Pricing</li>
-              <li>Comprehensive Family Healthcare</li>
+              <li>Certified Homeopathic Doctors with Years of Experience</li>
+              <li>Personalized Treatment Plans for Every Patient</li>
+              <li>Safe, Natural & Side-effect-free Remedies</li>
+              <li>Chronic & Acute Illness Expertise</li>
+              <li>Friendly, Confidential & Family-friendly Environment</li>
+              <li>Affordable Pricing and Long-Term Wellness Goals</li>
             </ul>
 
             <h3>Our Mission</h3>
             <p>
-              To provide accessible, affordable, and effective homeopathic care
-              that heals not just the symptoms but the root cause. We aim to
-              integrate homeopathy with modern practices to serve the community
-              with integrity and compassion.
+              To make homeopathy a go-to choice for wellness and healing across
+              all age groups by ensuring trusted and professional care rooted in
+              empathy, science, and tradition.
+            </p>
+
+            <h3>Our Vision</h3>
+            <p>
+              We envision a healthier society where holistic treatment is
+              valued, and natural healing is accessible to all. We aim to
+              promote awareness about homeopathy’s potential for sustainable
+              wellness.
             </p>
 
             <h3>Expertise</h3>
-            <p>
-              Our team has successfully treated a wide range of chronic and
-              acute conditions including:
-            </p>
+            <p>We have successfully managed and treated conditions like:</p>
             <ul>
-              <li>Skin Disorders (Eczema, Psoriasis, Acne)</li>
-              <li>Respiratory Illnesses (Asthma, Allergies)</li>
-              <li>Gastrointestinal Issues (IBS, Acidity)</li>
-              <li>Joint Pain & Arthritis</li>
-              <li>Children’s Health Issues</li>
-              <li>Stress, Anxiety & Sleep Disorders</li>
-              <li>Female Health & Menstrual Disorders</li>
+              <li>Skin Ailments – Eczema, Psoriasis, Acne</li>
+              <li>Respiratory Issues – Asthma, Allergic Rhinitis</li>
+              <li>Digestive Concerns – IBS, Indigestion, Acidity</li>
+              <li>Musculoskeletal Pain – Arthritis, Joint Pain</li>
+              <li>Childhood Conditions – Tonsillitis, Bedwetting</li>
+              <li>Mental Health – Anxiety, Sleeplessness, Stress</li>
+              <li>
+                Women's Health – PCOD, Irregular Cycles, Hormonal Imbalance
+              </li>
             </ul>
 
-            <h3>Patient-Centric Approach</h3>
+            <h3>Patient-Centric Care</h3>
             <p>
-              We understand that every patient is unique. That's why we spend
-              time to understand your lifestyle, medical history, and emotional
-              well-being before prescribing a remedy. Your comfort, privacy, and
-              healing are our top priorities.
+              We focus on building a deep understanding of our patients. From
+              the first consultation to follow-ups, our care is rooted in
+              empathy, active listening, and ongoing support.
             </p>
+
+            <div className='about-cta'>
+              <p>
+                Ready to begin your journey toward natural wellness?{" "}
+                <strong>Schedule a consultation today</strong> and experience
+                the Bhanu Homeopathy difference.
+              </p>
+            </div>
           </div>
 
           <div className='about-image'>
