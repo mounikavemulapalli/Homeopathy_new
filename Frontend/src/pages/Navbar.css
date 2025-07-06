@@ -1,4 +1,9 @@
-/* Base Reset */
+/**
+ * Base Reset
+ *
+ * @format
+ */
+
 * {
   margin: 0;
   padding: 0;
@@ -67,7 +72,7 @@
 }
 
 .navbar-links li a:hover {
-  color: #1d4ed8;
+  color: white;
 }
 
 /* Sign Up Button */
@@ -84,6 +89,7 @@
 
 .signup-btn:hover {
   background-color: #1e40af;
+  color: black;
 }
 
 /* Hamburger Menu (Mobile) */

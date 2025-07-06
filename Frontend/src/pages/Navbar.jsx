@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "../assets/Bhanulogo.png";
+import { Link } from "react-router-dom"; // Add this at the top
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
         {/* Links */}
         <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>
           <li>
-            <a href='/home'>Home</a>
+            <a href='/'>Home</a>
           </li>
           <li>
             <a href='/about'>About</a>
@@ -35,10 +36,13 @@ const Navbar = () => {
             <a href='/contact'>Contact</a>
           </li>
           <li>
-            <a href='/signin'>Signin</a>
+            <a href='/login'>Signin</a>
           </li>
+
           <li>
-            <button className='signup-btn'>Sign Up</button>
+            <Link to='/register' className='signup-btn'>
+              Sign Up
+            </Link>
           </li>
         </ul>
       </nav>

@@ -14,6 +14,8 @@ const brainRoutes = require("./routes/analyzeRoutes");
 const brainSearch = require("./routes/brainSearch");
 const analyzeRoutes = require("./routes/analyzeRoutes");
 const generateSummaryRoute = require("./routes/generate-summary");
+const imageDiagnosisRoute = require("./routes/imageDiagnosis");
+const authRoutes = require("./routes/authRoutes");
 dotenv.config();
 connectDB();
 
@@ -33,9 +35,9 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.json({ limit: '100mb' }));
+app.use(express.json({ limit: "100mb" }));
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
-
+app.use("/api/auth", authRoutes);
 app.get("/", (req, res) => {
   res.send("Hello from Bhanu CaseSheet backend");
 });
@@ -48,8 +50,9 @@ app.use("/api/followups", followupRoutes);
 // app.use("/api/brain", brainSearch);
 app.use("/api/brain", brainRoutes);
 app.use("/api", analyzeRoutes);
-app.use("/api/generatesummary",generateSummaryRoute); 
-app.use(express.urlencoded({ extended: true, limit: '100mb' }));
+app.use("/api/generatesummary", generateSummaryRoute);
+app.use("/api/diagnose", imageDiagnosisRoute);
+app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

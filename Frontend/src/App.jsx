@@ -10,6 +10,8 @@ import Footer from "./pages/Footer";
 import SkinAnalyzer from "./pages/SkinAnalyzer";
 import ContactUs from "./Components/contact";
 import AboutUs from "./Components/Aboutus";
+import Register from "./Components/Register";
+import Login from "./Components/Login";
 function App() {
   return (
     <Router>
@@ -21,6 +23,8 @@ function App() {
         <Route path='/cases' element={<CasesList />} />
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/about' element={<AboutUs />} />
+        <Route path='/Register' element={<Register />} />
+        <Route path='/Login' element={<Login />} />
         {/* other routes */}
       </Routes>
       <Footer />
