@@ -7,16 +7,20 @@ import CaseSheetForm from "./Components/CaseSheetForm";
 import CasesList from "./Components/CasesList";
 import Navbar from "./pages/Navbar";
 import Footer from "./pages/Footer";
-
+import SkinAnalyzer from "./pages/SkinAnalyzer";
+import ContactUs from "./Components/contact";
+import AboutUs from "./Components/Aboutus";
 function App() {
   return (
-    <Router>  
-      <Navbar />    
+    <Router>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Hero />} />
-        
+        <Route path='/image' element={<SkinAnalyzer />} />
         <Route path='/addcase' element={<CaseSheetForm />} />
         <Route path='/cases' element={<CasesList />} />
+        <Route path='/contact' element={<ContactUs />} />
+        <Route path='/about' element={<AboutUs />} />
         {/* other routes */}
       </Routes>
       <Footer />
