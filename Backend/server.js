@@ -32,8 +32,7 @@ app.use(
       "https://homeopathy-new.onrender.com",
       "https://homeopathy-eight.vercel.app",
       "https://homeopathy-6fnt.onrender.com",
-      "https://homeopathy-new.vercel.app",
-      "https://homeopathy-new.onrender.com",
+
       // Add your deployed frontend URLs here if needed
     ],
     credentials: true,
