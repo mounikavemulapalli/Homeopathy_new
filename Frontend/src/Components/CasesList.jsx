@@ -50,6 +50,45 @@ const CasesList = () => {
   const indexOfFirst = indexOfLast - casesPerPage;
   const currentCases = filteredCases.slice(indexOfFirst, indexOfLast);
   const totalPages = Math.ceil(filteredCases.length / casesPerPage);
+  const addComplaint = () => {
+    const updated = [
+      ...(selectedCase.chiefComplaints || []),
+      { complaint: "", duration: "", description: "" },
+    ];
+    setSelectedCase((prev) => ({ ...prev, chiefComplaints: updated }));
+  };
+
+  const updateComplaint = (index, key, value) => {
+    const updated = [...selectedCase.chiefComplaints];
+    updated[index][key] = value;
+    setSelectedCase((prev) => ({ ...prev, chiefComplaints: updated }));
+  };
+
+  const removeComplaint = (index) => {
+    const updated = [...selectedCase.chiefComplaints];
+    updated.splice(index, 1);
+    setSelectedCase((prev) => ({ ...prev, chiefComplaints: updated }));
+  };
+
+  const addPrescription = () => {
+    const updated = [
+      ...(selectedCase.prescription || []),
+      { remedyName: "", potency: "", dose: "", instructions: "" },
+    ];
+    setSelectedCase((prev) => ({ ...prev, prescription: updated }));
+  };
+
+  const updatePrescription = (index, key, value) => {
+    const updated = [...selectedCase.prescription];
+    updated[index][key] = value;
+    setSelectedCase((prev) => ({ ...prev, prescription: updated }));
+  };
+
+  const removePrescription = (index) => {
+    const updated = [...selectedCase.prescription];
+    updated.splice(index, 1);
+    setSelectedCase((prev) => ({ ...prev, prescription: updated }));
+  };
 
   const handleEditClick = (caseData) => {
     setSelectedCase(caseData);
@@ -75,7 +114,14 @@ const CasesList = () => {
 
   const handleFieldChange = (e) => {
     const { name, value } = e.target;
-    setSelectedCase((prev) => ({ ...prev, [name]: value }));
+    const objectFields = ["chiefComplaints", "pastHistory", "prescription"];
+
+    try {
+      const parsed = objectFields.includes(name) ? JSON.parse(value) : value;
+      setSelectedCase((prev) => ({ ...prev, [name]: parsed }));
+    } catch {
+      setSelectedCase((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSaveCase = async () => {
@@ -109,7 +155,7 @@ const CasesList = () => {
     setLoadingSummary(true);
     try {
       const res = await axios.post(
-        `${API_URL}/api/generate-summary`,
+        `${API_URL}/api/generatesummary`,
         selectedCase
       );
       setAiSummary(res.data.summary || "");
@@ -118,6 +164,11 @@ const CasesList = () => {
     } finally {
       setLoadingSummary(false);
     }
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedCase((prev) => ({ ...prev, faceImage: file }));
   };
 
   return (
@@ -196,68 +247,149 @@ const CasesList = () => {
       {/* Edit Modal */}
       {isModalOpen && selectedCase && (
         <Modal isOpen={isModalOpen} onClose={handleModalClose}>
-          <h3>Edit Case</h3>
+          <h3>Edit Case Sheet</h3>
           <form
             onSubmit={(e) => {
               e.preventDefault();
               handleSaveCase();
             }}
           >
-            {["name", "phone", "age", "gender", "symptoms", "remedyGiven"].map(
-              (field) => (
-                <div key={field}>
-                  <label>{field}:</label>
-                  <input
-                    name={field}
-                    value={selectedCase[field] || ""}
-                    onChange={handleFieldChange}
-                    type={field === "age" ? "number" : "text"}
-                  />
-                </div>
-              )
-            )}
-            <label>Date of Visit:</label>
+            <h4>Basic Details</h4>
             <input
-              type='date'
-              name='dateOfVisit'
-              value={
-                selectedCase.dateOfVisit
-                  ? new Date(selectedCase.dateOfVisit)
-                      .toISOString()
-                      .split("T")[0]
-                  : ""
-              }
+              name='name'
+              value={selectedCase.name || ""}
+              onChange={handleFieldChange}
+            />
+            <input
+              name='phone'
+              value={selectedCase.phone || ""}
+              onChange={handleFieldChange}
+            />
+            <input
+              name='age'
+              value={selectedCase.age || ""}
+              onChange={handleFieldChange}
+            />
+            <input
+              name='gender'
+              value={selectedCase.gender || ""}
               onChange={handleFieldChange}
             />
 
-            {/* AI Summary Button */}
-            <hr />
-            <h4>AI Suggestion</h4>
-            <button
-              type='button'
-              onClick={handleAISuggestion}
-              disabled={loadingSummary}
-              className='btn btn-info mb-2'
-            >
-              {loadingSummary ? "Generating..." : "Generate Summary"}
+            <h4>Chief Complaints</h4>
+            {(selectedCase.chiefComplaints || []).map((item, index) => (
+              <div key={index}>
+                <input
+                  placeholder='Complaint'
+                  value={item.complaint || ""}
+                  onChange={(e) =>
+                    updateComplaint(index, "complaint", e.target.value)
+                  }
+                />
+                <input
+                  placeholder='Duration'
+                  value={item.duration || ""}
+                  onChange={(e) =>
+                    updateComplaint(index, "duration", e.target.value)
+                  }
+                />
+                <input
+                  placeholder='Description'
+                  value={item.description || ""}
+                  onChange={(e) =>
+                    updateComplaint(index, "description", e.target.value)
+                  }
+                />
+                <button type='button' onClick={() => removeComplaint(index)}>
+                  🗑
+                </button>
+              </div>
+            ))}
+            <button type='button' onClick={addComplaint}>
+              + Add Complaint
             </button>
 
-            {/* Show summary */}
-            {aiSummary && (
-              <div className='mb-3'>
-                <label>
-                  <strong>AI Summary:</strong>
-                </label>
-                <textarea
-                  className='form-control'
-                  value={aiSummary}
-                  readOnly
-                  rows={6}
+            <h4>Prescriptions</h4>
+            {(selectedCase.prescription || []).map((item, index) => (
+              <div key={index}>
+                <input
+                  placeholder='Remedy'
+                  value={item.remedyName || ""}
+                  onChange={(e) =>
+                    updatePrescription(index, "remedyName", e.target.value)
+                  }
                 />
+                <input
+                  placeholder='Potency'
+                  value={item.potency || ""}
+                  onChange={(e) =>
+                    updatePrescription(index, "potency", e.target.value)
+                  }
+                />
+                <input
+                  placeholder='Dose'
+                  value={item.dose || ""}
+                  onChange={(e) =>
+                    updatePrescription(index, "dose", e.target.value)
+                  }
+                />
+                <input
+                  placeholder='Instructions'
+                  value={item.instructions || ""}
+                  onChange={(e) =>
+                    updatePrescription(index, "instructions", e.target.value)
+                  }
+                />
+                <button type='button' onClick={() => removePrescription(index)}>
+                  🗑
+                </button>
               </div>
-            )}
+            ))}
+            <button type='button' onClick={addPrescription}>
+              + Add Prescription
+            </button>
 
-            <div>
+            <h4>AI Tools 🧠</h4>
+            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+              <img
+                src='https://cdn-icons-png.flaticon.com/512/616/616408.png'
+                alt='Panda Icon'
+                style={{ width: "50px", height: "50px" }}
+              />
+              <button
+                type='button'
+                onClick={handleAISuggestion}
+                style={{
+                  background: "#4CAF50",
+                  color: "#fff",
+                  padding: "10px 20px",
+                  border: "none",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                }}
+              >
+                {loadingSummary ? "🧠 Thinking..." : "✨ Generate Summary"}
+              </button>
+            </div>
+
+            <div
+              style={{
+                background: "#f3f4f6",
+                padding: "10px",
+                borderRadius: "8px",
+                marginTop: "10px",
+                whiteSpace: "pre-wrap",
+                fontFamily: "monospace",
+                fontSize: "14px",
+                maxHeight: "300px",
+                overflowY: "auto",
+                border: "1px solid #ddd",
+              }}
+            >
+              {aiSummary || "AI summary will appear here..."}
+            </div>
+
+            <div style={{ marginTop: "20px" }}>
               <button type='submit'>Save</button>
               <button type='button' onClick={handleModalClose}>
                 Cancel
