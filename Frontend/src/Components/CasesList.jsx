@@ -1,10 +1,9 @@
 /** @format */
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Modal from "./Modal";
-
+import Loading from "../assets/loading.gif"
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 const CasesList = () => {
@@ -17,11 +16,22 @@ const CasesList = () => {
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const casesPerPage = 5;
-
+  const resetToNewComplaintOnly = () => {
+    setSelectedCase((prev) => ({
+      ...prev,
+      chiefComplaints: [
+        { complaint: "", duration: "", description: "" }
+      ],
+      aiRemedyGiven: "",
+      main_remedy: {},
+      next_best_remedies: []
+    }));
+    setAiSummary("");
+  };
   // AI summary state
   const [aiSummary, setAiSummary] = useState("");
   const [loadingSummary, setLoadingSummary] = useState(false);
-
+  const [loadingCases, setLoadingCases] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -30,6 +40,8 @@ const CasesList = () => {
         setFilteredCases(res.data);
       } catch (err) {
         toast.error("Failed to load cases.");
+      }finally {
+        setLoadingCases(false);
       }
     };
     fetchData();
@@ -112,18 +124,32 @@ const CasesList = () => {
     setAiSummary("");
   };
 
+  // const handleFieldChange = (e) => {
+  //   const { name, value } = e.target;
+  //   const objectFields = ["chiefComplaints", "pastHistory", "prescription"];
+
+  //   try {
+  //     const parsed = objectFields.includes(name) ? JSON.parse(value) : value;
+  //     setSelectedCase((prev) => ({ ...prev, [name]: parsed }));
+  //   } catch {
+  //     setSelectedCase((prev) => ({ ...prev, [name]: value }));
+  //   }
+  // };
   const handleFieldChange = (e) => {
     const { name, value } = e.target;
-    const objectFields = ["chiefComplaints", "pastHistory", "prescription"];
-
-    try {
-      const parsed = objectFields.includes(name) ? JSON.parse(value) : value;
-      setSelectedCase((prev) => ({ ...prev, [name]: parsed }));
-    } catch {
+    const path = name.split(".");
+    if (path.length === 2) {
+      setSelectedCase((prev) => ({
+        ...prev,
+        [path[0]]: {
+          ...prev[path[0]],
+          [path[1]]: value,
+        },
+      }));
+    } else {
       setSelectedCase((prev) => ({ ...prev, [name]: value }));
     }
   };
-
   const handleSaveCase = async () => {
     try {
       const res = await axios.put(
@@ -151,20 +177,95 @@ const CasesList = () => {
   };
 
   const handleAISuggestion = async () => {
-    if (!selectedCase) return;
+    if (!selectedCase || !selectedCase.chiefComplaints?.length) return;
+  
     setLoadingSummary(true);
+  
+    // Only use the latest complaint
+    const latestComplaint = selectedCase.chiefComplaints.at(-1); // last item
+    const tempCase = {
+      ...selectedCase,
+      chiefComplaints: [latestComplaint],
+    };
+  
     try {
-      const res = await axios.post(
-        `${API_URL}/api/generatesummary`,
-        selectedCase
-      );
+      const res = await axios.post(`${API_URL}/api/generatesummary`, tempCase);
       setAiSummary(res.data.summary || "");
+      setSelectedCase((prev) => ({
+        ...prev,
+        aiRemedyGiven: res.data?.geminiRemedy || "",
+        main_remedy: res.data?.main_remedy || {},
+        next_best_remedies: res.data?.next_best_remedies || [],
+      }));
     } catch (err) {
       toast.error("AI suggestion failed.");
     } finally {
       setLoadingSummary(false);
     }
   };
+  
+  const AIDetails = () => (
+    aiSummary && (
+      <div style={{ marginTop: "20px", backgroundColor: "#f9f9f9", padding: "20px", borderRadius: "8px" }}>
+        <h3 style={{ marginBottom: "10px" }}>🧠 AI Generated Analysis</h3>
+
+        <div style={{ marginBottom: "15px" }}>
+          <strong>Summary:</strong>
+          <p style={{ whiteSpace: "pre-wrap", marginTop: "5px" }}>{aiSummary}</p>
+        </div>
+
+        <div style={{ marginBottom: "15px" }}>
+           <strong>Remedy Suggested:</strong>
+           <ul>
+             <li>
+               <strong>
+                 {selectedCase.aiRemedyGiven || selectedCase.main_remedy?.remedyName || selectedCase.remedyGiven || "N/A"}
+               </strong>
+               {selectedCase.main_remedy?.reason && <>: {selectedCase.main_remedy.reason}</>}
+             </li>
+           </ul>
+         </div>
+
+        {(selectedCase.main_remedy?.name || selectedCase.remedyGiven) && (
+  <div style={{ marginBottom: "15px" }}>
+    <strong>old Remedy prescribed:</strong>
+    <ul>
+      <li>
+        <strong>{selectedCase.main_remedy?.name || selectedCase.remedyGiven}</strong>
+        {selectedCase.main_remedy?.reason && <>: {selectedCase.main_remedy.reason}</>}
+      </li>
+    </ul>
+  </div>
+)}
+
+
+        {selectedCase.main_remedy?.key_symptoms?.length > 0 && (
+          <div style={{ marginBottom: "15px" }}>
+            <strong>Key Symptoms:</strong>
+            <ul>
+              {selectedCase.main_remedy.key_symptoms.map((symptom, i) => (
+                <li key={i}>{symptom}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {selectedCase.next_best_remedies?.length > 0 && (
+          <div>
+            <strong>Next Best Remedies:</strong>
+            <ul>
+              {selectedCase.next_best_remedies.map((remedy, i) => (
+                <li key={i}>
+                  <strong>{remedy.name}</strong>: {remedy.reason}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    )
+  );
+
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -275,7 +376,30 @@ const CasesList = () => {
               value={selectedCase.gender || ""}
               onChange={handleFieldChange}
             />
-
+            <input
+  name="maritalStatus"
+  placeholder="Marital Status"
+  value={selectedCase.maritalStatus || ""}
+  onChange={handleFieldChange}
+/>
+<input
+  name="occupation"
+  placeholder="Occupation"
+  value={selectedCase.occupation || ""}
+  onChange={handleFieldChange}
+/>
+<input
+  name="address"
+  placeholder="Address"
+  value={selectedCase.address || ""}
+  onChange={handleFieldChange}
+/>
+<input
+  name="dateOfVisit"
+  type="date"
+  value={selectedCase.dateOfVisit?.slice(0, 10) || ""}
+  onChange={handleFieldChange}
+/>
             <h4>Chief Complaints</h4>
             {(selectedCase.chiefComplaints || []).map((item, index) => (
               <div key={index}>
@@ -300,7 +424,67 @@ const CasesList = () => {
                     updateComplaint(index, "description", e.target.value)
                   }
                 />
-                <button type='button' onClick={() => removeComplaint(index)}>
+                <h4>History of Present Illness</h4>
+<textarea
+  name="historyPresentIllness"
+  value={selectedCase.historyPresentIllness || ""}
+  onChange={handleFieldChange}
+/>
+<h4>Past History</h4>
+<input
+  name="pastHistory.childhoodDiseases"
+  placeholder="Childhood Diseases"
+  value={selectedCase.pastHistory?.childhoodDiseases || ""}
+  onChange={handleFieldChange}
+/>
+<input
+  name="pastHistory.surgeriesInjuries"
+  placeholder="Surgeries/Injuries"
+  value={selectedCase.pastHistory?.surgeriesInjuries || ""}
+  onChange={handleFieldChange}
+/>
+<input
+  name="pastHistory.majorIllnesses"
+  placeholder="Major Illnesses"
+  value={selectedCase.pastHistory?.majorIllnesses || ""}
+  onChange={handleFieldChange}
+/>
+<h4>Family History</h4>
+<textarea
+  name="familyHistory"
+  value={selectedCase.familyHistory || ""}
+  onChange={handleFieldChange}
+/>
+<h4>Personal History</h4>
+{Object.keys(selectedCase.personalHistory || {}).map((key) => (
+  <input
+    key={key}
+    name={`personalHistory.${key}`}
+    placeholder={key.charAt(0).toUpperCase() + key.slice(1)}
+    value={selectedCase.personalHistory[key] || ""}
+    onChange={handleFieldChange}
+  />
+))}
+<h4>Lab Investigation</h4>
+<textarea
+  name="labInvestigation"
+  value={JSON.stringify(selectedCase.labInvestigation || {})}
+  onChange={handleFieldChange}
+/>
+<h4>General Remarks</h4>
+<textarea
+  name="generalRemarks"
+  value={selectedCase.generalRemarks || ""}
+  onChange={handleFieldChange}
+/>
+
+<h4>Observations By Doctor</h4>
+<textarea
+  name="observationsByDoctor"
+  value={selectedCase.observationsByDoctor || ""}
+  onChange={handleFieldChange}
+/>
+ <button type='button' onClick={() => removeComplaint(index)}>
                   🗑
                 </button>
               </div>
@@ -308,7 +492,6 @@ const CasesList = () => {
             <button type='button' onClick={addComplaint}>
               + Add Complaint
             </button>
-
             <h4>Prescriptions</h4>
             {(selectedCase.prescription || []).map((item, index) => (
               <div key={index}>
@@ -351,11 +534,13 @@ const CasesList = () => {
 
             <h4>AI Tools 🧠</h4>
             <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <img
-                src='https://cdn-icons-png.flaticon.com/512/616/616408.png'
-                alt='Panda Icon'
-                style={{ width: "50px", height: "50px" }}
-              />
+              {loadingSummary && (
+                <img
+                  src={Loading}
+                  alt='Thinking...' // Changed alt text to reflect thinking
+                  style={{ width: "350px", height: "350px", verticalAlign: "middle" }}
+                />
+              )}
               <button
                 type='button'
                 onClick={handleAISuggestion}
@@ -368,7 +553,7 @@ const CasesList = () => {
                   cursor: "pointer",
                 }}
               >
-                {loadingSummary ? "🧠 Thinking..." : "✨ Generate Summary"}
+                ✨ Generate Summary
               </button>
             </div>
 
@@ -386,7 +571,7 @@ const CasesList = () => {
                 border: "1px solid #ddd",
               }}
             >
-              {aiSummary || "AI summary will appear here..."}
+              {AIDetails()}
             </div>
 
             <div style={{ marginTop: "20px" }}>
@@ -509,3 +694,5 @@ const CasesList = () => {
 };
 
 export default CasesList;
+
+  

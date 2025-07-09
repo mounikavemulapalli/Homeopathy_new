@@ -37,9 +37,7 @@ const Login = () => {
         setMessage("Login successful!");
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(data.user));
-
-        // optional redirect
-        // window.location.href = '/dashboard';
+        window.location.href = '/cases';
       } else {
         setMessage(data.msg || "Invalid credentials");
       }

@@ -6,7 +6,7 @@
 
 // const API_KEY = process.env.GEMINI_API_KEY; // Set this in .env file or replace with actual key
 // const genAI = new GoogleGenerativeAI(API_KEY);
-// const model = genAI.getGenerativeModel({ model: "models/gemini-1.5-flash" });
+// const model = genAI.getGenerativeModel({ model: "models/gemini-2.5-flash-lite-preview-06-17" });
 
 // function buildPromptFromCaseData(caseData) {
 //   const complaints = (caseData.chiefComplaints || [])
@@ -90,7 +90,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const API_KEY = process.env.GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
-const model = genAI.getGenerativeModel({ model: "models/gemini-1.5-flash" });
+const model = genAI.getGenerativeModel({ model: "models/gemini-2.5-flash-lite-preview-06-17" });
 
 function buildPromptFromCaseData(caseData) {
   const complaints = (caseData.chiefComplaints || [])

@@ -12,6 +12,7 @@ import ContactUs from "./Components/contact";
 import AboutUs from "./Components/Aboutus";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
+
 function App() {
   return (
     <Router>
@@ -25,6 +26,7 @@ function App() {
         <Route path='/about' element={<AboutUs />} />
         <Route path='/Register' element={<Register />} />
         <Route path='/Login' element={<Login />} />
+       
         {/* other routes */}
       </Routes>
       <Footer />

@@ -82,13 +82,13 @@
 //     // Use Gemini Vision model if image is provided
 //     let result;
 //     if (caseData.imageBase64) {
-//       const model = genAI.getGenerativeModel({ model: "models/gemini-1.5-flash" });
+//       const model = genAI.getGenerativeModel({ model: "models/gemini-2.5-flash-lite-preview-06-17" });
 //       result = await model.generateContent([
 //         { text: prompt },
 //         { inlineData: { mimeType: "image/jpeg", data: caseData.imageBase64 } }
 //       ]);
 //     } else {
-//       const model = genAI.getGenerativeModel({ model: "models/gemini-1.5-flash" });
+//       const model = genAI.getGenerativeModel({ model: "models/gemini-2.5-flash-lite-preview-06-17" });
 //       result = await model.generateContent(prompt);
 //     }
 //     const summary = result.response.text();
@@ -188,7 +188,7 @@ ${
 }
     `;
 
-    const model = genAI.getGenerativeModel({ model: "models/gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "models/gemini-2.5-flash-lite-preview-06-17" });
 
     let result;
     if (caseData.imageBase64) {
