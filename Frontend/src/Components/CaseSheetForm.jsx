@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import "./casestyles.css";
+import SkinAnalyzer from "../pages/SkinAnalyzer"; // Assuming SkinAnalyzer.jsx is in the same directory
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
@@ -53,7 +54,7 @@ const initialCaseData = {
   image: null,
 };
 
-const CaseSheetForm = () => {
+const CaseSheetForm = ({ existingCaseData }) => {
   const [submittedData, setSubmittedData] = useState(null);
   const [caseData, setCaseData] = useState(initialCaseData);
   const [aiSummary, setAiSummary] = useState("");
@@ -85,8 +86,7 @@ const CaseSheetForm = () => {
     }
     setCaseData({ ...caseData, chiefComplaints: updatedComplaints });
   };
-const handleAnalyzeSkinForComplaint = async (index) => {
-    const imageFile = caseData.chiefComplaints[index].skinImage;
+const handleAnalyzeSkinForComplaint = async (index, imageFile) => {
     if (!imageFile) {
       alert("Please upload a skin image first.");
       return;
@@ -642,17 +642,18 @@ ${brainData.next_best_remedies
               </div>
               <div className='case-form-group'>
                 <label className='case-label'>Skin Image</label>
-                <input
-                  type='file'
-                  accept='image/*'
-                  name='skinImage'
-                  onChange={(e) => handleChiefComplaintChange(index, e)}
+                <SkinAnalyzer
+                  imageFile={complaint.skinImage}
+                  onImageChange={(file) =>
+                    handleChiefComplaintChange(index, {
+                      target: { name: "skinImage", files: [file] },
+                    })
+                  }
+                  onAnalyze={(imageFile) =>
+                    handleAnalyzeSkinForComplaint(index, imageFile)
+                  }
+                  analysisResult={skinAnalysisResults[index]}
                 />
-                <p style={{ fontSize: 12, color: "#555" }}>
-                  {complaint.skinImage
-                    ? complaint.skinImage.name
-                    : "No file chosen"}
-                </p>
               </div>
             </div>
           </div>
