@@ -29,7 +29,7 @@ const initialCaseData = {
     surgeriesInjuries: "",
     majorIllnesses: "",
   },
-  labInvestigation:{},
+  labInvestigation: {},
   familyHistory: "",
   personalHistory: {
     appetite: "",
@@ -67,6 +67,7 @@ const CaseSheetForm = () => {
   const [miasm, setMiasm] = useState("");
   const [dosage, setDosage] = useState("");
   const [labInput, setLabInput] = useState("");
+  const [skinAnalysisResults, setSkinAnalysisResults] = useState({});
   const [geminiReason, setGeminiReason] = useState("");
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -74,7 +75,7 @@ const CaseSheetForm = () => {
   };
 
   const handleChiefComplaintChange = (index, e) => {
-    const { name, value, files } = e.target; 
+    const { name, value, files } = e.target;
     const updatedComplaints = [...caseData.chiefComplaints];
 
     if (name === "skinImage" && files && files[0]) {
@@ -84,7 +85,35 @@ const CaseSheetForm = () => {
     }
     setCaseData({ ...caseData, chiefComplaints: updatedComplaints });
   };
+const handleAnalyzeSkinForComplaint = async (index) => {
+    const imageFile = caseData.chiefComplaints[index].skinImage;
+    if (!imageFile) {
+      alert("Please upload a skin image first.");
+      return;
+    }
 
+    const formData = new FormData();
+    formData.append("image", imageFile);
+
+    try {
+      const res = await fetch(`${API_URL}/api/diagnose/analyze-skin`, {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+      setSkinAnalysisResults((prev) => ({ ...prev, [index]: data }));
+    } catch (error) {
+      console.error("Skin analysis failed:", error);
+      setSkinAnalysisResults((prev) => ({
+        ...prev,
+        [index]: {
+          diagnosis: "Analysis failed",
+          explanation: "An error occurred while analyzing the image.",
+        },
+      }));
+    }
+  };
   const addChiefComplaint = () => {
     setCaseData({
       ...caseData,
@@ -112,7 +141,7 @@ const CaseSheetForm = () => {
     setCaseData({
       ...caseData,
       prescription: [
-        ...caseData.prescription, 
+        ...caseData.prescription,
         {
           date: "",
           remedyName: "",
@@ -216,23 +245,17 @@ const CaseSheetForm = () => {
   const generateSummary = async () => {
     const skinImageBase64s = [];
 
-for (const complaint of caseData.chiefComplaints) {
+    for (const complaint of caseData.chiefComplaints) {
+      if (complaint.skinImage) {
+        const base64 = await getBase64(complaint.skinImage);
 
-if (complaint.skinImage) {
+        skinImageBase64s.push({
+          label: complaint.complaint || "Skin Image",
 
-const base64 = await getBase64(complaint.skinImage);
-
-skinImageBase64s.push({
-
-label: complaint.complaint || "Skin Image",
-
-imageBase64: base64,
-
-});
-
-}
-
-}
+          imageBase64: base64,
+        });
+      }
+    }
     if (
       (!selectedRubrics || selectedRubrics.length === 0) &&
       (!caseData.chiefComplaints ||
@@ -257,14 +280,18 @@ imageBase64: base64,
       const response = await fetch(`${API_URL}/api/generatesummary`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...caseData, imageBase64,skinImages:skinImageBase64s, }),
+        body: JSON.stringify({
+          ...caseData,
+          imageBase64,
+          skinImages: skinImageBase64s,
+        }),
       });
 
       const summaryData = await response.json();
       const summaryText = summaryData.summary || "No summary generated.";
 
       const geminiRemedy =
-      summaryData.geminiRemedy || summaryData.remedy || null;
+        summaryData.geminiRemedy || summaryData.remedy || null;
       const geminiMiasm = summaryData.miasm || "N/A";
       const geminiReason = summaryData.summary || "No explanation provided";
       const geminiDosage = summaryData.dosage || "N/A";
@@ -344,17 +371,28 @@ Remedy: ${brainData?.main_remedy?.name || "N/A"}
 Miasm: ${brainData?.main_remedy?.miasm || "N/A"}
 Dosage: ${brainData?.main_remedy?.dosage || "N/A"}
 Explanation: ${brainData?.main_remedy?.reason || "No explanation provided"}
-Key Symptoms: ${brainData?.main_remedy?.key_symptoms?.join(", ") || "No key symptoms provided"}
+Key Symptoms: ${
+        brainData?.main_remedy?.key_symptoms?.join(", ") ||
+        "No key symptoms provided"
+      }
 
 🧠 AI Suggested Remedy
-Best Homeopathic Remedy and Dosage: ${geminiRemedy || (brainData?.main_remedy?.name || "N/A")} ${geminiDosage ? `(${geminiDosage})` : (brainData?.main_remedy?.dosage ? `(${brainData.main_remedy.dosage})` : "")}
+Best Homeopathic Remedy and Dosage: ${
+        geminiRemedy || brainData?.main_remedy?.name || "N/A"
+      } ${
+        geminiDosage
+          ? `(${geminiDosage})`
+          : brainData?.main_remedy?.dosage
+          ? `(${brainData.main_remedy.dosage})`
+          : ""
+      }
 
 ${
   brainData.next_best_remedies?.length > 0
     ? `🧠 Next Best Remedies:
 ${brainData.next_best_remedies
-        .map((r, i) => `${i + 1}. ${r.name} – ${r.reason || "No reason"}`)
-        .join("\n")}`
+  .map((r, i) => `${i + 1}. ${r.name} – ${r.reason || "No reason"}`)
+  .join("\n")}`
     : ""
 }
 `;
@@ -814,37 +852,36 @@ ${brainData.next_best_remedies
           placeholder="Doctor's observations"
         />
       </section>
-      <section className="case-section">
-  <h3 className="case-section-title">10. Lab Investigation</h3>
+      <section className='case-section'>
+        <h3 className='case-section-title'>10. Lab Investigation</h3>
 
-  <textarea
-    className="case-textarea"
-    placeholder="Enter values like: Hb: 9.5, WBC: 12000, Thyroid: 2.1"
-    value={labInput}
-    onChange={(e) => {
-      const input = e.target.value;
-      setLabInput(input);
+        <textarea
+          className='case-textarea'
+          placeholder='Enter values like: Hb: 9.5, WBC: 12000, Thyroid: 2.1'
+          value={labInput}
+          onChange={(e) => {
+            const input = e.target.value;
+            setLabInput(input);
 
-      // Convert to object
-      const entries = input.split(",").map((pair) => pair.trim());
-      const labObj = {};
+            // Convert to object
+            const entries = input.split(",").map((pair) => pair.trim());
+            const labObj = {};
 
-      entries.forEach((entry) => {
-        const [key, value] = entry.split(":").map((item) => item.trim());
-        if (key && !isNaN(parseFloat(value))) {
-          labObj[key] = parseFloat(value);
-        }
-      });
+            entries.forEach((entry) => {
+              const [key, value] = entry.split(":").map((item) => item.trim());
+              if (key && !isNaN(parseFloat(value))) {
+                labObj[key] = parseFloat(value);
+              }
+            });
 
-      setCaseData({
-        ...caseData,
-        labInvestigation: labObj,
-      });
-    }}
-    rows={5}
-  />
-</section>
-
+            setCaseData({
+              ...caseData,
+              labInvestigation: labObj,
+            });
+          }}
+          rows={5}
+        />
+      </section>
 
       {/* <div className='case-form-group'>
         <label className='case-label'>Rubric Suggestion (type to search)</label>
@@ -983,8 +1020,6 @@ ${brainData.next_best_remedies
             </table>
           </section>
         )}
-      
-
 
         <h3 className='case-section-title'>11. Prescription</h3>
         {caseData.prescription.map((prescription, index) => (
