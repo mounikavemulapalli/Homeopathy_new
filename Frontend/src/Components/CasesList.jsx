@@ -237,8 +237,6 @@ const CasesList = () => {
     </ul>
   </div>
 )}
-
-
         {selectedCase.main_remedy?.key_symptoms?.length > 0 && (
           <div style={{ marginBottom: "15px" }}>
             <strong>Key Symptoms:</strong>
@@ -273,7 +271,7 @@ const CasesList = () => {
   };
 
   return (
-    <div>
+    <div className="cases-wrapper">
       <h2>Cases</h2>
       <input
         type='text'
