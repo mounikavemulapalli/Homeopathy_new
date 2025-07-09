@@ -1,12 +1,26 @@
 /** @format */
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../assets/Bhanulogo.png";
-import { Link } from "react-router-dom"; // Add this at the top
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // ✅ Check login status from localStorage
+    const user = localStorage.getItem("user");
+    setIsLoggedIn(!!user);
+  }, []);
+
+  const handleLogout = () => {
+    // ✅ Clear auth info
+    localStorage.removeItem("user");
+    setIsLoggedIn(false);
+    navigate("/signin");
+  };
 
   return (
     <header className='navbar'>
@@ -26,24 +40,34 @@ const Navbar = () => {
 
         {/* Links */}
         <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>
-          <li>
-            <a href='/'>Home</a>
-          </li>
-          <li>
-            <a href='/about'>About</a>
-          </li>
-          <li>
-            <a href='/contact'>Contact</a>
-          </li>
-          <li>
-            <a href='/login'>Signin</a>
-          </li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
 
-          <li>
-            <Link to='/register' className='signup-btn'>
-              Sign Up
-            </Link>
-          </li>
+          {isLoggedIn ? (
+            <>
+              <li><Link to="/addcase">Add Case</Link></li>
+              <li><Link to="/cases">View Cases</Link></li>
+              <li>
+                <button
+                  onClick={handleLogout}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    color: "red",
+                    cursor: "pointer"
+                  }}
+                >
+                  Logout
+                </button>
+              </li>
+            </>
+          ) : (
+            <>
+              <li><Link to="/login">Sign In</Link></li>
+              <li><Link to="/register" className='signup-btn'>Sign Up</Link></li>
+            </>
+          )}
         </ul>
       </nav>
     </header>

@@ -7,8 +7,8 @@
 }
 
 .about-container {
-  max-width: 1320px;
-  margin: 0 auto;
+  max-width: 1420px;
+  margin: 10px auto;
 }
 
 .about-heading {
@@ -45,10 +45,12 @@
   justify-content: center;
   align-items: stretch;
   gap: 40px;
+  /* Ensure a row layout for larger screens */
+  flex-direction: row;
 }
 
 .about-text {
-  flex: 1;
+  flex: 2; /* Give more space to text content */
   min-width: 300px;
   background: #f0f8f5;
   padding: 24px 30px;
@@ -89,27 +91,6 @@
   list-style-type: disc;
 }
 
-.about-image {
-  flex: 1;
-  min-width: 300px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  border: 3px solid #fdd835;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.about-image img:hover {
-  transform: scale(1.02);
-}
 
 .about-cta {
   margin-top: 20px;

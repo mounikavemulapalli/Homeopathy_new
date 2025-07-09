@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/doctor.jpg";
+import logo from "../assets/doctor1.jpg";
 import logo1 from "../assets/Bhanulogo.png";
 const Home = () => {
   return (
@@ -16,14 +16,14 @@ const Home = () => {
             Combining traditional homeopathy with modern tools to provide holistic care that works. 
             7+ years of service to over 10,000 satisfied patients.
           </p>
-          <div style={styles.heroButtons}>
+          {/* <div style={styles.heroButtons}>
             <Link to="/addcase" style={{ ...styles.button, backgroundColor: "#4f46e5" }}>
               ➕ Add New Case
             </Link>
             <Link to="/cases" style={{ ...styles.button, backgroundColor: "#10b981" }}>
               📋 View All Cases
             </Link>
-          </div>
+          </div> */}
         </div>
         <div style={styles.heroRight}>
           <img

@@ -2,7 +2,7 @@
 
 import React from "react";
 import "./AboutUs.css";
-import doctor from "../assets/doctor.jpg";
+
 
 const AboutUs = () => {
   return (
@@ -81,9 +81,7 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <div className='about-image'>
-            <img src={doctor} alt='Bhanu Homeopathy Clinic' />
-          </div>
+          
         </div>
       </div>
     </section>
