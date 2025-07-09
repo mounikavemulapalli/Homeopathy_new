@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import "./casestyles.css";
 import SkinAnalyzer from "../pages/SkinAnalyzer"; // Assuming SkinAnalyzer.jsx is in the same directory
+import Loading from "../assets/loading.gif";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
@@ -924,18 +925,34 @@ ${brainData.next_best_remedies
       {/* Prescription */}
       <section className='case-section'>
         {/* AI Summary */}
-        <div style={{ marginTop: "20px" }}>
-          <button
-            type='button'
-            style={{ backgroundColor: "#ffc107", color: "#333" }}
-            onClick={generateSummary}
-            disabled={loadingSummary}
-          >
-            {loadingSummary
-              ? "Generating AI Summary..."
-              : "Generate AI Summary"}
-          </button>
-        </div>
+        <div style={{ marginTop: "20px", display: "flex", alignItems: "center", gap: "12px" }}>
+  {loadingSummary && (
+    <img
+      src={Loading}
+      alt='Loading...'
+      style={{ width: "124px", height: "124px" }}
+    />
+  )}
+
+  <button
+    type='button'
+    style={{
+      backgroundColor: "#ffc107",
+      color: "#333",
+      padding: "8px 16px",
+      border: "none",
+      borderRadius: "4px",
+      cursor: loadingSummary ? "not-allowed" : "pointer",
+      opacity: loadingSummary ? 0.7 : 1,
+    }}
+    onClick={generateSummary}
+    disabled={loadingSummary}
+  >
+    {loadingSummary ? "Generating AI Summary..." : "Generate AI Summary"}
+  </button>
+</div>
+
+
 
         {aiSummary && (
           <div
