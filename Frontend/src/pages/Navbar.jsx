@@ -19,7 +19,7 @@ const Navbar = () => {
     // ✅ Clear auth info
     localStorage.removeItem("user");
     setIsLoggedIn(false);
-    navigate("/signin");
+    navigate("/login");
   };
 
   return (
