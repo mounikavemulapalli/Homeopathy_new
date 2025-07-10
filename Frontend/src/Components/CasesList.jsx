@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import Modal from "./Modal";
 import Loading from "../assets/loading.gif";
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
-
 const CasesList = () => {
   const [cases, setCases] = useState([]);
   const [filteredCases, setFilteredCases] = useState([]);
