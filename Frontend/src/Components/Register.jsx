@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import "./Auth.css";
-
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 const Register = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -23,7 +23,7 @@ const Register = () => {
     setSuccess(false);
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+      const res = await fetch(`${API_URL}/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
