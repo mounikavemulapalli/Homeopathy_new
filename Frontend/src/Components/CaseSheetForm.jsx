@@ -642,7 +642,7 @@ ${brainData.next_best_remedies
                 />
               </div>
               <div className='case-form-group'>
-                <label className='case-label'>Skin Image</label>
+                {/* <label className='case-label'>Skin Image</label> */}
                 <SkinAnalyzer
                   imageFile={complaint.skinImage}
                   onImageChange={(file) =>
