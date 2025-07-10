@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Modal from "./Modal";
-import Loading from "../assets/loading.gif"
+import Loading from "../assets/loading.gif";
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 const CasesList = () => {
