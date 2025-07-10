@@ -15,11 +15,11 @@ const FollowUpPage = () => {
     const fetchCasesAndFollowUps = async () => {
       setLoading(true);
       try {
-        const casesRes = await fetch("http://localhost:5000/api/cases");
+        const casesRes = await fetch(`${API_URL}/api/cases`);
         const casesData = await casesRes.json();
         setCases(casesData);
   
-        const followUpsRes = await fetch("http://localhost:5000/api/followups");
+        const followUpsRes = await fetch(`${API_URL}/api/followups`);
         const followUpsData = await followUpsRes.json();
         setFollowUps(followUpsData);
   
@@ -51,7 +51,7 @@ const FollowUpPage = () => {
   
 
   const handleAddFollowUp = (data) => {
-    fetch("http://localhost:5000/api/followups", {
+    fetch("${API_URL}/api/followups", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -68,7 +68,7 @@ const FollowUpPage = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this follow-up?")) return;
     try {
-      await fetch(`http://localhost:5000/api/followups/${id}`, {
+      await fetch(`${API_URL}/api/followups/${id}`, {
         method: "DELETE",
       });
       setFollowUps((prev) => prev.filter((f) => f._id !== id));
