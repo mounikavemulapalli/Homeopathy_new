@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
-
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 const TodayFollowUps = () => {
   const [followUps, setFollowUps] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,7 +13,7 @@ const TodayFollowUps = () => {
   }, []);
 
   const fetchFollowUps = () => {
-    fetch("http://localhost:5000/api/followups/today")
+    fetch(`${API_URL}/api/followups/today`)
       .then((res) => res.json())
       .then((data) => {
         setFollowUps(data);
@@ -23,7 +23,7 @@ const TodayFollowUps = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Delete this follow-up?")) {
-      fetch(`http://localhost:5000/api/followups/${id}`, {
+      fetch(`${API_URL}/api/followups/${id}`, {
         method: "DELETE",
       }).then(() => fetchFollowUps());
     }
@@ -39,7 +39,7 @@ const TodayFollowUps = () => {
   };
 
   const handleEditSave = (id) => {
-    fetch(`http://localhost:5000/api/followups/${id}`, {
+    fetch(`${API_URL}/api/followups/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(editForm),

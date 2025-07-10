@@ -1,9 +1,4 @@
-/** @format */
-
-/** @format */
-
 import React, { useState, useEffect } from "react";
-
 const FollowUpForm = ({ onSubmit, cases = [], initialData }) => {
   const [formData, setFormData] = useState({
     casesId: "",
