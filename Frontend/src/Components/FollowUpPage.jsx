@@ -122,7 +122,7 @@
 import React, { useState, useEffect } from "react";
 import FollowUpForm from "./FollowUpForm";
 import FollowUps from "./FollowUps";
-import "./FollowUpPage.css";
+import "./followuppage.css";
 
 const FollowUpPage = () => {
   const [followUps, setFollowUps] = useState([]);
