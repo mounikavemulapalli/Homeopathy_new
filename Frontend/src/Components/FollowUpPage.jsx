@@ -1,200 +1,239 @@
-/** @format */
+// import React, { useState, useEffect } from "react";
+// import FollowUpForm from "./FollowUpForm";
+// import FollowUps from "./FollowUps";
+// import "./followuppage.css";
+// const FollowUpPage = () => {
+//   const [followUps, setFollowUps] = useState([]);
+//   const [cases, setCases] = useState([]);
+//   const [autoExpectedFollowUps, setAutoExpectedFollowUps] = useState([]);
+//   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().slice(0, 10));
 
+//   const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+//   useEffect(() => {
+//     fetchData();
+//   }, []);
+
+//   const fetchData = async () => {
+//     try {
+//       const [casesRes, followRes] = await Promise.all([
+//         fetch(`${API_URL}/api/cases`),
+//         fetch(`${API_URL}/api/followups`)
+//       ]);
+//       const [casesData, followData] = await Promise.all([
+//         casesRes.json(),
+//         followRes.json()
+//       ]);
+
+//       setCases(casesData);
+//       setFollowUps(followData);
+
+//       const autoFollowUps = casesData
+//         .filter((c) => c.dateOfVisit)
+//         .map((c) => {
+//           const expected = new Date(c.dateOfVisit);
+//           expected.setDate(expected.getDate() + 15);
+//           return {
+//             ...c,
+//             expectedFollowUpDate: expected.toISOString().split("T")[0],
+//             patientName: c.name,
+//             phoneNumber: c.phone
+//           };
+//         });
+
+//       setAutoExpectedFollowUps(autoFollowUps);
+//     } catch (err) {
+//       console.error("Failed to fetch data:", err);
+//     }
+//   };
+
+//   const handleAddFollowUp = async (data) => {
+//     try {
+//       const res = await fetch(`${API_URL}/api/followups`, {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify(data)
+//       });
+//       const saved = await res.json();
+//       setFollowUps((prev) => [...prev, saved]);
+//     } catch (err) {
+//       alert("Failed to add follow-up.");
+//     }
+//   };
+
+//   const todays = followUps.filter((f) => f.date === selectedDate);
+//   const existingTodayIds = todays.map((f) => f.casesId || f.patientId);
+//   const autoExpectedFiltered = autoExpectedFollowUps.filter(f => !existingTodayIds.includes(f._id));
+//   const autos = autoExpectedFollowUps.filter((a) => a.expectedFollowUpDate === selectedDate);
+
+//   return (
+//     <div className="followup-container">
+//       <FollowUpForm onSubmit={handleAddFollowUp} cases={cases} />
+
+//       <div className="max-w-3xl mx-auto mt-6">
+//         <label className="font-semibold">Select Date:</label>
+//         <input
+//           type="date"
+//           value={selectedDate}
+//           onChange={(e) => setSelectedDate(e.target.value)}
+//           className="block border p-2 rounded my-2"
+//         />
+
+//         <h3 className="text-xl font-bold mt-4 text-green-700">
+//           Follow-ups on {selectedDate}
+//         </h3>
+//         {todays.length === 0 ? (
+//           <p className="text-gray-500">No follow-ups.</p>
+//         ) : (
+//           <ul className="space-y-3">
+//             {todays.map((item) => (
+//               <li key={item._id} className="bg-green-100 p-3 rounded shadow">
+//                 <strong>{item.patientName}</strong> ({item.phoneNumber})<br />
+//                 Complaint: {item.complaint || item.complaints}<br />
+//                 Prescription: {item.prescription}<br />
+//                 Remarks: {item.remarks}
+//               </li>
+//             ))}
+//           </ul>
+//         )}
+
+//         <h3 className="text-xl font-bold mt-8 text-blue-700">
+//           Auto-Expected Follow-ups for {selectedDate} (15 days after visit)
+//         </h3>
+//         {autos.length === 0 ? (
+//           <p className="text-gray-500">No auto follow-ups.</p>
+//         ) : (
+//           <ul className="space-y-3">
+//             {autos.map((item) => (
+//               <li key={item._id} className="bg-blue-100 p-3 rounded shadow">
+//                 <strong>{item.patientName}</strong> ({item.phoneNumber})<br />
+//                 Visit Date: {item.dateOfVisit ? item.dateOfVisit.slice(0, 10) : "N/A"}<br />
+//                 Expected Complaint: {item.chiefComplaints?.[0]?.complaint || "N/A"}
+//               </li>
+//             ))}
+//           </ul>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default FollowUpPage;
 import React, { useState, useEffect } from "react";
 import FollowUpForm from "./FollowUpForm";
-import FollowUps from "./FollowUps"; // Corrected import
+import FollowUps from "./FollowUps";
+import "./FollowUpPage.css";
 
 const FollowUpPage = () => {
   const [followUps, setFollowUps] = useState([]);
-  const [cases, setCases] = useState([]); // Corrected Setcases to setCases
-  const [loading, setLoading] = useState(true);
+  const [cases, setCases] = useState([]);
   const [autoExpectedFollowUps, setAutoExpectedFollowUps] = useState([]);
-  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().slice(0, 10)); // State for selected date
+  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().slice(0, 10));
+
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
   useEffect(() => {
-    const fetchCasesAndFollowUps = async () => {
-      setLoading(true);
-      try {
-        const casesRes = await fetch(`${API_URL}/api/cases`);
-        const casesData = await casesRes.json();
-        setCases(casesData);
-  
-        const followUpsRes = await fetch(`${API_URL}/api/followups`);
-        const followUpsData = await followUpsRes.json();
-        setFollowUps(followUpsData);
-  
-        // ✅ Fix: Properly map and then set
-        const allAutoExpected = casesData
-          .filter((item) => item.dateOfVisit)
-          .map((item) => {
-            const visitDate = new Date(item.dateOfVisit);
-            visitDate.setDate(visitDate.getDate() + 15);
-            return {
-              ...item,
-              expectedFollowUpDate: visitDate.toISOString().split("T")[0],
-              patientName: item.name || "",
-              phoneNumber: item.phone || "",
-            };
-          });
-  
-        setAutoExpectedFollowUps(allAutoExpected); // ✅ Move here
-  
-      } catch (err) {
-        console.error("Error fetching data:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-  
-    fetchCasesAndFollowUps();
+    fetchData();
   }, []);
-  
 
-  const handleAddFollowUp = (data) => {
-    fetch("${API_URL}/api/followups", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((savedFollowUp) => {
-        setFollowUps((prev) => [...prev, savedFollowUp]);
-      })
-      .catch((err) => {
-        alert("Failed to save follow-up!");
-        console.error(err);
-      });
-  };
-  const handleDelete = async (id) => {
-    if (!window.confirm("Delete this follow-up?")) return;
+  const fetchData = async () => {
     try {
-      await fetch(`${API_URL}/api/followups/${id}`, {
-        method: "DELETE",
-      });
-      setFollowUps((prev) => prev.filter((f) => f._id !== id));
+      const [casesRes, followRes] = await Promise.all([
+        fetch(`${API_URL}/api/cases`),
+        fetch(`${API_URL}/api/followups`)
+      ]);
+      const [casesData, followData] = await Promise.all([
+        casesRes.json(),
+        followRes.json()
+      ]);
+
+      setCases(casesData);
+      setFollowUps(followData);
+
+      const autoFollowUps = casesData
+        .filter((c) => c.dateOfVisit)
+        .map((c) => {
+          const expected = new Date(c.dateOfVisit);
+          expected.setDate(expected.getDate() + 15);
+          return {
+            ...c,
+            expectedFollowUpDate: expected.toISOString().split("T")[0],
+            patientName: c.name,
+            phoneNumber: c.phone
+          };
+        });
+
+      setAutoExpectedFollowUps(autoFollowUps);
     } catch (err) {
-      alert("Delete failed!");
+      console.error("Failed to fetch data:", err);
     }
   };
-  
-  const handleEdit = (id) => {
-    const toEdit = followUps.find((f) => f._id === id);
-    if (toEdit) {
-      setEditingFollowUp(toEdit); // Create state to hold current item being edited
+
+  const handleAddFollowUp = async (data) => {
+    try {
+      const res = await fetch(`${API_URL}/api/followups`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+      const saved = await res.json();
+      setFollowUps((prev) => [...prev, saved]);
+    } catch (err) {
+      alert("Failed to add follow-up.");
     }
   };
-  
-  // Filter follow-ups based on selectedDate
-  const filteredTodaysFollowUps = followUps.filter(
-    (f) => f.date === selectedDate
-  );
 
-  const filteredAutoExpectedFollowUps = autoExpectedFollowUps.filter(
-    (item) => item.expectedFollowUpDate === selectedDate
+  const todays = followUps.filter((f) => f.date === selectedDate);
+  const existingTodayIds = todays.map((f) => f.casesId || f.patientId);
+  const autos = autoExpectedFollowUps.filter(
+    (a) => a.expectedFollowUpDate === selectedDate && !existingTodayIds.includes(a._id)
   );
-
-  if (loading) {
-    return <div className='text-center mt-8'>Loading cases...</div>;
-  }
 
   return (
-    <div>
+    <div className="followup-container">
       <FollowUpForm onSubmit={handleAddFollowUp} cases={cases} />
 
-      <div className='max-w-2xl mx-auto mt-8'>
-        <h2 className='text-lg font-bold mb-2 text-gray-800'>
-          Select Date for Follow-ups
-        </h2>
+      <div className="date-selector">
+        <label className="font-semibold">Select Date:</label>
         <input
-          type='date'
+          type="date"
           value={selectedDate}
           onChange={(e) => setSelectedDate(e.target.value)}
-          className='p-2 border border-gray-300 rounded-md mb-4'
         />
-
-        <h2 className='text-lg font-bold mb-2 text-green-700'>
-          Consultations for {selectedDate}
-        </h2>
-        {filteredTodaysFollowUps.length === 0 ? (
-          <div className='text-gray-500 text-center'>
-            No consultations for {selectedDate}.
-          </div>
-        ) : (
-          <ul className='space-y-4'>
-            {filteredTodaysFollowUps.map((item) => (
-              <li
-                key={item._id} // Assuming _id is the unique identifier
-                className='bg-green-50 shadow rounded p-4 border border-green-200'
-              >
-                <div className='flex justify-between items-center mb-2'>
-                  <span className='font-semibold'>
-                    {item.patientName}{/* Added patientName */}
-                    <span className='text-xs text-gray-500'>
-                      (ID: {item.casesId}) - {item.phoneNumber}{/* Added phoneNumber */}
-                    </span>
-                  </span>
-                  <span className='text-sm text-gray-500'>{item.date}</span>
-                </div>
-                <div>
-                  <strong>Complaint/Progress:</strong>
-                  <div className='ml-2'>{item.complaint}</div>
-                </div>
-                <div className='mt-2'>
-                  <strong>Prescription:</strong>
-                  <div className='ml-2'>{item.prescription}</div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        <h2 className='text-lg font-bold mb-2 mt-8 text-blue-700'>
-          Auto-Expected Follow-ups for {selectedDate} (15 days after visit)
-        </h2>
-        {filteredAutoExpectedFollowUps.length === 0 ? (
-          <div className='text-gray-500 text-center'>
-            No auto-expected follow-ups for {selectedDate}.
-          </div>
-        ) : (
-          <ul className='space-y-4'>
-            {filteredAutoExpectedFollowUps.map((item) => (
-              <li
-                key={item._id} // Assuming _id is the unique identifier for cases
-                className='bg-blue-50 shadow rounded p-4 border border-blue-200'
-              >
-                <div className='flex justify-between items-center mb-2'>
-                  <span className='font-semibold'>
-                    {item.patientName}{' '}
-                    <span className='text-xs text-gray-500'>
-                      (Case ID: {item.caseId}) - {item.phoneNumber}
-                    </span>
-                  </span>
-                  <span className='text-sm text-gray-500'>
-                    Visit Date: {item.dateOfVisit}
-                  </span>
-                </div>
-                <div>
-                  <strong>Complaint:</strong>
-                  <div className='ml-2'>
-                    {item.chiefComplaints && item.chiefComplaints.length > 0
-                      ? item.chiefComplaints[0].complaint
-                      : "N/A"}
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
       </div>
 
-      {/* Render the FollowUps component with all follow-ups for the selected date */}
-      <FollowUps
-        followUps={[
-          ...filteredTodaysFollowUps,
-          ...filteredAutoExpectedFollowUps,
-        ]}
-        title={`All Follow-ups for ${selectedDate}`}
-      />
+      <h3>Follow-ups on {selectedDate}</h3>
+      {todays.length === 0 ? (
+        <p className="text-muted">No follow-ups.</p>
+      ) : (
+        <ul className="followup-list">
+          {todays.map((item) => (
+            <li key={item._id} className="followup-card">
+              <strong>{item.patientName}</strong>
+              <span className="text-muted">{item.phoneNumber}</span>
+              <div><strong>Complaint:</strong> {item.complaint || item.complaints}</div>
+              <div><strong>Prescription:</strong> {item.prescription}</div>
+              <div><strong>Remarks:</strong> {item.remarks}</div>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <h3>Auto-Expected Follow-ups for {selectedDate}</h3>
+      {autos.length === 0 ? (
+        <p className="text-muted">No auto follow-ups.</p>
+      ) : (
+        <ul className="followup-list">
+          {autos.map((item) => (
+            <li key={item._id} className="followup-card auto-card">
+              <strong>{item.patientName}</strong>
+              <span className="text-muted">{item.phoneNumber}</span>
+              <div><strong>Visit Date:</strong> {item.dateOfVisit?.slice(0, 10) || "N/A"}</div>
+              <div><strong>Expected Complaint:</strong> {item.chiefComplaints?.[0]?.complaint || "N/A"}</div>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

@@ -30,10 +30,10 @@ function App() {
         <Route path='/about' element={<AboutUs />} />
         <Route path='/Register' element={<Register />} />
         <Route path='/Login' element={<Login />} />
-        <Route path='/followups' element={<FollowUps />} />
-        <Route path='/followup' element={<FollowUpForm />} />
-        <Route path='/followup/:id' element={<FollowUpPage />} />
-        <Route path='/todayfollowups' element={<TodayFollowUps />} />
+        <Route path="/followup" element={<FollowUpPage />} />
+<Route path="/followups/:id" element={<FollowUpForm />} />
+        <Route path="/todayfollowups" element={<TodayFollowUps />} />
+        <Route path="/followups" element={<FollowUps />} />
       </Routes>
       <Footer />
     </Router>
