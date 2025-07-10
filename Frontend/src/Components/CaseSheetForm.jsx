@@ -930,7 +930,7 @@ ${brainData.next_best_remedies
     <img
       src={Loading}
       alt='Loading...'
-      style={{ width: "224px", height: "124px" }}
+      style={{ width: "224px", height: "224px" }}
     />
   )}
 
