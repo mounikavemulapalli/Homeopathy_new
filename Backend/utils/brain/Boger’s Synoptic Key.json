@@ -4326,7 +4326,7 @@
       "medium": ["Ipec", "Sulph"],
       "low": ["Puls", "Rhus-t"]
     }
-  }, 
+  },
   {
     "rubric": "Circulation, increased",
     "grading": {
@@ -10438,7 +10438,7 @@
       "medium": ["Merc", "Acon"],
       "low": []
     }
-   },
+  },
   {
     "rubric": "Throat, burning",
     "grading": {
