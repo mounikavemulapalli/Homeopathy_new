@@ -1,5 +1,4 @@
 // /** @format */
-
 // const mongoose = require("mongoose");
 
 // const followUpSchema = new mongoose.Schema({
