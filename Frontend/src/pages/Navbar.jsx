@@ -3,7 +3,6 @@
 // import "./Navbar.css";
 // import logo from "../assets/Bhanulogo.png";
 // import { Link, useNavigate } from "react-router-dom";
-
 // const Navbar = () => {
 //   const [menuOpen, setMenuOpen] = useState(false);
 //   const [isLoggedIn, setIsLoggedIn] = useState(false);
