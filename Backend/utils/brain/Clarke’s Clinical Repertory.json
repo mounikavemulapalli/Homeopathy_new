@@ -1,0 +1,4426 @@
+[
+  {
+    "rubric": "ABORTION",
+    "subrubrics": [
+      {
+        "rubric": "threatened",
+        "grading": {
+          "high": ["Bell", "Cham", "Sec"],
+          "medium": ["Cimic", "Sabin"],
+          "low": ["Aletris", "Croc"]
+        }
+      },
+      {
+        "rubric": "habitual",
+        "grading": {
+          "high": ["Helon", "Kali-c"],
+          "medium": ["Sabin"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ABSCESS",
+    "subrubrics": [
+      {
+        "rubric": "suppurating",
+        "grading": {
+          "high": ["Hep", "Sil"],
+          "medium": ["Merc"],
+          "low": ["Fl-ac", "Calc-s"]
+        }
+      },
+      {
+        "rubric": "chronic",
+        "grading": {
+          "high": ["Sil"],
+          "medium": ["Sulph"],
+          "low": ["Calc"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ACIDITY",
+    "subrubrics": [
+      {
+        "rubric": "stomach",
+        "grading": {
+          "high": ["Rob", "Iris", "Nux-v"],
+          "medium": ["Phos", "Carb-v"],
+          "low": ["Puls", "Ars"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ACNE",
+    "subrubrics": [
+      {
+        "rubric": "vulgaris",
+        "grading": {
+          "high": ["Kali-br", "Jug-r"],
+          "medium": ["Sulph", "Calc-s"],
+          "low": ["Nat-m"]
+        }
+      },
+      {
+        "rubric": "indurated",
+        "grading": {
+          "high": ["Sil", "Hepar"],
+          "medium": [],
+          "low": ["Calc", "Merc"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ADDISON’S DISEASE",
+    "subrubrics": [
+      {
+        "rubric": "general",
+        "grading": {
+          "high": ["Ars", "Phos"],
+          "medium": ["Tub"],
+          "low": ["Adren", "Nat-m"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "AFTERPAINS",
+    "subrubrics": [
+      {
+        "rubric": "severe",
+        "grading": {
+          "high": ["Cham", "Cimic", "Bell"],
+          "medium": ["Puls", "Mag-p"],
+          "low": ["Sec"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "AGUE",
+    "subrubrics": [
+      {
+        "rubric": "with chill and heat alternately",
+        "grading": {
+          "high": ["Ars", "Nux-v"],
+          "medium": ["Ipec", "Nat-m"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "quotidian",
+        "grading": {
+          "high": ["Nat-m", "Chin"],
+          "medium": ["Cedr", "Eup-per"],
+          "low": ["Ars", "Carb-v"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ALOPECIA",
+    "subrubrics": [
+      {
+        "rubric": "areata",
+        "grading": {
+          "high": ["Fl-ac", "Graph"],
+          "medium": ["Phos", "Sep"],
+          "low": ["Lyc"]
+        }
+      },
+      {
+        "rubric": "with dandruff",
+        "grading": {
+          "high": ["Nat-m", "Phos"],
+          "medium": ["Thuj", "Vinc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "AMENORRHOEA",
+    "subrubrics": [
+      {
+        "rubric": "in young girls",
+        "grading": {
+          "high": ["Puls", "Sep"],
+          "medium": ["Graph", "Calc"],
+          "low": ["Nat-m"]
+        }
+      },
+      {
+        "rubric": "from cold",
+        "grading": {
+          "high": ["Puls", "Dulc"],
+          "medium": ["Calc", "Cimic"],
+          "low": ["Mag-p"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ANAEMIA",
+    "subrubrics": [
+      {
+        "rubric": "pernicious",
+        "grading": {
+          "high": ["Pic-ac", "Ferr", "China"],
+          "medium": ["Phos", "Nat-m"],
+          "low": ["Sec"]
+        }
+      },
+      {
+        "rubric": "after acute disease",
+        "grading": {
+          "high": ["China", "Ferr"],
+          "medium": ["Ars"],
+          "low": ["Calc"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ANGINA PECTORIS",
+    "subrubrics": [
+      {
+        "rubric": "paroxysmal pain",
+        "grading": {
+          "high": ["Acon", "Lat", "Spig"],
+          "medium": ["Cact", "Amyl", "Glon"],
+          "low": ["Tab", "Kalm"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ANKLE JOINT",
+    "subrubrics": [
+      {
+        "rubric": "pain, swelling",
+        "grading": {
+          "high": ["Led", "Rhus-t"],
+          "medium": ["Bry", "Apis"],
+          "low": ["Ruta"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ANTHRAX",
+    "subrubrics": [
+      {
+        "rubric": "malignant pustule",
+        "grading": {
+          "high": ["Anthracin", "Ars"],
+          "medium": ["Tarent"],
+          "low": ["Sil"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ANURIA",
+    "subrubrics": [
+      {
+        "rubric": "with dropsy",
+        "grading": {
+          "high": ["Apoc", "Ars"],
+          "medium": ["Dig", "Helleb"],
+          "low": ["Tereb"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "APHTHAE",
+    "subrubrics": [
+      {
+        "rubric": "in children",
+        "grading": {
+          "high": ["Borax", "Merc"],
+          "medium": ["Kali-chl", "Sulph-ac"],
+          "low": ["Sulph", "Nux-v"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "APPENDICITIS",
+    "subrubrics": [
+      {
+        "rubric": "early stage",
+        "grading": {
+          "high": ["Bry", "Bell"],
+          "medium": ["Merc", "Lach"],
+          "low": ["Rhus-t"]
+        }
+      },
+      {
+        "rubric": "with peritonitis",
+        "grading": {
+          "high": ["Lach", "Merc", "Ars"],
+          "medium": ["Sulph"],
+          "low": ["Colch"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ASCITES",
+    "subrubrics": [
+      {
+        "rubric": "dropsy of abdomen",
+        "grading": {
+          "high": ["Apoc", "Helleb", "Ars"],
+          "medium": ["Dig", "Sulph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ASTHENOPIA",
+    "subrubrics": [
+      {
+        "rubric": "weak vision with headache",
+        "grading": {
+          "high": ["Ruta", "Onosm", "Phos-ac"],
+          "medium": ["Jabor", "Nat-m"],
+          "low": ["Gels"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ASTHMA",
+    "subrubrics": [
+      {
+        "rubric": "at night",
+        "grading": {
+          "high": ["Ars", "Med", "Nux-v"],
+          "medium": ["Ipec", "Kali-c"],
+          "low": ["Grind", "Lob"]
+        }
+      },
+      {
+        "rubric": "from suppressed eruptions",
+        "grading": {
+          "high": ["Psor", "Sulph"],
+          "medium": ["Calc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ATHEROMA",
+    "subrubrics": [
+      {
+        "rubric": "vessels, degeneration",
+        "grading": {
+          "high": ["Baryta-m", "Plumb"],
+          "medium": ["Aur", "Con"],
+          "low": ["Phos"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "BACKACHE",
+    "subrubrics": [
+      {
+        "rubric": "lumbar region",
+        "grading": {
+          "high": ["Rhus-t", "Kali-c"],
+          "medium": ["Sep", "Bry"],
+          "low": ["Sulph", "Puls"]
+        }
+      },
+      {
+        "rubric": "during menstruation",
+        "grading": {
+          "high": ["Sep", "Cimic"],
+          "medium": ["Puls"],
+          "low": ["Lach"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "BALANITIS",
+    "subrubrics": [
+      {
+        "rubric": "inflammation of glans",
+        "grading": {
+          "high": ["Merc", "Canth"],
+          "medium": ["Thuja"],
+          "low": ["Sulph"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "BARBER’S ITCH",
+    "subrubrics": [
+      {
+        "rubric": "eruption on beard region",
+        "grading": {
+          "high": ["Tell", "Sep"],
+          "medium": ["Sulph", "Calc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "BILIOUSNESS",
+    "subrubrics": [
+      {
+        "rubric": "with headache",
+        "grading": {
+          "high": ["Nux-v", "Iris"],
+          "medium": ["Bry", "Puls"],
+          "low": ["Chel"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "BLEPHARITIS",
+    "subrubrics": [
+      {
+        "rubric": "with crusty lids",
+        "grading": {
+          "high": ["Graph", "Staph"],
+          "medium": ["Calc", "Petros"],
+          "low": ["Sulph"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "BOILS",
+    "subrubrics": [
+      {
+        "rubric": "recurrent",
+        "grading": {
+          "high": ["Sulph", "Hepar"],
+          "medium": ["Sil", "Calc-s"],
+          "low": ["Echin"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "BRIGHT’S DISEASE",
+    "subrubrics": [
+      {
+        "rubric": "chronic nephritis",
+        "grading": {
+          "high": ["Ars", "Phos", "Tereb"],
+          "medium": ["Apis", "Merc"],
+          "low": ["Kali-chl"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "BRONCHITIS",
+    "subrubrics": [
+      {
+        "rubric": "acute",
+        "grading": {
+          "high": ["Bry", "Phos"],
+          "medium": ["Ipec", "Spong"],
+          "low": ["Ant-t", "Sulph"]
+        }
+      },
+      {
+        "rubric": "chronic",
+        "grading": {
+          "high": ["Kali-bi", "Ant-t"],
+          "medium": ["Lob", "Carb-v"],
+          "low": ["Iod"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "BURNS",
+    "subrubrics": [
+      {
+        "rubric": "painful, superficial",
+        "grading": {
+          "high": ["Canth", "Urt-u"],
+          "medium": ["Caust"],
+          "low": ["Rhus-t"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CANCER",
+    "subrubrics": [
+      {
+        "rubric": "general",
+        "grading": {
+          "high": ["Con", "Carbo-an", "Hydrast"],
+          "medium": ["Thuja", "Ars"],
+          "low": ["Phos", "Kali-c"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CANCER OF BREAST",
+    "subrubrics": [
+      {
+        "rubric": "scirrhous",
+        "grading": {
+          "high": ["Con", "Carcinosin"],
+          "medium": ["Phyt", "Sil"],
+          "low": ["Hydrast"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CANCER OF STOMACH",
+    "subrubrics": [
+      {
+        "rubric": "painful",
+        "grading": {
+          "high": ["Ars", "Kali-bi"],
+          "medium": ["Phos", "Hydrast"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CATARRH",
+    "subrubrics": [
+      {
+        "rubric": "chronic nasal",
+        "grading": {
+          "high": ["Kali-bi", "Hydrast"],
+          "medium": ["Puls", "Sulph"],
+          "low": ["Nux-v"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CATARACT",
+    "subrubrics": [
+      {
+        "rubric": "senile",
+        "grading": {
+          "high": ["Calc", "Caust"],
+          "medium": ["Phos", "Sil"],
+          "low": ["Sep", "Naphth"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CEREBRAL CONGESTION",
+    "subrubrics": [
+      {
+        "rubric": "apoplectic tendency",
+        "grading": {
+          "high": ["Bell", "Glon", "Op"],
+          "medium": ["Nux-v", "Gels"],
+          "low": ["Phos"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CHAPPED HANDS",
+    "subrubrics": [
+      {
+        "rubric": "from cold weather",
+        "grading": {
+          "high": ["Petrol", "Graph"],
+          "medium": ["Calc", "Sulph"],
+          "low": ["Rhus-t"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CHEILITIS",
+    "subrubrics": [
+      {
+        "rubric": "cracked lips",
+        "grading": {
+          "high": ["Nat-m", "Graph"],
+          "medium": ["Sulph", "Petrol"],
+          "low": ["Nit-ac"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CHICKENPOX",
+    "subrubrics": [
+      {
+        "rubric": "eruption suppressed",
+        "grading": {
+          "high": ["Ant-t", "Sulph"],
+          "medium": ["Rhus-t"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CHILBLAINS",
+    "subrubrics": [
+      {
+        "rubric": "itching, bluish",
+        "grading": {
+          "high": ["Agar", "Petrol"],
+          "medium": ["Rhus-t", "Puls"],
+          "low": ["Sulph"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CHILLS",
+    "subrubrics": [
+      {
+        "rubric": "intermittent fever",
+        "grading": {
+          "high": ["Nat-m", "Ars", "Chin"],
+          "medium": ["Eup-per", "Nux-v"],
+          "low": ["Ipec", "Carb-v"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CHOKING",
+    "subrubrics": [
+      {
+        "rubric": "on swallowing food",
+        "grading": {
+          "high": ["Bell", "Ign", "Lach"],
+          "medium": ["Glon", "Ambra"],
+          "low": ["Caust"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CHOLERA",
+    "subrubrics": [
+      {
+        "rubric": "collapse stage",
+        "grading": {
+          "high": ["Camph", "Verat", "Ars"],
+          "medium": ["Cupr", "Sec"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CHOREA",
+    "subrubrics": [
+      {
+        "rubric": "in children",
+        "grading": {
+          "high": ["Agar", "Cimic", "Caust"],
+          "medium": ["Tarent", "Zinc"],
+          "low": ["Cupr"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CIRRHOSIS",
+    "subrubrics": [
+      {
+        "rubric": "of liver",
+        "grading": {
+          "high": ["Phos", "Card-m", "Chel"],
+          "medium": ["Merc", "Sulph"],
+          "low": ["Aur"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "COLIC",
+    "subrubrics": [
+      {
+        "rubric": "flatulent",
+        "grading": {
+          "high": ["Coloc", "Carb-v"],
+          "medium": ["Cham", "Lyc"],
+          "low": ["Nux-v"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "COLLAPSE",
+    "subrubrics": [
+      {
+        "rubric": "with coldness and weakness",
+        "grading": {
+          "high": ["Camph", "Verat", "Carb-v"],
+          "medium": ["Ars", "Sec"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CONSTIPATION",
+    "subrubrics": [
+      {
+        "rubric": "chronic",
+        "grading": {
+          "high": ["Nux-v", "Alum", "Bry"],
+          "medium": ["Op", "Sulph"],
+          "low": ["Graph"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CONSUMPTION",
+    "subrubrics": [
+      {
+        "rubric": "advanced stage",
+        "grading": {
+          "high": ["Phos", "Tub", "Sil"],
+          "medium": ["Sulph", "Calc"],
+          "low": ["Iod"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CONVULSIONS",
+    "subrubrics": [
+      {
+        "rubric": "in children",
+        "grading": {
+          "high": ["Bell", "Cham", "Cic"],
+          "medium": ["Cupr", "Zinc"],
+          "low": ["Gels"]
+        }
+      },
+      {
+        "rubric": "from teething",
+        "grading": {
+          "high": ["Cham", "Bell", "Cic"],
+          "medium": ["Zinc", "Calc"],
+          "low": ["Ign"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CORNS",
+    "subrubrics": [
+      {
+        "rubric": "painful, inflamed",
+        "grading": {
+          "high": ["Ant-c", "Ran-b", "Sil"],
+          "medium": ["Graph", "Sulph"],
+          "low": ["Nit-ac"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "COUGH",
+    "subrubrics": [
+      {
+        "rubric": "dry at night",
+        "grading": {
+          "high": ["Hyos", "Rumex", "Phos"],
+          "medium": ["Bell", "Con"],
+          "low": ["Nux-v"]
+        }
+      },
+      {
+        "rubric": "with expectoration in morning",
+        "grading": {
+          "high": ["Kali-bi", "Puls", "Hepar"],
+          "medium": ["Calc", "Lyc"],
+          "low": ["Sulph"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CRACKS",
+    "subrubrics": [
+      {
+        "rubric": "fingers",
+        "grading": {
+          "high": ["Petrol", "Graph"],
+          "medium": ["Sulph", "Nat-m"],
+          "low": ["Sep"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CROUP",
+    "subrubrics": [
+      {
+        "rubric": "membranous",
+        "grading": {
+          "high": ["Kali-bi", "Spong", "Hepar"],
+          "medium": ["Brom", "Acon"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "CYSTITIS",
+    "subrubrics": [
+      {
+        "rubric": "with burning urine",
+        "grading": {
+          "high": ["Canth", "Apis", "Equis"],
+          "medium": ["Sars", "Bell"],
+          "low": ["Nux-v"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "DEAFNESS",
+    "subrubrics": [
+      {
+        "rubric": "after catarrh",
+        "grading": {
+          "high": ["Kali-s", "Puls"],
+          "medium": ["Merc", "Sulph"],
+          "low": ["Calc"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "DEBILITY",
+    "subrubrics": [
+      {
+        "rubric": "after acute disease",
+        "grading": {
+          "high": ["China", "Phos-ac"],
+          "medium": ["Calc", "Ars"],
+          "low": ["Nux-v"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "DELIRIUM",
+    "subrubrics": [
+      {
+        "rubric": "in typhoid",
+        "grading": {
+          "high": ["Hyos", "Bell", "Stram"],
+          "medium": ["Op", "Murat-ac"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "DENTITION",
+    "subrubrics": [
+      {
+        "rubric": "difficult, painful",
+        "grading": {
+          "high": ["Cham", "Calc", "Bell"],
+          "medium": ["Cic", "Podoph"],
+          "low": ["Sil"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "DERMATITIS",
+    "subrubrics": [
+      {
+        "rubric": "eczema with itching",
+        "grading": {
+          "high": ["Sulph", "Graph", "Petrol"],
+          "medium": ["Mez", "Ars"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "DIARRHOEA",
+    "subrubrics": [
+      {
+        "rubric": "in children",
+        "grading": {
+          "high": ["Cham", "Calc", "Podoph"],
+          "medium": ["Ars", "Sulph"],
+          "low": ["Aloe"]
+        }
+      },
+      {
+        "rubric": "early morning",
+        "grading": {
+          "high": ["Aloe", "Sulph"],
+          "medium": ["Podoph", "Bry"],
+          "low": ["Phos"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "DIPHTHERIA",
+    "subrubrics": [
+      {
+        "rubric": "malignant",
+        "grading": {
+          "high": ["Merc-cy", "Lac-c", "Apis"],
+          "medium": ["Kali-bi", "Lach"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "DIZZINESS",
+    "subrubrics": [
+      {
+        "rubric": "on rising",
+        "grading": {
+          "high": ["Bry", "Gels", "Bell"],
+          "medium": ["Phos", "Nux-v"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "DROPSY",
+    "subrubrics": [
+      {
+        "rubric": "general",
+        "grading": {
+          "high": ["Helleb", "Ars", "Apoc"],
+          "medium": ["Dig", "China"],
+          "low": ["Tereb"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "DYSENTERY",
+    "subrubrics": [
+      {
+        "rubric": "with tenesmus",
+        "grading": {
+          "high": ["Merc", "Nux-v", "Colch"],
+          "medium": ["Aloe", "Ipec"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "DYSMENORRHOEA",
+    "subrubrics": [
+      {
+        "rubric": "membranous",
+        "grading": {
+          "high": ["Kreos", "Xanth", "Ustil"],
+          "medium": ["Cimic", "Sep"],
+          "low": ["Lach"]
+        }
+      },
+      {
+        "rubric": "with backache",
+        "grading": {
+          "high": ["Cimic", "Sep", "Puls"],
+          "medium": ["Bell", "Mag-p"],
+          "low": ["Lach"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "DYSPEPSIA",
+    "subrubrics": [
+      {
+        "rubric": "with flatulence",
+        "grading": {
+          "high": ["Carb-v", "Lyc", "China"],
+          "medium": ["Nux-v", "Puls"],
+          "low": ["Arg-n"]
+        }
+      },
+      {
+        "rubric": "from farinaceous food",
+        "grading": {
+          "high": ["Nat-m", "Calc", "Lyc"],
+          "medium": ["Puls"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "EARACHE",
+    "subrubrics": [
+      {
+        "rubric": "acute, with inflammation",
+        "grading": {
+          "high": ["Bell", "Cham", "Puls"],
+          "medium": ["Hepar", "Merc"],
+          "low": ["Kali-bi"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ECZEMA",
+    "subrubrics": [
+      {
+        "rubric": "behind ears",
+        "grading": {
+          "high": ["Graph", "Petrol"],
+          "medium": ["Mez", "Calc"],
+          "low": ["Sulph"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "EMACIATION",
+    "subrubrics": [
+      {
+        "rubric": "with good appetite",
+        "grading": {
+          "high": ["Iod", "Nat-m", "Abrot"],
+          "medium": ["Tub", "Lyc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ENURESIS",
+    "subrubrics": [
+      {
+        "rubric": "in children",
+        "grading": {
+          "high": ["Caust", "Sep", "Equis"],
+          "medium": ["Kreos", "Bell"],
+          "low": ["Sulph"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ENTERITIS",
+    "subrubrics": [
+      {
+        "rubric": "acute inflammation of bowels",
+        "grading": {
+          "high": ["Acon", "Bell", "Merc"],
+          "medium": ["Colch", "Ars"],
+          "low": ["Ipec"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "EPISTAXIS",
+    "subrubrics": [
+      {
+        "rubric": "at night",
+        "grading": {
+          "high": ["Bry", "Ham", "Phos"],
+          "medium": ["Nit-ac", "Kali-n"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "EPILEPSY",
+    "subrubrics": [
+      {
+        "rubric": "before menses",
+        "grading": {
+          "high": ["Cupr", "Calc", "Sep"],
+          "medium": ["Puls", "Lach"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "after fright",
+        "grading": {
+          "high": ["Op", "Acon", "Ign"],
+          "medium": ["Bell", "Hyos"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ERYSIPELAS",
+    "subrubrics": [
+      {
+        "rubric": "face, bright red, burning",
+        "grading": {
+          "high": ["Bell", "Apis", "Rhus-t"],
+          "medium": ["Canth", "Lach"],
+          "low": ["Sulph"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "EXANTHEMATA",
+    "subrubrics": [
+      {
+        "rubric": "eruption suppressed",
+        "grading": {
+          "high": ["Sulph", "Zinc", "Ant-t"],
+          "medium": ["Cupr", "Bry"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "EYE",
+    "subrubrics": [
+      {
+        "rubric": "inflammation of lids",
+        "grading": {
+          "high": ["Graph", "Merc", "Puls"],
+          "medium": ["Staph", "Sulph"],
+          "low": ["Petrol"]
+        }
+      },
+      {
+        "rubric": "lachrymation, acrid",
+        "grading": {
+          "high": ["Euphr", "Merc", "Ars"],
+          "medium": ["Sulph", "Calc"],
+          "low": ["All-c"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "FACE",
+    "subrubrics": [
+      {
+        "rubric": "neuralgia, right side",
+        "grading": {
+          "high": ["Mag-p", "Spig", "Bell"],
+          "medium": ["Coloc", "Verb"],
+          "low": ["Kalm"]
+        }
+      },
+      {
+        "rubric": "eruption on lips",
+        "grading": {
+          "high": ["Nat-m", "Graph", "Sep"],
+          "medium": ["Petrol", "Sulph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "FEAR",
+    "subrubrics": [
+      {
+        "rubric": "of death",
+        "grading": {
+          "high": ["Acon", "Ars", "Phos"],
+          "medium": ["Op", "Lach"],
+          "low": ["Gels"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "FEVER",
+    "subrubrics": [
+      {
+        "rubric": "intermittent, tertian",
+        "grading": {
+          "high": ["Nat-m", "Chin", "Ars"],
+          "medium": ["Ipec", "Eup-per"],
+          "low": ["Nux-v"]
+        }
+      },
+      {
+        "rubric": "typhoid",
+        "grading": {
+          "high": ["Bapt", "Mur-ac", "Rhus-t"],
+          "medium": ["Bry", "Gels"],
+          "low": ["Op"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "FLATULENCE",
+    "subrubrics": [
+      {
+        "rubric": "upper abdomen",
+        "grading": {
+          "high": ["Carb-v", "Lyc", "China"],
+          "medium": ["Arg-n", "Puls"],
+          "low": ["Nux-v"]
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "FRACTURES",
+    "subrubrics": [
+      {
+        "rubric": "delayed union",
+        "grading": {
+          "high": ["Symph", "Calc", "Sil"],
+          "medium": ["Fl-ac", "Ruta"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "GASTRITIS",
+    "subrubrics": [
+      {
+        "rubric": "acute",
+        "grading": {
+          "high": ["Ars", "Ipec", "Ant-c"],
+          "medium": ["Phos", "Nux-v"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "GIDDINESS",
+    "subrubrics": [
+      {
+        "rubric": "in the dark",
+        "grading": {
+          "high": ["Con", "Phos", "Calc"],
+          "medium": ["Gels", "Bell"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "GLANDULAR SWELLINGS",
+    "subrubrics": [
+      {
+        "rubric": "cold, indurated",
+        "grading": {
+          "high": ["Baryta-c", "Sil", "Merc"],
+          "medium": ["Calc", "Hepar"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "GONORRHOEA",
+    "subrubrics": [
+      {
+        "rubric": "thick yellow discharge",
+        "grading": {
+          "high": ["Cann-s", "Merc", "Puls"],
+          "medium": ["Sulph", "Thuja"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "GOUT",
+    "subrubrics": [
+      {
+        "rubric": "chronic, nodes in joints",
+        "grading": {
+          "high": ["Colch", "Led", "Lyc"],
+          "medium": ["Ant-c", "Urt-u"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "GUMS",
+    "subrubrics": [
+      {
+        "rubric": "bleeding easily",
+        "grading": {
+          "high": ["Merc", "Phos", "Carb-v"],
+          "medium": ["Kali-chl", "Nit-ac"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "spongy, receding",
+        "grading": {
+          "high": ["Merc", "Kali-chl", "Phos"],
+          "medium": ["Sil", "Fl-ac"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HAEMORRHAGE",
+    "subrubrics": [
+      {
+        "rubric": "bright red blood",
+        "grading": {
+          "high": ["Acon", "Ipec", "Phos"],
+          "medium": ["Ham", "Mill"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "dark, clotted",
+        "grading": {
+          "high": ["Croto-t", "Sulph", "China"],
+          "medium": ["Sec", "Kali-c"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HAEMORRHOIDS",
+    "subrubrics": [
+      {
+        "rubric": "bleeding piles",
+        "grading": {
+          "high": ["Ham", "Aesc", "Sulph"],
+          "medium": ["Nit-ac", "Phos"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "blind piles",
+        "grading": {
+          "high": ["Aesc", "Nux-v", "Sulph"],
+          "medium": ["Coll", "Aloe"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HEADACHE",
+    "subrubrics": [
+      {
+        "rubric": "morning on waking",
+        "grading": {
+          "high": ["Nux-v", "Bry", "Gels"],
+          "medium": ["Lach", "Sep"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "right side",
+        "grading": {
+          "high": ["Sanguin", "Bell", "Spig"],
+          "medium": ["Iris", "Gels"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "left side",
+        "grading": {
+          "high": ["Spig", "Sep", "Lach"],
+          "medium": ["Cycl", "Puls"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HEART",
+    "subrubrics": [
+      {
+        "rubric": "palpitation on least exertion",
+        "grading": {
+          "high": ["Phos", "Digitalis", "Gels"],
+          "medium": ["Calc", "Spig"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "hypertrophy with dilatation",
+        "grading": {
+          "high": ["Crataeg", "Digitalis", "Cactus"],
+          "medium": ["Adon-v", "Spig"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HEAT",
+    "subrubrics": [
+      {
+        "rubric": "flushes of",
+        "grading": {
+          "high": ["Lach", "Amyl-n", "Sulph"],
+          "medium": ["Sep", "Bell"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HEPATITIS",
+    "subrubrics": [
+      {
+        "rubric": "chronic, with jaundice",
+        "grading": {
+          "high": ["Chel", "Card-m", "Merc"],
+          "medium": ["Phos", "Bry"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HERPES",
+    "subrubrics": [
+      {
+        "rubric": "zoster (shingles)",
+        "grading": {
+          "high": ["Ran-b", "Mez", "Rhus-t"],
+          "medium": ["Sulph", "Lyc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HOARSENESS",
+    "subrubrics": [
+      {
+        "rubric": "worse in morning",
+        "grading": {
+          "high": ["Caust", "Carb-v", "Phos"],
+          "medium": ["Spong", "Bell"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HYSTERIA",
+    "subrubrics": [
+      {
+        "rubric": "globus hystericus",
+        "grading": {
+          "high": ["Ign", "Asaf", "Valer"],
+          "medium": ["Plb", "Mosch"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HYDROCELE",
+    "subrubrics": [
+      {
+        "rubric": "chronic, painless",
+        "grading": {
+          "high": ["Graph", "Sil", "Puls"],
+          "medium": ["Rhod", "Aur"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HYDROPHOBIA",
+    "subrubrics": [
+      {
+        "rubric": "early stage",
+        "grading": {
+          "high": ["Bell", "Hyos", "Stram"],
+          "medium": ["Lach", "Canth"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HYDROTHORAX",
+    "subrubrics": [
+      {
+        "rubric": "with oppression of chest",
+        "grading": {
+          "high": ["Ars", "Apoc", "Dig"],
+          "medium": ["Helleb", "Merc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HYPERTROPHY",
+    "subrubrics": [
+      {
+        "rubric": "of heart",
+        "grading": {
+          "high": ["Crataeg", "Cact", "Adon-v"],
+          "medium": ["Spig", "Kalm"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "HYSTERIC CONVULSIONS",
+    "subrubrics": [
+      {
+        "rubric": "with weeping",
+        "grading": {
+          "high": ["Ign", "Cimic", "Valer"],
+          "medium": ["Mosch", "Asaf"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "IMPOTENCE",
+    "subrubrics": [
+      {
+        "rubric": "with nervous exhaustion",
+        "grading": {
+          "high": ["Agn", "Ph-ac", "Calc"],
+          "medium": ["China", "Nux-v"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "INDIGESTION",
+    "subrubrics": [
+      {
+        "rubric": "from milk",
+        "grading": {
+          "high": ["Aeth", "Calc", "Mag-c"],
+          "medium": ["Lac-d", "Puls"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "after farinaceous food",
+        "grading": {
+          "high": ["Nat-m", "Lyc", "Nux-v"],
+          "medium": ["Puls", "China"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "INFLAMMATION",
+    "subrubrics": [
+      {
+        "rubric": "chronic with suppuration",
+        "grading": {
+          "high": ["Hepar", "Sil", "Merc"],
+          "medium": ["Sulph", "Calc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "INJURIES",
+    "subrubrics": [
+      {
+        "rubric": "from blunt instruments",
+        "grading": {
+          "high": ["Arn", "Bellis", "Ruta"],
+          "medium": ["Hyper", "Led"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "INSANITY",
+    "subrubrics": [
+      {
+        "rubric": "from disappointed love",
+        "grading": {
+          "high": ["Ign", "Nat-m", "Phos-ac"],
+          "medium": ["Staph", "Puls"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "INSOMNIA",
+    "subrubrics": [
+      {
+        "rubric": "from business worry",
+        "grading": {
+          "high": ["Nux-v", "Coff", "Sulph"],
+          "medium": ["Kali-ph", "Gels"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "INTERCOSTAL NEURALGIA",
+    "subrubrics": [
+      {
+        "rubric": "right side",
+        "grading": {
+          "high": ["Ran-b", "Spig", "Bry"],
+          "medium": ["Bell", "Sulph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "INTERMITTENT FEVER",
+    "subrubrics": [
+      {
+        "rubric": "quotidian type",
+        "grading": {
+          "high": ["Nat-m", "Chin", "Ars"],
+          "medium": ["Eup-per", "Ipec"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "tertian type",
+        "grading": {
+          "high": ["Chin", "Nat-m", "Ars"],
+          "medium": ["Nux-v", "Ipec"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "INTERTRIGO",
+    "subrubrics": [
+      {
+        "rubric": "between thighs, infants",
+        "grading": {
+          "high": ["Borax", "Graph", "Sulph"],
+          "medium": ["Calc", "Rhus-t"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "INTUSSUSCEPTION",
+    "subrubrics": [
+      {
+        "rubric": "infantile",
+        "grading": {
+          "high": ["Op", "Plumb", "Bell"],
+          "medium": ["Coloc", "Nux-v"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "IRRITABILITY",
+    "subrubrics": [
+      {
+        "rubric": "children, during dentition",
+        "grading": {
+          "high": ["Cham", "Cina", "Bell"],
+          "medium": ["Calc", "Sanic"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ITCHING",
+    "subrubrics": [
+      {
+        "rubric": "without eruption",
+        "grading": {
+          "high": ["Sulph", "Psor", "Urt-u"],
+          "medium": ["Dolich", "Mez"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "worse at night",
+        "grading": {
+          "high": ["Sulph", "Psor", "Mez"],
+          "medium": ["Rhus-t", "Lyc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "JAUNDICE",
+    "subrubrics": [
+      {
+        "rubric": "infantile",
+        "grading": {
+          "high": ["Chin", "Chel", "Merc"],
+          "medium": ["Lept", "Nat-s"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "chronic",
+        "grading": {
+          "high": ["Chel", "Card-m", "Phos"],
+          "medium": ["Merc", "Chin"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "KIDNEYS",
+    "subrubrics": [
+      {
+        "rubric": "degeneration, granular",
+        "grading": {
+          "high": ["Ars", "Phos", "Plumb"],
+          "medium": ["Merc", "Apoc"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "congestion with dropsy",
+        "grading": {
+          "high": ["Apoc", "Ars", "Merc"],
+          "medium": ["Digitalis", "Tereb"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "KNEE",
+    "subrubrics": [
+      {
+        "rubric": "swelling of",
+        "grading": {
+          "high": ["Bry", "Rhus-t", "Apis"],
+          "medium": ["Sil", "Calc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "LARYNGITIS",
+    "subrubrics": [
+      {
+        "rubric": "chronic",
+        "grading": {
+          "high": ["Caust", "Phos", "Arg-n"],
+          "medium": ["Carb-v", "Kali-bi"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "LAUGHTER",
+    "subrubrics": [
+      {
+        "rubric": "hysterical",
+        "grading": {
+          "high": ["Ign", "Stram", "Hyos"],
+          "medium": ["Asaf", "Cimic"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "LEUCORRHOEA",
+    "subrubrics": [
+      {
+        "rubric": "acrid, excoriating",
+        "grading": {
+          "high": ["Kreos", "Merc", "Nit-ac"],
+          "medium": ["Sulph", "Sep"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "thick, yellow",
+        "grading": {
+          "high": ["Puls", "Calc", "Sep"],
+          "medium": ["Sulph", "Borax"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "LICE",
+    "subrubrics": [
+      {
+        "rubric": "pediculosis capitis",
+        "grading": {
+          "high": ["Staph", "Merc", "Psor"],
+          "medium": ["Sulph", "Lyc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "LIMBS",
+    "subrubrics": [
+      {
+        "rubric": "restlessness of",
+        "grading": {
+          "high": ["Rhus-t", "Tarent", "Zinc"],
+          "medium": ["Ars", "Cham"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "weakness after exertion",
+        "grading": {
+          "high": ["China", "Phos-ac", "Kali-ph"],
+          "medium": ["Calc", "Pic-ac"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "LIPS",
+    "subrubrics": [
+      {
+        "rubric": "dry and cracked",
+        "grading": {
+          "high": ["Bry", "Nat-m", "Sulph"],
+          "medium": ["Rhus-t", "Ars"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "ulcerated corners",
+        "grading": {
+          "high": ["Graph", "Nat-m", "Ant-c"],
+          "medium": ["Petrol", "Merc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "LIVER",
+    "subrubrics": [
+      {
+        "rubric": "enlarged",
+        "grading": {
+          "high": ["Chel", "Merc", "Card-m"],
+          "medium": ["Lyc", "Podoph"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "fatty degeneration",
+        "grading": {
+          "high": ["Phos", "Chel", "Ars"],
+          "medium": ["Iod", "China"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "LOCKJAW",
+    "subrubrics": [
+      {
+        "rubric": "traumatic",
+        "grading": {
+          "high": ["Hyper", "Led", "Nux-v"],
+          "medium": ["Arn", "Cic"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "LOCOMOTOR ATAXIA",
+    "subrubrics": [
+      {
+        "rubric": "early stage",
+        "grading": {
+          "high": ["Arg-n", "Plumb", "Phos"],
+          "medium": ["Ox-ac", "Alum"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "LOIN",
+    "subrubrics": [
+      {
+        "rubric": "pain in",
+        "grading": {
+          "high": ["Berb", "Canth", "Coloc"],
+          "medium": ["Sep", "Kali-c"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "LUMBAGO",
+    "subrubrics": [
+      {
+        "rubric": "worse from motion",
+        "grading": {
+          "high": ["Bry", "Nux-v", "Sulph"],
+          "medium": ["Coloc", "Arn"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "worse from rest, better by motion",
+        "grading": {
+          "high": ["Rhus-t", "Kali-bi", "Med"],
+          "medium": ["Calc", "Agar"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "LUNGS",
+    "subrubrics": [
+      {
+        "rubric": "congestion with oppression",
+        "grading": {
+          "high": ["Acon", "Am-c", "Bry"],
+          "medium": ["Phos", "Verat-v"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "tuberculosis",
+        "grading": {
+          "high": ["Phos", "Tub", "Kali-c"],
+          "medium": ["Sulph", "Calc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "LYMPHATIC GLANDS",
+    "subrubrics": [
+      {
+        "rubric": "enlarged, indurated",
+        "grading": {
+          "high": ["Merc", "Calc", "Sil"],
+          "medium": ["Iod", "Tub"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MADNESS",
+    "subrubrics": [
+      {
+        "rubric": "from religious melancholy",
+        "grading": {
+          "high": ["Aur", "Verat", "Stram"],
+          "medium": ["Ign", "Sep"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MASTITIS",
+    "subrubrics": [
+      {
+        "rubric": "with suppuration",
+        "grading": {
+          "high": ["Phyt", "Sil", "Hepar"],
+          "medium": ["Bell", "Merc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MASTURBATION",
+    "subrubrics": [
+      {
+        "rubric": "bad effects of",
+        "grading": {
+          "high": ["Phos-ac", "Calc", "China"],
+          "medium": ["Staph", "Agn"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MEASLES",
+    "subrubrics": [
+      {
+        "rubric": "suppressed eruption",
+        "grading": {
+          "high": ["Puls", "Bry", "Sulph"],
+          "medium": ["Bell", "Zinc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MEMORY",
+    "subrubrics": [
+      {
+        "rubric": "loss of",
+        "grading": {
+          "high": ["Anac", "Kali-br", "Nat-m"],
+          "medium": ["Phos", "Cann-i"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MENINGITIS",
+    "subrubrics": [
+      {
+        "rubric": "with opisthotonos",
+        "grading": {
+          "high": ["Cic", "Bell", "Stram"],
+          "medium": ["Zinc", "Cupr"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MENSTRUATION",
+    "subrubrics": [
+      {
+        "rubric": "too early, profuse",
+        "grading": {
+          "high": ["Calc", "Bell", "Sulph"],
+          "medium": ["Kreos", "Ferr"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "too late, scanty",
+        "grading": {
+          "high": ["Puls", "Sep", "Graph"],
+          "medium": ["Nat-m", "Phos"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "METRORRHAGIA",
+    "subrubrics": [
+      {
+        "rubric": "in young girls",
+        "grading": {
+          "high": ["Calc", "Bell", "Sabin"],
+          "medium": ["Ipec", "Kreos"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "after labour",
+        "grading": {
+          "high": ["Sec", "Bell", "China"],
+          "medium": ["Ipec", "Ars"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MICTURITION",
+    "subrubrics": [
+      {
+        "rubric": "frequent, with small quantity",
+        "grading": {
+          "high": ["Canth", "Equis", "Apis"],
+          "medium": ["Merc", "Nux-v"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "painful, burning",
+        "grading": {
+          "high": ["Canth", "Sars", "Apis"],
+          "medium": ["Bell", "Berb"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MILK",
+    "subrubrics": [
+      {
+        "rubric": "scanty secretion",
+        "grading": {
+          "high": ["Urt-u", "Ricinus", "Puls"],
+          "medium": ["Lac-c", "Calc"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "suppressed",
+        "grading": {
+          "high": ["Puls", "Urt-u", "Lac-c"],
+          "medium": ["Bry", "Bell"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MIND",
+    "subrubrics": [
+      {
+        "rubric": "confusion of",
+        "grading": {
+          "high": ["Anac", "Cann-i", "Lyc"],
+          "medium": ["Gels", "Phos-ac"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "dullness, sluggish",
+        "grading": {
+          "high": ["Phos-ac", "Gels", "Nux-m"],
+          "medium": ["Kali-ph", "Sulph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MOLES",
+    "subrubrics": [
+      {
+        "rubric": "bleeding from",
+        "grading": {
+          "high": ["Thuja", "Calc", "Kali-c"],
+          "medium": ["Nit-ac", "Sulph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MORNING AGGRAVATION",
+    "subrubrics": [
+      {
+        "rubric": "general",
+        "grading": {
+          "high": ["Nux-v", "Sulph", "Lyc"],
+          "medium": ["Nat-m", "Bry"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MOUTH",
+    "subrubrics": [
+      {
+        "rubric": "ulcers on tongue",
+        "grading": {
+          "high": ["Merc", "Nit-ac", "Borax"],
+          "medium": ["Kali-chl", "Sulph-ac"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "aphthae",
+        "grading": {
+          "high": ["Borax", "Merc", "Sulph-ac"],
+          "medium": ["Kali-chl", "Sulph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MUMPS",
+    "subrubrics": [
+      {
+        "rubric": "with orchitis",
+        "grading": {
+          "high": ["Bell", "Rhod", "Puls"],
+          "medium": ["Spong", "Merc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "MUSCLES",
+    "subrubrics": [
+      {
+        "rubric": "twitching of",
+        "grading": {
+          "high": ["Agar", "Zinc", "Ign"],
+          "medium": ["Cic", "Cupr"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "pain, soreness",
+        "grading": {
+          "high": ["Rhus-t", "Arn", "Bry"],
+          "medium": ["Phyt", "Sulph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "NAILS",
+    "subrubrics": [
+      {
+        "rubric": "brittle",
+        "grading": {
+          "high": ["Sil", "Graph", "Thuja"],
+          "medium": ["Calc", "Fl-ac"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "crumbling",
+        "grading": {
+          "high": ["Graph", "Ant-c", "Sil"],
+          "medium": ["Thuja", "Sep"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "NAUSEA",
+    "subrubrics": [
+      {
+        "rubric": "morning on waking",
+        "grading": {
+          "high": ["Nux-v", "Lob", "Ipec"],
+          "medium": ["Sep", "Bry"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "during pregnancy",
+        "grading": {
+          "high": ["Sep", "Nux-v", "Colch"],
+          "medium": ["Kreos", "Cocc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "NECK",
+    "subrubrics": [
+      {
+        "rubric": "stiffness of",
+        "grading": {
+          "high": ["Gels", "Cimic", "Rhus-t"],
+          "medium": ["Bry", "Bell"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "NEPHRITIS",
+    "subrubrics": [
+      {
+        "rubric": "with albuminuria",
+        "grading": {
+          "high": ["Merc", "Apis", "Ars"],
+          "medium": ["Tereb", "Phos"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "NERVOUSNESS",
+    "subrubrics": [
+      {
+        "rubric": "in children",
+        "grading": {
+          "high": ["Cham", "Cina", "Tarent"],
+          "medium": ["Coff", "Ign"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "NEURALGIA",
+    "subrubrics": [
+      {
+        "rubric": "from cold",
+        "grading": {
+          "high": ["Acon", "Mag-p", "Coloc"],
+          "medium": ["Cham", "Spig"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "left-sided",
+        "grading": {
+          "high": ["Spig", "Lach", "Mag-p"],
+          "medium": ["Cimic", "Platina"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "NOSE",
+    "subrubrics": [
+      {
+        "rubric": "obstruction of",
+        "grading": {
+          "high": ["Nux-v", "Samb", "Am-c"],
+          "medium": ["Calc", "Sil"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "ulcers in",
+        "grading": {
+          "high": ["Kali-bi", "Nit-ac", "Merc"],
+          "medium": ["Thuja", "Ant-c"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "NUMBNESS",
+    "subrubrics": [
+      {
+        "rubric": "of fingers",
+        "grading": {
+          "high": ["Agar", "Caust", "Kalm"],
+          "medium": ["Plumb", "Zinc"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "of lower limbs",
+        "grading": {
+          "high": ["Sec", "Plumb", "Phos"],
+          "medium": ["Agar", "Kali-bi"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "NYMPHOMANIA",
+    "subrubrics": [
+      {
+        "rubric": "with voluptuous dreams",
+        "grading": {
+          "high": ["Hyos", "Canth", "Plat"],
+          "medium": ["Tarent", "Lil-t"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "OBESITY",
+    "subrubrics": [
+      {
+        "rubric": "with weakness",
+        "grading": {
+          "high": ["Calc", "Graph", "Phos-ac"],
+          "medium": ["Caps", "Sulph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "OESOPHAGUS",
+    "subrubrics": [
+      {
+        "rubric": "spasms of",
+        "grading": {
+          "high": ["Glon", "Ign", "Bell"],
+          "medium": ["Nux-v", "Stram"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "OPHTHALMIA",
+    "subrubrics": [
+      {
+        "rubric": "scrofulous",
+        "grading": {
+          "high": ["Calc", "Merc", "Sulph"],
+          "medium": ["Graph", "Puls"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "ORCHITIS",
+    "subrubrics": [
+      {
+        "rubric": "gonorrhoeal",
+        "grading": {
+          "high": ["Puls", "Clem", "Rhod"],
+          "medium": ["Spong", "Arg-n"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "OTITIS",
+    "subrubrics": [
+      {
+        "rubric": "media",
+        "grading": {
+          "high": ["Puls", "Merc", "Bell"],
+          "medium": ["Cham", "Kali-bi"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "OVARIES",
+    "subrubrics": [
+      {
+        "rubric": "left, pain in",
+        "grading": {
+          "high": ["Lach", "Apis", "Coloc"],
+          "medium": ["Sulph", "Kali-c"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "tumor of",
+        "grading": {
+          "high": ["Apis", "Calc", "Lach"],
+          "medium": ["Con", "Sep"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PAINS",
+    "subrubrics": [
+      {
+        "rubric": "burning",
+        "grading": {
+          "high": ["Ars", "Sulph", "Canth"],
+          "medium": ["Phos", "Kreos"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "pressing",
+        "grading": {
+          "high": ["Bry", "Acon", "Nux-v"],
+          "medium": ["Coloc", "Ars"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PAINS",
+    "subrubrics": [
+      {
+        "rubric": "stabbing",
+        "grading": {
+          "high": ["Kali-c", "Bry", "Spig"],
+          "medium": ["Ran-b", "Sulph"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "tearing",
+        "grading": {
+          "high": ["Merc", "Rhus-t", "Coloc"],
+          "medium": ["Bry", "Cham"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "throbbing",
+        "grading": {
+          "high": ["Bell", "Puls", "Mag-p"],
+          "medium": ["Sil", "Sulph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PALPITATION",
+    "subrubrics": [
+      {
+        "rubric": "violent, visible",
+        "grading": {
+          "high": ["Spig", "Cact", "Digitalis"],
+          "medium": ["Kali-c", "Ign"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "with anxiety",
+        "grading": {
+          "high": ["Acon", "Ars", "Kali-p"],
+          "medium": ["Gels", "Ign"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PARALYSIS",
+    "subrubrics": [
+      {
+        "rubric": "after apoplexy",
+        "grading": {
+          "high": ["Op", "Phos", "Gels"],
+          "medium": ["Nux-v", "Caust"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "one side",
+        "grading": {
+          "high": ["Gels", "Lyc", "Plumb"],
+          "medium": ["Op", "Caust"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PARSLEY ODOUR",
+    "subrubrics": [
+      {
+        "rubric": "in breath",
+        "grading": {
+          "high": ["Asaf", "Petrosel"],
+          "medium": [],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PERICARDITIS",
+    "subrubrics": [
+      {
+        "rubric": "with effusion",
+        "grading": {
+          "high": ["Digitalis", "Ars", "Spig"],
+          "medium": ["Kali-c", "Bry"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PERIOSTITIS",
+    "subrubrics": [
+      {
+        "rubric": "chronic, with night pains",
+        "grading": {
+          "high": ["Merc", "Sil", "Hepar"],
+          "medium": ["Fl-ac", "Aur"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PERITONITIS",
+    "subrubrics": [
+      {
+        "rubric": "with meteorism",
+        "grading": {
+          "high": ["Bell", "Colch", "Ars"],
+          "medium": ["Bry", "Merc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PERSPIRATION",
+    "subrubrics": [
+      {
+        "rubric": "offensive",
+        "grading": {
+          "high": ["Sil", "Sulph", "Psor"],
+          "medium": ["Merc", "Calc"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "profuse at night",
+        "grading": {
+          "high": ["Sil", "Merc", "China"],
+          "medium": ["Phos", "Calc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PHARYNX",
+    "subrubrics": [
+      {
+        "rubric": "inflammation of",
+        "grading": {
+          "high": ["Bell", "Merc", "Apis"],
+          "medium": ["Kali-bich", "Hepar"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PHLEBITIS",
+    "subrubrics": [
+      {
+        "rubric": "with suppuration",
+        "grading": {
+          "high": ["Lach", "Vipera", "Fl-ac"],
+          "medium": ["Ham", "Apis"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PHOTOPHOBIA",
+    "subrubrics": [
+      {
+        "rubric": "during headache",
+        "grading": {
+          "high": ["Bell", "Nat-m", "Iris"],
+          "medium": ["Onos", "Gels"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PHTHISIS",
+    "subrubrics": [
+      {
+        "rubric": "incipient",
+        "grading": {
+          "high": ["Tub", "Phos", "Calc"],
+          "medium": ["Sil", "Psor"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "with hectic fever",
+        "grading": {
+          "high": ["Tub", "China", "Phos"],
+          "medium": ["Stann", "Lyc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PILES",
+    "subrubrics": [
+      {
+        "rubric": "bleeding, painful",
+        "grading": {
+          "high": ["Aesculus", "Ham", "Nux-v"],
+          "medium": ["Sulph", "Collin"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "blind, itching",
+        "grading": {
+          "high": ["Sulph", "Aesculus", "Graph"],
+          "medium": ["Nux-v", "Aloe"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PLEURISY",
+    "subrubrics": [
+      {
+        "rubric": "with effusion",
+        "grading": {
+          "high": ["Bry", "Apis", "Ars"],
+          "medium": ["Sulph", "Digitalis"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PNEUMONIA",
+    "subrubrics": [
+      {
+        "rubric": "in old people",
+        "grading": {
+          "high": ["Ant-t", "Carb-v", "Phos"],
+          "medium": ["Am-c", "Opium"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "POLYPUS",
+    "subrubrics": [
+      {
+        "rubric": "nasal",
+        "grading": {
+          "high": ["Calc", "Sang", "Teucr"],
+          "medium": ["Phos", "Lemna-m"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PROSTATE",
+    "subrubrics": [
+      {
+        "rubric": "enlarged, with frequent urination",
+        "grading": {
+          "high": ["Con", "Sabal", "Ferr-p"],
+          "medium": ["Baryta-c", "Chimaph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PERSPIRATION",
+    "subrubrics": [
+      {
+        "rubric": "offensive",
+        "grading": {
+          "high": ["Sil", "Sulph", "Psor"],
+          "medium": ["Merc", "Calc"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "profuse at night",
+        "grading": {
+          "high": ["Sil", "Merc", "China"],
+          "medium": ["Phos", "Calc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PHARYNX",
+    "subrubrics": [
+      {
+        "rubric": "inflammation of",
+        "grading": {
+          "high": ["Bell", "Merc", "Apis"],
+          "medium": ["Kali-bich", "Hepar"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PHLEBITIS",
+    "subrubrics": [
+      {
+        "rubric": "with suppuration",
+        "grading": {
+          "high": ["Lach", "Vipera", "Fl-ac"],
+          "medium": ["Ham", "Apis"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PHOTOPHOBIA",
+    "subrubrics": [
+      {
+        "rubric": "during headache",
+        "grading": {
+          "high": ["Bell", "Nat-m", "Iris"],
+          "medium": ["Onos", "Gels"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PHTHISIS",
+    "subrubrics": [
+      {
+        "rubric": "incipient",
+        "grading": {
+          "high": ["Tub", "Phos", "Calc"],
+          "medium": ["Sil", "Psor"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "with hectic fever",
+        "grading": {
+          "high": ["Tub", "China", "Phos"],
+          "medium": ["Stann", "Lyc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PILES",
+    "subrubrics": [
+      {
+        "rubric": "bleeding, painful",
+        "grading": {
+          "high": ["Aesculus", "Ham", "Nux-v"],
+          "medium": ["Sulph", "Collin"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "blind, itching",
+        "grading": {
+          "high": ["Sulph", "Aesculus", "Graph"],
+          "medium": ["Nux-v", "Aloe"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PLEURISY",
+    "subrubrics": [
+      {
+        "rubric": "with effusion",
+        "grading": {
+          "high": ["Bry", "Apis", "Ars"],
+          "medium": ["Sulph", "Digitalis"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PNEUMONIA",
+    "subrubrics": [
+      {
+        "rubric": "in old people",
+        "grading": {
+          "high": ["Ant-t", "Carb-v", "Phos"],
+          "medium": ["Am-c", "Opium"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "POLYPUS",
+    "subrubrics": [
+      {
+        "rubric": "nasal",
+        "grading": {
+          "high": ["Calc", "Sang", "Teucr"],
+          "medium": ["Phos", "Lemna-m"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PROSTATE",
+    "subrubrics": [
+      {
+        "rubric": "enlarged, with frequent urination",
+        "grading": {
+          "high": ["Con", "Sabal", "Ferr-p"],
+          "medium": ["Baryta-c", "Chimaph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PRURITUS",
+    "subrubrics": [
+      {
+        "rubric": "of anus",
+        "grading": {
+          "high": ["Sulph", "Aesculus", "Aloe"],
+          "medium": ["Graph", "Nux-v"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "of vulva",
+        "grading": {
+          "high": ["Sep", "Kreos", "Graph"],
+          "medium": ["Psor", "Borax"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "PULSE",
+    "subrubrics": [
+      {
+        "rubric": "irregular",
+        "grading": {
+          "high": ["Digitalis", "Cact", "Spig"],
+          "medium": ["Kali-c", "Lach"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "slow",
+        "grading": {
+          "high": ["Dig", "Op", "Gels"],
+          "medium": ["Phos", "Verat"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "QUINSY",
+    "subrubrics": [
+      {
+        "rubric": "suppurating",
+        "grading": {
+          "high": ["Hep", "Merc", "Bell"],
+          "medium": ["Sil", "Bar-c"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "RASH",
+    "subrubrics": [
+      {
+        "rubric": "in children",
+        "grading": {
+          "high": ["Sulph", "Cham", "Calc"],
+          "medium": ["Bell", "Puls"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "retrocession of",
+        "grading": {
+          "high": ["Cupr", "Bell", "Zinc"],
+          "medium": ["Stram", "Acon"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "RECTUM",
+    "subrubrics": [
+      {
+        "rubric": "burning in",
+        "grading": {
+          "high": ["Ars", "Aloe", "Sulph"],
+          "medium": ["Nux-v", "Graph"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "constipation with ineffectual urging",
+        "grading": {
+          "high": ["Nux-v", "Sil", "Bry"],
+          "medium": ["Sulph", "Aesculus"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "diarrhoea after eating",
+        "grading": {
+          "high": ["Ars", "China", "Podo"],
+          "medium": ["Phos", "Aloe"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "prolapse of",
+        "grading": {
+          "high": ["Pod", "Ign", "Aloe"],
+          "medium": ["Nux-v", "Mur-ac"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "RENAL COLIC",
+    "subrubrics": [
+      {
+        "rubric": "right side",
+        "grading": {
+          "high": ["Coloc", "Berb-v", "Nux-v"],
+          "medium": ["Canth", "Sars"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "with haematuria",
+        "grading": {
+          "high": ["Canth", "Berb-v", "Tereb"],
+          "medium": ["Ocimum", "Lyc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "RESPIRATION",
+    "subrubrics": [
+      {
+        "rubric": "difficult lying down",
+        "grading": {
+          "high": ["Ars", "Spong", "Phos"],
+          "medium": ["Ipec", "Grind"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "sighing",
+        "grading": {
+          "high": ["Ign", "Phos", "Nat-m"],
+          "medium": ["Puls", "Stann"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "RETENTION OF URINE",
+    "subrubrics": [
+      {
+        "rubric": "after labour",
+        "grading": {
+          "high": ["Caust", "Nux-v", "Bell"],
+          "medium": ["Puls", "Arn"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "with full bladder and no desire",
+        "grading": {
+          "high": ["Op", "Bell", "Hyos"],
+          "medium": ["Stram", "Gels"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "RHEUMATISM",
+    "subrubrics": [
+      {
+        "rubric": "chronic, worse damp",
+        "grading": {
+          "high": ["Rhus-t", "Dulc", "Calc"],
+          "medium": ["Caust", "Bry"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "migratory",
+        "grading": {
+          "high": ["Puls", "Rhod", "Kali-bi"],
+          "medium": ["Led", "Lyc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SALIVATION",
+    "subrubrics": [
+      {
+        "rubric": "during sleep",
+        "grading": {
+          "high": ["Merc", "Nux-v", "Kali-bi"],
+          "medium": ["Rhus-t", "Lach"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SCABIES",
+    "subrubrics": [
+      {
+        "rubric": "with violent itching",
+        "grading": {
+          "high": ["Sulph", "Psor", "Petrol"],
+          "medium": ["Sep", "Mez"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SCALP ERUPTIONS",
+    "subrubrics": [
+      {
+        "rubric": "with crusts and thick discharge",
+        "grading": {
+          "high": ["Graph", "Mez", "Calc"],
+          "medium": ["Hepar", "Merc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SCIATICA",
+    "subrubrics": [
+      {
+        "rubric": "left side",
+        "grading": {
+          "high": ["Coloc", "Lyc", "Gnaph"],
+          "medium": ["Am-m", "Phyt"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "worse at night",
+        "grading": {
+          "high": ["Coloc", "Rhus-t", "Ars"],
+          "medium": ["Merc", "Kali-bi"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SCIRRHUS",
+    "subrubrics": [
+      {
+        "rubric": "of breast",
+        "grading": {
+          "high": ["Con", "Phyt", "Carbo-an"],
+          "medium": ["Hydr", "Iod"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SCREAMING",
+    "subrubrics": [
+      {
+        "rubric": "in children, during sleep",
+        "grading": {
+          "high": ["Bell", "Stram", "Calc"],
+          "medium": ["Kali-br", "Cham"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SCROFULA",
+    "subrubrics": [
+      {
+        "rubric": "with glandular swelling",
+        "grading": {
+          "high": ["Baryta-c", "Sil", "Calc"],
+          "medium": ["Tub", "Iod"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SEMINAL EMISSIONS",
+    "subrubrics": [
+      {
+        "rubric": "frequent, with weakness",
+        "grading": {
+          "high": ["Staph", "China", "Phos-ac"],
+          "medium": ["Agn", "Nux-v"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SENILITY",
+    "subrubrics": [
+      {
+        "rubric": "premature",
+        "grading": {
+          "high": ["Baryta-c", "Sec", "Carbo-an"],
+          "medium": ["Kali-ph", "Phos-ac"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SHINGLES",
+    "subrubrics": [
+      {
+        "rubric": "with burning pain",
+        "grading": {
+          "high": ["Mez", "Ars", "Rhus-t"],
+          "medium": ["Canth", "Apis"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SLEEP",
+    "subrubrics": [
+      {
+        "rubric": "disturbed by dreams",
+        "grading": {
+          "high": ["Puls", "Sulph", "Nat-m"],
+          "medium": ["Sep", "Phos"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "sleeplessness after midnight",
+        "grading": {
+          "high": ["Nux-v", "Kali-c", "Sulph"],
+          "medium": ["Coff", "Lyc"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "unrefreshing",
+        "grading": {
+          "high": ["Phos-ac", "Nux-v", "Sulph"],
+          "medium": ["Calc", "Sep"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SLEEP",
+    "subrubrics": [
+      {
+        "rubric": "talking during",
+        "grading": {
+          "high": ["Phos-ac", "Stram", "Lach"],
+          "medium": ["Bell", "Hyos"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "waking frequently",
+        "grading": {
+          "high": ["Sulph", "Nux-v", "Coff"],
+          "medium": ["Puls", "Kali-c"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SNEEZING",
+    "subrubrics": [
+      {
+        "rubric": "frequent, with watery coryza",
+        "grading": {
+          "high": ["All-c", "Euphr", "Ars"],
+          "medium": ["Nux-v", "Sabad"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SORE THROAT",
+    "subrubrics": [
+      {
+        "rubric": "worse right side",
+        "grading": {
+          "high": ["Lyc", "Lach", "Merc"],
+          "medium": ["Phyt", "Bell"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "ulcerated",
+        "grading": {
+          "high": ["Merc", "Nit-ac", "Lach"],
+          "medium": ["Hepar", "Kali-bi"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SPASMS",
+    "subrubrics": [
+      {
+        "rubric": "hysterical",
+        "grading": {
+          "high": ["Ign", "Valer", "Asaf"],
+          "medium": ["Puls", "Mosch"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SPLEEN",
+    "subrubrics": [
+      {
+        "rubric": "enlarged",
+        "grading": {
+          "high": ["Ceanoth", "China", "Quercus"],
+          "medium": ["Carbo-v", "Nat-m"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "STIFFNESS",
+    "subrubrics": [
+      {
+        "rubric": "on beginning to move",
+        "grading": {
+          "high": ["Rhus-t", "Bry", "Calc"],
+          "medium": ["Caust", "Kali-c"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "STOMACH",
+    "subrubrics": [
+      {
+        "rubric": "acidity, with heartburn",
+        "grading": {
+          "high": ["Rob", "Nat-ph", "Ars"],
+          "medium": ["Nux-v", "Iris"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "aversion to food",
+        "grading": {
+          "high": ["China", "Ipec", "Sep"],
+          "medium": ["Nux-v", "Ign"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "fullness after eating little",
+        "grading": {
+          "high": ["Lyc", "Carbo-v", "China"],
+          "medium": ["Nux-v", "Phos"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "pain, burning",
+        "grading": {
+          "high": ["Ars", "Phos", "Iris"],
+          "medium": ["Canth", "Sulph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "STOMACH",
+    "subrubrics": [
+      {
+        "rubric": "pain, crampy",
+        "grading": {
+          "high": ["Coloc", "Mag-p", "Nux-v"],
+          "medium": ["Cham", "Ipec"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "vomiting after eating",
+        "grading": {
+          "high": ["Ipec", "Ars", "Kreos"],
+          "medium": ["Phos", "Ant-t"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "vomiting of bile",
+        "grading": {
+          "high": ["Iris", "Bry", "Nux-v"],
+          "medium": ["Chel", "Pod"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "STOOLS",
+    "subrubrics": [
+      {
+        "rubric": "bloody",
+        "grading": {
+          "high": ["Merc", "Aloe", "Nit-ac"],
+          "medium": ["Phos", "Nux-v"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "green",
+        "grading": {
+          "high": ["Cham", "Mag-c", "Sulph"],
+          "medium": ["Merc", "Pod"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "offensive",
+        "grading": {
+          "high": ["Merc", "Pod", "Sulph"],
+          "medium": ["Aloe", "Calc"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "watery",
+        "grading": {
+          "high": ["Verat", "Podo", "Ars"],
+          "medium": ["Phos", "China"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "STRABISMUS",
+    "subrubrics": [
+      {
+        "rubric": "convergent",
+        "grading": {
+          "high": ["Phys", "Zinc", "Nux-v"],
+          "medium": ["Gels", "Cycl"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "STRANGURY",
+    "subrubrics": [
+      {
+        "rubric": "painful and ineffectual",
+        "grading": {
+          "high": ["Canth", "Nux-v", "Apis"],
+          "medium": ["Bell", "Merc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "STRUMA",
+    "subrubrics": [
+      {
+        "rubric": "with glandular enlargement",
+        "grading": {
+          "high": ["Baryta-c", "Iod", "Calc"],
+          "medium": ["Sil", "Lyc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "STUPOR",
+    "subrubrics": [
+      {
+        "rubric": "with open eyes",
+        "grading": {
+          "high": ["Op", "Zinc", "Phos"],
+          "medium": ["Hyos", "Helleb"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SWEAT",
+    "subrubrics": [
+      {
+        "rubric": "cold",
+        "grading": {
+          "high": ["Verat", "Camph", "Carbo-v"],
+          "medium": ["Ars", "China"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "profuse at night",
+        "grading": {
+          "high": ["Merc", "Sil", "Calc"],
+          "medium": ["Sep", "China"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "sour",
+        "grading": {
+          "high": ["Calc", "Sil", "Rheum"],
+          "medium": ["Merc", "Phos"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SWEAT",
+    "subrubrics": [
+      {
+        "rubric": "suppression of",
+        "grading": {
+          "high": ["Bell", "Acon", "Cham"],
+          "medium": ["Bry", "Gels"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SWELLING",
+    "subrubrics": [
+      {
+        "rubric": "glands, cervical",
+        "grading": {
+          "high": ["Baryta-c", "Merc", "Calc"],
+          "medium": ["Sil", "Iod"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "glands, inguinal",
+        "grading": {
+          "high": ["Merc", "Nit-ac", "Thuja"],
+          "medium": ["Calc", "Carbo-an"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "dropsical",
+        "grading": {
+          "high": ["Apis", "Ars", "Helleb"],
+          "medium": ["Digitalis", "China"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "SYNCOPE",
+    "subrubrics": [
+      {
+        "rubric": "on slight exertion",
+        "grading": {
+          "high": ["Carbo-v", "China", "Verat"],
+          "medium": ["Phos", "Digitalis"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "TASTE",
+    "subrubrics": [
+      {
+        "rubric": "bitter in morning",
+        "grading": {
+          "high": ["Bry", "Nux-v", "Ant-c"],
+          "medium": ["Chel", "Sep"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "putrid",
+        "grading": {
+          "high": ["Merc", "Arn", "Hepar"],
+          "medium": ["Nux-v", "Puls"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "loss of taste",
+        "grading": {
+          "high": ["Nux-v", "Nat-m", "China"],
+          "medium": ["Phos", "Puls"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "TEETH",
+    "subrubrics": [
+      {
+        "rubric": "decayed, rapid",
+        "grading": {
+          "high": ["Staph", "Kreos", "Merc"],
+          "medium": ["Calc", "Sil"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "grinding",
+        "grading": {
+          "high": ["Cina", "Bell", "Sant"],
+          "medium": ["Cham", "Hyos"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "TEETH",
+    "subrubrics": [
+      {
+        "rubric": "looseness",
+        "grading": {
+          "high": ["Merc", "Phos", "Nit-ac"],
+          "medium": ["Sil", "Carbo-v"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "sensitive to air",
+        "grading": {
+          "high": ["Cham", "Coff", "Merc"],
+          "medium": ["Nux-v", "Puls"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "THIRST",
+    "subrubrics": [
+      {
+        "rubric": "absent during fever",
+        "grading": {
+          "high": ["Gels", "Puls", "Ant-t"],
+          "medium": ["Ipec", "Cycl"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "for large quantities",
+        "grading": {
+          "high": ["Bry", "Phos", "Verat"],
+          "medium": ["Nat-m", "China"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "for small quantities, often",
+        "grading": {
+          "high": ["Ars", "Chin", "Sulph"],
+          "medium": ["Nux-v", "Lyc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "THROAT",
+    "subrubrics": [
+      {
+        "rubric": "constriction",
+        "grading": {
+          "high": ["Bell", "Cact", "Plumb"],
+          "medium": ["Lach", "Ign"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "dryness",
+        "grading": {
+          "high": ["Bell", "Nux-v", "Bry"],
+          "medium": ["Phos", "Apis"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "inflammation with white patches",
+        "grading": {
+          "high": ["Merc", "Nit-ac", "Kali-bi"],
+          "medium": ["Lach", "Hepar"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "pain, stitching",
+        "grading": {
+          "high": ["Hepar", "Nit-ac", "Kali-c"],
+          "medium": ["Bell", "Phyt"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "THROAT",
+    "subrubrics": [
+      {
+        "rubric": "swollen",
+        "grading": {
+          "high": ["Bell", "Merc", "Apis"],
+          "medium": ["Phyt", "Hepar"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "ulcerated",
+        "grading": {
+          "high": ["Merc", "Nit-ac", "Kali-bi"],
+          "medium": ["Hepar", "Lach"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "THROBBING",
+    "subrubrics": [
+      {
+        "rubric": "in head",
+        "grading": {
+          "high": ["Bell", "Glon", "Melil"],
+          "medium": ["Nat-m", "Puls"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "THUMB",
+    "subrubrics": [
+      {
+        "rubric": "pain in",
+        "grading": {
+          "high": ["Caust", "Led", "Fl-ac"],
+          "medium": ["Ruta", "Kali-bi"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "TIC DOULOUREUX",
+    "subrubrics": [
+      {
+        "rubric": "right side",
+        "grading": {
+          "high": ["Mag-p", "Spig", "Verb"],
+          "medium": ["Coloc", "Puls"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "left side",
+        "grading": {
+          "high": ["Spig", "Platina", "Mez"],
+          "medium": ["Ars", "Coloc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "TINNITUS",
+    "subrubrics": [
+      {
+        "rubric": "ringing",
+        "grading": {
+          "high": ["Chin", "Salic-ac", "Nat-s"],
+          "medium": ["Bell", "Nit-ac"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "roaring",
+        "grading": {
+          "high": ["Chin", "Graph", "Lyc"],
+          "medium": ["Phos", "Sil"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "TONGUE",
+    "subrubrics": [
+      {
+        "rubric": "coated white",
+        "grading": {
+          "high": ["Ant-c", "Bry", "Nux-v"],
+          "medium": ["Puls", "Ipec"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "cracked",
+        "grading": {
+          "high": ["Nit-ac", "Kali-bi", "Mur-ac"],
+          "medium": ["Rhus-t", "Ars"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "TONGUE",
+    "subrubrics": [
+      {
+        "rubric": "dry",
+        "grading": {
+          "high": ["Bry", "Nux-v", "Phos"],
+          "medium": ["Bell", "Rhus-t"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "mapped",
+        "grading": {
+          "high": ["Tarax", "Nat-m", "Ars"],
+          "medium": ["Rhus-t", "Kali-bi"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "swollen",
+        "grading": {
+          "high": ["Bell", "Apis", "Mur-ac"],
+          "medium": ["Lach", "Nit-ac"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "trembling",
+        "grading": {
+          "high": ["Gels", "Merc", "Phos"],
+          "medium": ["Nux-v", "Ars"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "TONSILS",
+    "subrubrics": [
+      {
+        "rubric": "inflamed",
+        "grading": {
+          "high": ["Bell", "Hepar", "Baryta-c"],
+          "medium": ["Merc", "Phyt"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "ulcerated",
+        "grading": {
+          "high": ["Merc", "Kali-bi", "Nit-ac"],
+          "medium": ["Hepar", "Lach"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "TREMBLING",
+    "subrubrics": [
+      {
+        "rubric": "with weakness",
+        "grading": {
+          "high": ["Gels", "Zinc", "Phos"],
+          "medium": ["Coccul", "Ars"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "URINE",
+    "subrubrics": [
+      {
+        "rubric": "albuminous",
+        "grading": {
+          "high": ["Apis", "Ars", "Phos"],
+          "medium": ["Canth", "Helleb"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "bloody",
+        "grading": {
+          "high": ["Canth", "Tereb", "Ars"],
+          "medium": ["Bell", "Ham"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "URINE",
+    "subrubrics": [
+      {
+        "rubric": "burning",
+        "grading": {
+          "high": ["Canth", "Apis", "Equis"],
+          "medium": ["Ars", "Sars"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "cloudy",
+        "grading": {
+          "high": ["Sars", "Sep", "Clem"],
+          "medium": ["Berb", "Puls"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "dark",
+        "grading": {
+          "high": ["Lyc", "Nit-ac", "China"],
+          "medium": ["Phos", "Merc"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "frequent urging",
+        "grading": {
+          "high": ["Canth", "Apis", "Sars"],
+          "medium": ["Nux-v", "Equis"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "incontinence",
+        "grading": {
+          "high": ["Caust", "Bell", "Sep"],
+          "medium": ["Gels", "Equis"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "involuntary at night",
+        "grading": {
+          "high": ["Sep", "Caust", "Kreos"],
+          "medium": ["Sulph", "Puls"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "pain before",
+        "grading": {
+          "high": ["Berb", "Sars", "Canth"],
+          "medium": ["Puls", "Nit-ac"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "pain during",
+        "grading": {
+          "high": ["Canth", "Apis", "Sars"],
+          "medium": ["Equis", "Berb"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "pain after",
+        "grading": {
+          "high": ["Sars", "Equis", "Berb"],
+          "medium": ["Canth", "Puls"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "quantity, increased",
+        "grading": {
+          "high": ["Phos-ac", "Nat-m", "Apis"],
+          "medium": ["China", "Urea"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "URINE",
+    "subrubrics": [
+      {
+        "rubric": "quantity, diminished",
+        "grading": {
+          "high": ["Apis", "Canth", "Ars"],
+          "medium": ["Phos", "Nit-ac"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "retention",
+        "grading": {
+          "high": ["Bell", "Caust", "Nux-v"],
+          "medium": ["Acon", "Ign"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "sediment, brick-dust",
+        "grading": {
+          "high": ["Lyc", "Nux-v", "Phos"],
+          "medium": ["Puls", "Sep"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "sediment, pus",
+        "grading": {
+          "high": ["Berb", "Canth", "Sars"],
+          "medium": ["Merc", "Sep"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "sediment, red sand",
+        "grading": {
+          "high": ["Lyc", "Sars", "Uva"],
+          "medium": ["Puls", "Phos"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "URINE",
+    "subrubrics": [
+      {
+        "rubric": "slimy",
+        "grading": {
+          "high": ["Kali-bi", "Berb", "Sep"],
+          "medium": ["Cann-s", "Copaiv"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "suppressed",
+        "grading": {
+          "high": ["Apis", "Canth", "Bell"],
+          "medium": ["Acon", "Camph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "URTICARIA",
+    "subrubrics": [
+      {
+        "rubric": "from suppressed menses",
+        "grading": {
+          "high": ["Puls", "Sep", "Sulph"],
+          "medium": ["Dulc", "Kali-c"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "with diarrhoea",
+        "grading": {
+          "high": ["Apis", "Ant-c", "Nat-m"],
+          "medium": ["Sulph", "Urt-u"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "VAGINA",
+    "subrubrics": [
+      {
+        "rubric": "pain during coition",
+        "grading": {
+          "high": ["Sep", "Kreos", "Plat"],
+          "medium": ["Bell", "Graph"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "VARICES",
+    "subrubrics": [
+      {
+        "rubric": "of legs",
+        "grading": {
+          "high": ["Ham", "Fl-ac", "Puls"],
+          "medium": ["Calc", "Carb-an"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "VERTIGO",
+    "subrubrics": [
+      {
+        "rubric": "on rising",
+        "grading": {
+          "high": ["Bry", "Phos", "Nux-v"],
+          "medium": ["Bell", "Puls"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "with nausea",
+        "grading": {
+          "high": ["Cycl", "Ipec", "Tab"],
+          "medium": ["Bry", "Con"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "when looking up",
+        "grading": {
+          "high": ["Lyc", "Sil", "Spig"],
+          "medium": ["Bell", "Calc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "VERTIGO",
+    "subrubrics": [
+      {
+        "rubric": "when stooping",
+        "grading": {
+          "high": ["Bry", "Nux-v", "Sil"],
+          "medium": ["Con", "Bell"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "with headache",
+        "grading": {
+          "high": ["Glon", "Spig", "Puls"],
+          "medium": ["Cycl", "Gels"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "VOICE",
+    "subrubrics": [
+      {
+        "rubric": "hoarse",
+        "grading": {
+          "high": ["Caust", "Phos", "Carb-v"],
+          "medium": ["Spong", "Hep"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "lost",
+        "grading": {
+          "high": ["Caust", "Acon", "Arg-met"],
+          "medium": ["Phos", "Spong"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "VOMITING",
+    "subrubrics": [
+      {
+        "rubric": "after eating",
+        "grading": {
+          "high": ["Ars", "Ipec", "Nux-v"],
+          "medium": ["Phos", "Puls"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "bitter",
+        "grading": {
+          "high": ["Bry", "Ipec", "Chel"],
+          "medium": ["Puls", "Nux-v"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "blood",
+        "grading": {
+          "high": ["Ham", "Ipec", "Ars"],
+          "medium": ["Phos", "Sec"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "green",
+        "grading": {
+          "high": ["Ipec", "Ant-t", "Ars"],
+          "medium": ["Pod", "Cupr"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "in pregnancy",
+        "grading": {
+          "high": ["Sep", "Nux-v", "Kreos"],
+          "medium": ["Colch", "Tab"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "of bile",
+        "grading": {
+          "high": ["Ipec", "Chel", "Pod"],
+          "medium": ["Puls", "Nux-v"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "yellow bile",
+        "grading": {
+          "high": ["Chel", "Pod", "Ipec"],
+          "medium": ["Bry", "Nux-v"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "VOMITING",
+    "subrubrics": [
+      {
+        "rubric": "watery",
+        "grading": {
+          "high": ["Ars", "Phos", "Ipec"],
+          "medium": ["Verat", "Ferr"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "with diarrhoea",
+        "grading": {
+          "high": ["Verat", "Ars", "Camph"],
+          "medium": ["Podo", "Puls"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "with headache",
+        "grading": {
+          "high": ["Ipec", "Cycl", "Iris"],
+          "medium": ["Bry", "Spig"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "WARTS",
+    "subrubrics": [
+      {
+        "rubric": "bleeding",
+        "grading": {
+          "high": ["Thuja", "Nit-ac", "Caust"],
+          "medium": ["Dulc", "Cinnab"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "itching",
+        "grading": {
+          "high": ["Dulc", "Caust", "Thuja"],
+          "medium": ["Sulph", "Nit-ac"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "WEAKNESS",
+    "subrubrics": [
+      {
+        "rubric": "morning on rising",
+        "grading": {
+          "high": ["Phos-ac", "Sulph", "Calc"],
+          "medium": ["Sep", "Psor"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "after stool",
+        "grading": {
+          "high": ["Phos", "China", "Podo"],
+          "medium": ["Sulph", "Aloe"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "with trembling",
+        "grading": {
+          "high": ["Gels", "Zinc", "Phos"],
+          "medium": ["Ars", "Ign"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "WRIST",
+    "subrubrics": [
+      {
+        "rubric": "pain",
+        "grading": {
+          "high": ["Rhus-t", "Bry", "Caust"],
+          "medium": ["Ruta", "Arn"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "WRIST",
+    "subrubrics": [
+      {
+        "rubric": "swelling",
+        "grading": {
+          "high": ["Rhus-t", "Bry", "Caust"],
+          "medium": ["Ruta", "Calc"],
+          "low": []
+        }
+      }
+    ]
+  },
+  {
+    "rubric": "YAWNING",
+    "subrubrics": [
+      {
+        "rubric": "excessive",
+        "grading": {
+          "high": ["Ign", "Cocc", "Nux-m"],
+          "medium": ["Gels", "Sep"],
+          "low": []
+        }
+      },
+      {
+        "rubric": "with sleepiness",
+        "grading": {
+          "high": ["Nux-m", "Gels", "Ign"],
+          "medium": ["Op", "Zinc"],
+          "low": []
+        }
+      }
+    ]
+  }
+]
