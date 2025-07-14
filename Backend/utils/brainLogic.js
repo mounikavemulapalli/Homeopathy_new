@@ -97,26 +97,75 @@ function fullCaseAnalysis({ remedyGrades, remedyFrequency }) {
   const combinedScore = {};
   const remedyRubricCount = {};
 
-  remedyGrades.forEach(({ name, grade,type }) => {
-    const rarityBoost = remedyFrequency?.[name] ? 1 / remedyFrequency[name] : 1;
+  // 🧠 Detect case type
+  const totalRubrics = remedyGrades.length;
+  const rubricTypes = remedyGrades.map((r) => r.type);
+  const chronicIndicators = ["mental", "constitution", "thermal", "miasm"];
 
-    const weighted = (grade >= 3 ? grade * 2 : grade) * rarityBoost * typeWeight;
+  const isChronic =
+    totalRubrics >= 4 ||
+    rubricTypes.some((type) => chronicIndicators.includes(type));
+
+  console.log(`🩺 Case detected as: ${isChronic ? "CHRONIC" : "ACUTE"}`);
+
+  // 🔁 Main scoring loop
+  remedyGrades.forEach(({ name, grade, type }) => {
+    const rarityBoost = remedyFrequency?.[name] ? 1 / remedyFrequency[name] : 1;
+    const typeWeight = getTypeWeight(type);
+    const weighted =
+      (grade >= 3 ? grade * 2 : grade) * rarityBoost * typeWeight;
 
     combinedScore[name] = (combinedScore[name] || 0) + weighted;
     remedyRubricCount[name] = (remedyRubricCount[name] || 0) + 1;
   });
 
-  return Object.entries(combinedScore)
-    .map(([name, score]) => {
-      const rubricCount = remedyRubricCount[name];
-      if (remedyFrequency[name] > 40 && score < 9) {
-        score *= 0.6;
-      }
-      const penalty = score < 6 && rubricCount > 3 ? 2 : 0;
+  // 🔬 Enrich score with explanation metadata
+  const enrichedScores = Object.entries(combinedScore).map(([name, score]) => {
+    const rubricCount = remedyRubricCount[name];
+    const info =
+      remedyExplanation.find(
+        (e) => e.remedy.toLowerCase() === name.toLowerCase()
+      ) || {};
 
-      return { name, score: score - penalty };
-    })
-    .sort((a, b) => b.score - a.score);
+    // Deep remedy boost if chronic
+    if (isChronic && info.type === "deep-acting" && rubricCount >= 3) {
+      score += 2.0;
+    }
+
+    // Superficial remedy penalty if chronic
+    if (
+      isChronic &&
+      info.type === "superficial" &&
+      rubricCount >= 3 &&
+      score < 11
+    ) {
+      score -= 1.5;
+    }
+
+    // Thermal match
+    if (info.thermal === "hot") score += 0.3;
+
+    // Rare modality match
+    if (info.modalities?.worse?.includes("after eating chicken")) {
+      score += 0.5;
+    }
+
+    // Overused remedy penalty
+    if (remedyFrequency[name] > 40 && score < 9) {
+      score *= 0.6;
+    }
+
+    const penalty = score < 6 && rubricCount > 3 ? 2 : 0;
+
+    return {
+      name,
+      score: score - penalty,
+      rubricCount,
+      type: info.type || "unknown",
+    };
+  });
+
+  return enrichedScores.sort((a, b) => b.score - a.score);
 }
 
 /**
@@ -124,7 +173,7 @@ function fullCaseAnalysis({ remedyGrades, remedyFrequency }) {
  */
 function getRemediesFromRubrics(rubricTexts = []) {
   const result = [];
-  const knownRubrics = Object.keys(rubricData || {}); 
+  const knownRubrics = Object.keys(rubricData || {});
   rubricTexts.forEach((rubric) => {
     const normalized = rubric.trim().toLowerCase();
     let grading = rubricData[normalized];

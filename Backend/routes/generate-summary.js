@@ -90,7 +90,9 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const API_KEY = process.env.GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
-const model = genAI.getGenerativeModel({ model: "models/gemini-2.5-flash-lite-preview-06-17" });
+const model = genAI.getGenerativeModel({
+  model: "models/gemini-2.5-flash-lite-preview-06-17",
+});
 
 function buildPromptFromCaseData(caseData) {
   const complaints = (caseData.chiefComplaints || [])
@@ -119,7 +121,9 @@ Please analyze this patient case and return:
   "key_symptoms": ["symptom1", "symptom2"],
   "next_best_remedies": [
     { "name": "RemedyName1", "reason": "Why this was suggested" },
-    { "name": "RemedyName2", "reason": "Why this was suggested" }
+    { "name": "RemedyName2", "reason": "Why this was suggested" },
+    { "name": "RemedyName3", "reason": "Why this was suggested" },
+    { "name": "RemedyName4", "reason": "Why this was suggested" }
   ]
 }
 
