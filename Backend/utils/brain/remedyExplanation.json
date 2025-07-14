@@ -10515,5 +10515,95 @@
     "isIntercurrent": false,
     "clinicalType": "chronic",
     "whenToUse": "Use when patient presents with: residual paralysis."
+  },
+  {
+    "remedy": "Kalmia latifolia",
+    "type": "deep-acting",
+    "clinicalType": "chronic",
+    "thermal": "unknown",
+    "miasm": "psoro-tubercular",
+    "isIntercurrent": false,
+    "whenToUse": "Use when patient presents with: cervical pain radiating to left arm, stitching pain, numbness, and fear of death.",
+    "keynotes": [
+      "stitching pain",
+      "numbness",
+      "radiating to left hand",
+      "fear of death",
+      "neck < motion, > rest"
+    ],
+    "modalities": {
+      "worse": ["motion", "tilting neck"],
+      "better": ["rest"]
+    },
+    "constitution": "Rheumatic or neuralgic individuals with radiating pains and spinal irritation",
+    "mentalSymptoms": ["Fear of sudden death", "Anxiety during pain episodes"],
+    "physicalGenerals": [
+      "Stitching pains radiating from spine or neck",
+      "Numbness in limbs",
+      "Cervical spondylitis with neuralgic symptoms"
+    ],
+    "pioneerRemarks": [
+      "Kent: Especially useful in neuralgia with sudden onset and radiation along nerves",
+      "Boericke: Pains start in upper spine and shoot downwards, especially left-sided"
+    ],
+    "dosage": "200C single dose (adjust as per chronicity and sensitivity)"
+  },
+  {
+  "remedy": "Magnesium phosphoricum",
+  "type": "superficial",
+  "clinicalType": "acute",
+  "thermal": "hot",
+  "miasm": "psoric",
+  "isIntercurrent": false,
+  "whenToUse": "For cramping and colicky pains, especially neuralgic or spasmodic, better by warmth and pressure.",
+  "keynotes": [
+    "cramping pains relieved by warmth",
+    "neuralgia, especially facial",
+    "colic better by pressure",
+    "menstrual cramps better by bending double"
+  ],
+  "modalities": {
+    "worse": ["cold", "touch", "night"],
+    "better": ["warmth", "pressure", "bending double"]
   }
+},{
+  "remedy": "Hypericum perforatum",
+  "type": "acute",
+  "clinicalType": "acute",
+  "thermal": "unknown",
+  "miasm": "syphilitic",
+  "isIntercurrent": false,
+  "whenToUse": "For nerve injuries, shooting pains, puncture wounds, and spinal trauma. Often used for post-surgical or injury-related neuralgias.",
+  "keynotes": [
+    "nerve pain shooting upward",
+    "injuries to fingers, spine, tailbone",
+    "puncture wounds and post-surgery pain",
+    "sensitive to touch and pressure"
+  ],
+  "modalities": {
+    "worse": ["touch", "cold", "movement"],
+    "better": ["rest", "heat", "lying quietly"]
+  }
+},{
+  "remedy": "Bellis perennis",
+  "type": "deep-acting",
+  "clinicalType": "chronic",
+  "thermal": "cold",
+  "miasm": "sycotic",
+  "isIntercurrent": false,
+  "whenToUse": "For deep muscular trauma, bruising, pelvic and abdominal soreness especially post-surgery or after hard labor. Complementary to Arnica when Arnica fails.",
+  "keynotes": [
+    "deep bruises in pelvic or abdominal organs",
+    "injury after hard labor",
+    "used after surgical trauma",
+    "sore and bruised sensation"
+  ],
+  "modalities": {
+    "worse": ["cold", "damp", "overexertion"],
+    "better": ["warmth", "gentle motion"]
+  }
+}
+
+
+
 ]

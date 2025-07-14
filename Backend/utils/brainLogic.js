@@ -101,14 +101,13 @@ function fullCaseAnalysis({ remedyGrades, remedyFrequency }) {
   const totalRubrics = remedyGrades.length;
   const rubricTypes = remedyGrades.map((r) => r.type);
   const chronicIndicators = ["mental", "constitution", "thermal", "miasm"];
-
   const isChronic =
     totalRubrics >= 4 ||
     rubricTypes.some((type) => chronicIndicators.includes(type));
 
   console.log(`🩺 Case detected as: ${isChronic ? "CHRONIC" : "ACUTE"}`);
 
-  // 🔁 Main scoring loop
+  // Scoring loop
   remedyGrades.forEach(({ name, grade, type }) => {
     const rarityBoost = remedyFrequency?.[name] ? 1 / remedyFrequency[name] : 1;
     const typeWeight = getTypeWeight(type);
@@ -119,7 +118,28 @@ function fullCaseAnalysis({ remedyGrades, remedyFrequency }) {
     remedyRubricCount[name] = (remedyRubricCount[name] || 0) + 1;
   });
 
-  // 🔬 Enrich score with explanation metadata
+  // Collect all rubric text for matching
+  const allRubricText = remedyGrades.map((r) => r.name.toLowerCase()).join(" ");
+
+  // Extract patient modalities dynamically
+  const patientBetterMatches =
+    allRubricText.match(/better by ([a-z\s]+)/gi) || [];
+  const patientWorseMatches =
+    allRubricText.match(/worse by ([a-z\s]+)/gi) || [];
+
+  // Normalize values
+  const extractWords = (arr) =>
+    arr.map((s) =>
+      s
+        .replace(/better by |worse by /gi, "")
+        .trim()
+        .toLowerCase()
+    );
+
+  const patientBetter = extractWords(patientBetterMatches);
+  const patientWorse = extractWords(patientWorseMatches);
+
+  // Final scoring adjustments
   const enrichedScores = Object.entries(combinedScore).map(([name, score]) => {
     const rubricCount = remedyRubricCount[name];
     const info =
@@ -132,7 +152,7 @@ function fullCaseAnalysis({ remedyGrades, remedyFrequency }) {
       score += 2.0;
     }
 
-    // Superficial remedy penalty if chronic
+    // Superficial penalty if chronic
     if (
       isChronic &&
       info.type === "superficial" &&
@@ -142,12 +162,37 @@ function fullCaseAnalysis({ remedyGrades, remedyFrequency }) {
       score -= 1.5;
     }
 
+    // Boost intercurrent
+    if (isChronic && info.isIntercurrent && rubricCount >= 2) {
+      score += 1.5;
+    }
+
     // Thermal match
     if (info.thermal === "hot") score += 0.3;
 
-    // Rare modality match
+    // Rare modality bonus
     if (info.modalities?.worse?.includes("after eating chicken")) {
       score += 0.5;
+    }
+
+    // ✅ Dynamic Modality Mismatch Penalty
+    const remedyBetter = (info.modalities?.better || []).map((s) =>
+      s.toLowerCase()
+    );
+    const remedyWorse = (info.modalities?.worse || []).map((s) =>
+      s.toLowerCase()
+    );
+
+    let mismatchPenalty = 0;
+    patientBetter.forEach((mod) => {
+      if (remedyWorse.includes(mod)) mismatchPenalty += 1.5;
+    });
+    patientWorse.forEach((mod) => {
+      if (remedyBetter.includes(mod)) mismatchPenalty += 1.5;
+    });
+
+    if (mismatchPenalty > 0) {
+      score -= mismatchPenalty;
     }
 
     // Overused remedy penalty
@@ -162,6 +207,11 @@ function fullCaseAnalysis({ remedyGrades, remedyFrequency }) {
       score: score - penalty,
       rubricCount,
       type: info.type || "unknown",
+      clinicalType: info.clinicalType || "unspecified",
+      thermal: info.thermal || "unknown",
+      isIntercurrent: info.isIntercurrent || false,
+      miasm: info.miasm || "unspecified",
+      whenToUse: info.whenToUse || "",
     };
   });
 
