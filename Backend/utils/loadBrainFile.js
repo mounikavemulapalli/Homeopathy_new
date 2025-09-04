@@ -103,6 +103,18 @@
 const fs = require("fs");
 const path = require("path");
 
+function ensureArray(val) {
+  if (!val) return [];
+  if (Array.isArray(val)) return val;
+  if (typeof val === "string") {
+    return val
+      .split(/[,;]+/)
+      .map((s) => s.trim())
+      .filter(Boolean);
+  }
+  return [];
+}
+
 function normalize(text) {
   if (typeof text !== "string") return "";
   return text.trim().toLowerCase();
@@ -127,38 +139,37 @@ function loadAllRubrics() {
       }
 
       // Helper function
-      const addRubric = (rubricObj) => {
-        if (rubricObj.rubric && rubricObj.grading) {
-          const normalized = normalize(rubricObj.rubric);
-          const remedyMap = {};
-          (rubricObj.grading.high || []).forEach((r) => (remedyMap[r] = 3));
-          (rubricObj.grading.medium || []).forEach((r) => (remedyMap[r] = 2));
-          (rubricObj.grading.low || []).forEach((r) => (remedyMap[r] = 1));
-          allRubrics[normalized] = {
-            grading: remedyMap,
-            modality: rubricObj.modality || "",
-            miasm: rubricObj.miasm || "",
-            notes: rubricObj.notes || "",
-          };
-          rubricCount++;
-        }
+      const addRubric = (rubricName, rubricObj) => {
+        if (!rubricObj) return;
+
+        const normalized = rubricName ? normalize(String(rubricName)) : "";
+        if (!normalized) return;
+
+        const remedyMap = {};
+        ensureArray(rubricObj.high).forEach((r) => (remedyMap[r] = 3));
+        ensureArray(rubricObj.medium).forEach((r) => (remedyMap[r] = 2));
+        ensureArray(rubricObj.low).forEach((r) => (remedyMap[r] = 1));
+
+        allRubrics[normalized] = {
+          grading: remedyMap,
+          modality: rubricObj.modality || "",
+          miasm: rubricObj.miasm || "",
+          notes: rubricObj.notes || "",
+        };
+        rubricCount++;
       };
 
       if (Array.isArray(data)) {
         data.forEach((entry) => {
-          if (entry?.rubrics && Array.isArray(entry.rubrics)) {
-            entry.rubrics.forEach(addRubric);
-          } else if (entry?.rubric && entry?.grading) {
-            addRubric(entry);
-          } else if (typeof entry === "object") {
-            Object.entries(entry).forEach(([key, val]) => {
-              addRubric({ rubric: key, ...val });
+          if (typeof entry === "object") {
+            Object.entries(entry).forEach(([rubricName, rubricObj]) => {
+              addRubric(rubricName, rubricObj);
             });
           }
         });
       } else if (typeof data === "object") {
-        Object.entries(data).forEach(([key, val]) => {
-          addRubric({ rubric: key, ...val });
+        Object.entries(data).forEach(([rubricName, rubricObj]) => {
+          addRubric(rubricName, rubricObj);
         });
       }
     }
