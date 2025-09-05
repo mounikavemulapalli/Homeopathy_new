@@ -1,3 +1,5 @@
+/** @format */
+
 // /** @format */
 // const mongoose = require("mongoose");
 
@@ -14,45 +16,64 @@
 // });
 
 // module.exports = mongoose.model("FollowUp", followUpSchema);
-/** @format */
+// /** @format */
 
+// const mongoose = require("mongoose");
+
+// const followUpSchema = new mongoose.Schema({
+//   patientId: {
+//     type: String,
+//     required: false, // change to true if you always want this
+//   },
+//   patientName: {
+//     type: String,
+//     required: true,
+//   },
+//   phoneNumber: {
+//     type: String,
+//     required: false,
+//   },
+//   date: {
+//     type: String, // keep as string if you're using YYYY-MM-DD manually
+//     required: true,
+//   },
+//   complaint: {
+//     type: String,
+//     required: false,
+//   },
+//   complaints: {
+//     type: String,
+//     required: false,
+//   },
+//   prescription: {
+//     type: String,
+//     required: false,
+//   },
+//   remarks: {
+//     type: String,
+//     required: false,
+//   },
+// }, {
+//   timestamps: true // optional: adds createdAt and updatedAt
+// });
+
+// module.exports = mongoose.model("FollowUp", followUpSchema);
 const mongoose = require("mongoose");
 
 const followUpSchema = new mongoose.Schema({
-  patientId: {
+  casesId: { type: mongoose.Schema.Types.ObjectId, ref: "Case" },
+  patientName: String,
+  phoneNumber: String,
+  complaint: String,
+  prescription: String,
+  remarks: String,
+  date: { type: String, required: true },
+  reliefStatus: {
     type: String,
-    required: false, // change to true if you always want this
+    enum: ["Full Relief", "Partial Relief", "No Relief"],
+    default: "Partial Relief",
   },
-  patientName: {
-    type: String,
-    required: true,
-  },
-  phoneNumber: {
-    type: String,
-    required: false,
-  },
-  date: {
-    type: String, // keep as string if you're using YYYY-MM-DD manually
-    required: true,
-  },
-  complaint: {
-    type: String,
-    required: false,
-  },
-  complaints: {
-    type: String,
-    required: false,
-  },
-  prescription: {
-    type: String,
-    required: false,
-  },
-  remarks: {
-    type: String,
-    required: false,
-  },
-}, {
-  timestamps: true // optional: adds createdAt and updatedAt
+  analysis: { type: Object }, // AI analysis result
 });
 
 module.exports = mongoose.model("FollowUp", followUpSchema);

@@ -18,12 +18,10 @@ const CasesList = () => {
   const resetToNewComplaintOnly = () => {
     setSelectedCase((prev) => ({
       ...prev,
-      chiefComplaints: [
-        { complaint: "", duration: "", description: "" }
-      ],
+      chiefComplaints: [{ complaint: "", duration: "", description: "" }],
       aiRemedyGiven: "",
       main_remedy: {},
-      next_best_remedies: []
+      next_best_remedies: [],
     }));
     setAiSummary("");
   };
@@ -39,7 +37,7 @@ const CasesList = () => {
         setFilteredCases(res.data);
       } catch (err) {
         toast.error("Failed to load cases.");
-      }finally {
+      } finally {
         setLoadingCases(false);
       }
     };
@@ -177,24 +175,27 @@ const CasesList = () => {
 
   const handleAISuggestion = async () => {
     if (!selectedCase || !selectedCase.chiefComplaints?.length) return;
-  
+
     setLoadingSummary(true);
-  
+
     // Only use the latest complaint
-    const latestComplaint = selectedCase.chiefComplaints.at(-1); // last item
+    const latestComplaint = selectedCase.chiefComplaints.at(-1);
     const tempCase = {
       ...selectedCase,
       chiefComplaints: [latestComplaint],
+      relief: selectedCase.relief || "none", // pass relief also
     };
-  
+
     try {
       const res = await axios.post(`${API_URL}/api/generatesummary`, tempCase);
+
       setAiSummary(res.data.summary || "");
       setSelectedCase((prev) => ({
         ...prev,
         aiRemedyGiven: res.data?.geminiRemedy || "",
         main_remedy: res.data?.main_remedy || {},
         next_best_remedies: res.data?.next_best_remedies || [],
+        intercurrent_remedies: res.data?.intercurrent_remedies || [],
       }));
     } catch (err) {
       toast.error("AI suggestion failed.");
@@ -202,40 +203,58 @@ const CasesList = () => {
       setLoadingSummary(false);
     }
   };
-  
-  const AIDetails = () => (
+
+  const AIDetails = () =>
     aiSummary && (
-      <div style={{ marginTop: "20px", backgroundColor: "#f9f9f9", padding: "20px", borderRadius: "8px" }}>
+      <div
+        style={{
+          marginTop: "20px",
+          backgroundColor: "#f9f9f9",
+          padding: "20px",
+          borderRadius: "8px",
+        }}
+      >
         <h3 style={{ marginBottom: "10px" }}>🧠 AI Generated Analysis</h3>
 
         <div style={{ marginBottom: "15px" }}>
           <strong>Summary:</strong>
-          <p style={{ whiteSpace: "pre-wrap", marginTop: "5px" }}>{aiSummary}</p>
+          <p style={{ whiteSpace: "pre-wrap", marginTop: "5px" }}>
+            {aiSummary}
+          </p>
         </div>
 
         <div style={{ marginBottom: "15px" }}>
-           <strong>Remedy Suggested:</strong>
-           <ul>
-             <li>
-               <strong>
-                 {selectedCase.aiRemedyGiven || selectedCase.main_remedy?.remedyName || selectedCase.remedyGiven || "N/A"}
-               </strong>
-               {selectedCase.main_remedy?.reason && <>: {selectedCase.main_remedy.reason}</>}
-             </li>
-           </ul>
-         </div>
+          <strong>Remedy Suggested:</strong>
+          <ul>
+            <li>
+              <strong>
+                {selectedCase.aiRemedyGiven ||
+                  selectedCase.main_remedy?.remedyName ||
+                  selectedCase.remedyGiven ||
+                  "N/A"}
+              </strong>
+              {selectedCase.main_remedy?.reason && (
+                <>: {selectedCase.main_remedy.reason}</>
+              )}
+            </li>
+          </ul>
+        </div>
 
         {(selectedCase.main_remedy?.name || selectedCase.remedyGiven) && (
-  <div style={{ marginBottom: "15px" }}>
-    <strong>old Remedy prescribed:</strong>
-    <ul>
-      <li>
-        <strong>{selectedCase.main_remedy?.name || selectedCase.remedyGiven}</strong>
-        {selectedCase.main_remedy?.reason && <>: {selectedCase.main_remedy.reason}</>}
-      </li>
-    </ul>
-  </div>
-)}
+          <div style={{ marginBottom: "15px" }}>
+            <strong>old Remedy prescribed:</strong>
+            <ul>
+              <li>
+                <strong>
+                  {selectedCase.main_remedy?.name || selectedCase.remedyGiven}
+                </strong>
+                {selectedCase.main_remedy?.reason && (
+                  <>: {selectedCase.main_remedy.reason}</>
+                )}
+              </li>
+            </ul>
+          </div>
+        )}
         {selectedCase.main_remedy?.key_symptoms?.length > 0 && (
           <div style={{ marginBottom: "15px" }}>
             <strong>Key Symptoms:</strong>
@@ -260,9 +279,7 @@ const CasesList = () => {
           </div>
         )}
       </div>
-    )
-  );
-
+    );
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -270,7 +287,7 @@ const CasesList = () => {
   };
 
   return (
-    <div className="cases-wrapper">
+    <div className='cases-wrapper'>
       <h2>Cases</h2>
       <input
         type='text'
@@ -374,29 +391,29 @@ const CasesList = () => {
               onChange={handleFieldChange}
             />
             <input
-  name="maritalStatus"
-  placeholder="Marital Status"
-  value={selectedCase.maritalStatus || ""}
-  onChange={handleFieldChange}
-/>
-<input
-  name="occupation"
-  placeholder="Occupation"
-  value={selectedCase.occupation || ""}
-  onChange={handleFieldChange}
-/>
-<input
-  name="address"
-  placeholder="Address"
-  value={selectedCase.address || ""}
-  onChange={handleFieldChange}
-/>
-<input
-  name="dateOfVisit"
-  type="date"
-  value={selectedCase.dateOfVisit?.slice(0, 10) || ""}
-  onChange={handleFieldChange}
-/>
+              name='maritalStatus'
+              placeholder='Marital Status'
+              value={selectedCase.maritalStatus || ""}
+              onChange={handleFieldChange}
+            />
+            <input
+              name='occupation'
+              placeholder='Occupation'
+              value={selectedCase.occupation || ""}
+              onChange={handleFieldChange}
+            />
+            <input
+              name='address'
+              placeholder='Address'
+              value={selectedCase.address || ""}
+              onChange={handleFieldChange}
+            />
+            <input
+              name='dateOfVisit'
+              type='date'
+              value={selectedCase.dateOfVisit?.slice(0, 10) || ""}
+              onChange={handleFieldChange}
+            />
             <h4>Chief Complaints</h4>
             {(selectedCase.chiefComplaints || []).map((item, index) => (
               <div key={index}>
@@ -422,66 +439,78 @@ const CasesList = () => {
                   }
                 />
                 <h4>History of Present Illness</h4>
-<textarea
-  name="historyPresentIllness"
-  value={selectedCase.historyPresentIllness || ""}
-  onChange={handleFieldChange}
-/>
-<h4>Past History</h4>
-<input
-  name="pastHistory.childhoodDiseases"
-  placeholder="Childhood Diseases"
-  value={selectedCase.pastHistory?.childhoodDiseases || ""}
-  onChange={handleFieldChange}
-/>
-<input
-  name="pastHistory.surgeriesInjuries"
-  placeholder="Surgeries/Injuries"
-  value={selectedCase.pastHistory?.surgeriesInjuries || ""}
-  onChange={handleFieldChange}
-/>
-<input
-  name="pastHistory.majorIllnesses"
-  placeholder="Major Illnesses"
-  value={selectedCase.pastHistory?.majorIllnesses || ""}
-  onChange={handleFieldChange}
-/>
-<h4>Family History</h4>
-<textarea
-  name="familyHistory"
-  value={selectedCase.familyHistory || ""}
-  onChange={handleFieldChange}
-/>
-<h4>Personal History</h4>
-{Object.keys(selectedCase.personalHistory || {}).map((key) => (
-  <input
-    key={key}
-    name={`personalHistory.${key}`}
-    placeholder={key.charAt(0).toUpperCase() + key.slice(1)}
-    value={selectedCase.personalHistory[key] || ""}
-    onChange={handleFieldChange}
-  />
-))}
-<h4>Lab Investigation</h4>
-<textarea
-  name="labInvestigation"
-  value={JSON.stringify(selectedCase.labInvestigation || {})}
-  onChange={handleFieldChange}
-/>
-<h4>General Remarks</h4>
-<textarea
-  name="generalRemarks"
-  value={selectedCase.generalRemarks || ""}
-  onChange={handleFieldChange}
-/>
+                <textarea
+                  name='historyPresentIllness'
+                  value={selectedCase.historyPresentIllness || ""}
+                  onChange={handleFieldChange}
+                />
+                <h4>Past History</h4>
+                <input
+                  name='pastHistory.childhoodDiseases'
+                  placeholder='Childhood Diseases'
+                  value={selectedCase.pastHistory?.childhoodDiseases || ""}
+                  onChange={handleFieldChange}
+                />
+                <input
+                  name='pastHistory.surgeriesInjuries'
+                  placeholder='Surgeries/Injuries'
+                  value={selectedCase.pastHistory?.surgeriesInjuries || ""}
+                  onChange={handleFieldChange}
+                />
+                <input
+                  name='pastHistory.majorIllnesses'
+                  placeholder='Major Illnesses'
+                  value={selectedCase.pastHistory?.majorIllnesses || ""}
+                  onChange={handleFieldChange}
+                />
+                <h4>Family History</h4>
+                <textarea
+                  name='familyHistory'
+                  value={selectedCase.familyHistory || ""}
+                  onChange={handleFieldChange}
+                />
+                <h4>Personal History</h4>
+                {Object.keys(selectedCase.personalHistory || {}).map((key) => (
+                  <input
+                    key={key}
+                    name={`personalHistory.${key}`}
+                    placeholder={key.charAt(0).toUpperCase() + key.slice(1)}
+                    value={selectedCase.personalHistory[key] || ""}
+                    onChange={handleFieldChange}
+                  />
+                ))}
+                <h4>Relief Status</h4>
+                <select
+                  name='relief'
+                  value={selectedCase.relief || ""}
+                  onChange={handleFieldChange}
+                >
+                  <option value=''>-- Select Relief --</option>
+                  <option value='full'>Full Relief</option>
+                  <option value='partial'>Partial Relief</option>
+                  <option value='none'>No Relief</option>
+                </select>
 
-<h4>Observations By Doctor</h4>
-<textarea
-  name="observationsByDoctor"
-  value={selectedCase.observationsByDoctor || ""}
-  onChange={handleFieldChange}
-/>
- <button type='button' onClick={() => removeComplaint(index)}>
+                <h4>Lab Investigation</h4>
+                <textarea
+                  name='labInvestigation'
+                  value={JSON.stringify(selectedCase.labInvestigation || {})}
+                  onChange={handleFieldChange}
+                />
+                <h4>General Remarks</h4>
+                <textarea
+                  name='generalRemarks'
+                  value={selectedCase.generalRemarks || ""}
+                  onChange={handleFieldChange}
+                />
+
+                <h4>Observations By Doctor</h4>
+                <textarea
+                  name='observationsByDoctor'
+                  value={selectedCase.observationsByDoctor || ""}
+                  onChange={handleFieldChange}
+                />
+                <button type='button' onClick={() => removeComplaint(index)}>
                   🗑
                 </button>
               </div>
@@ -535,7 +564,11 @@ const CasesList = () => {
                 <img
                   src={Loading}
                   alt='Thinking...' // Changed alt text to reflect thinking
-                  style={{ width: "350px", height: "350px", verticalAlign: "middle" }}
+                  style={{
+                    width: "350px",
+                    height: "350px",
+                    verticalAlign: "middle",
+                  }}
                 />
               )}
               <button
@@ -691,5 +724,3 @@ const CasesList = () => {
 };
 
 export default CasesList;
-
-  

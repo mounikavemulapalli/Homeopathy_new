@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const FollowUp = require("../models/FollowUp");
-
+const { reanalyzeCase } = require("../services/analysisService");
 // Get today's follow-ups
 router.get("/today", async (req, res) => {
   const today = new Date().toISOString().slice(0, 10);
@@ -31,19 +31,32 @@ router.post("/", async (req, res) => {
   try {
     const followUp = new FollowUp(req.body);
     await followUp.save();
+
+    if (req.body.reliefStatus === "No Relief") {
+      const analysis = await reanalyzeCase(followUp.casesId);
+      followUp.analysis = analysis;
+      await followUp.save();
+    }
+
     res.status(201).json(followUp);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
 });
 
-// Update follow-up by ID
 router.put("/:id", async (req, res) => {
   try {
-    const updated = await FollowUp.findByIdAndUpdate(req.params.id, req.body, {
-      new: true, // return updated document
+    const followUp = await FollowUp.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
     });
-    res.json(updated);
+
+    if (req.body.reliefStatus === "No Relief" && followUp) {
+      const analysis = await reanalyzeCase(followUp.casesId);
+      followUp.analysis = analysis;
+      await followUp.save();
+    }
+
+    res.json(followUp);
   } catch (err) {
     res.status(500).json({ error: "Update failed" });
   }
