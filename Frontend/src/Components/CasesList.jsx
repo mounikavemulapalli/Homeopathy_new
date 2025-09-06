@@ -491,12 +491,19 @@ const CasesList = () => {
                   <option value='none'>No Relief</option>
                 </select>
 
-                <h4>Lab Investigation</h4>
+                {/* <h4>Lab Investigation</h4>
                 <textarea
                   name='labInvestigation'
                   value={JSON.stringify(selectedCase.labInvestigation || {})}
                   onChange={handleFieldChange}
+                /> */}
+                <h4>Lab Investigation</h4>
+                <textarea
+                  name='labInvestigation'
+                  value={selectedCase.labInvestigation || ""}
+                  onChange={handleFieldChange}
                 />
+
                 <h4>General Remarks</h4>
                 <textarea
                   name='generalRemarks'
