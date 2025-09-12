@@ -181,19 +181,21 @@ router.post("/", async (req, res) => {
 
     const result = await model.generateContent(prompt);
     const response = result.response;
-    const text = response.text();
+    const text = await response.text();
 
     let parsed;
     try {
+       parsed = JSON.parse(text);
+    } catch {
       const jsonStart = text.indexOf("{");
       const jsonEnd = text.lastIndexOf("}") + 1;
+      if (jsonStart === -1 || jsonEnd === -1) {
+        return res
+          .status(500)
+          .json({ error: "Invalid structured response from Gemini" });
+      }
       const jsonString = text.slice(jsonStart, jsonEnd);
       parsed = JSON.parse(jsonString);
-    } catch (err) {
-      console.warn("Failed to parse JSON. Raw text:", text);
-      return res
-        .status(500)
-        .json({ error: "Invalid structured response from Gemini" });
     }
 
     res.json({
